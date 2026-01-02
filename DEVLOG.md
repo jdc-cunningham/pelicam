@@ -10,6 +10,10 @@ Will reproduce that but through the nested folder/files instead of this [POS](ht
 
 Will be interesting on first boot to check for changes, you'd have to remove the flattened menu image to generate a new one based on specified icon image files and location
 
+That popup question about battery being charged though... which is based on an "on-ticker" eg. counting up as it's booted.
+
+I'm not sure how to define that yet in the menu. Maybe same depth but you don't say "root/index" or something.
+
 ### 01/01/2026
 
 10:04 PM
