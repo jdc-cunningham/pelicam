@@ -14,6 +14,8 @@ That popup question about battery being charged though... which is based on an "
 
 I'm not sure how to define that yet in the menu. Maybe same depth but you don't say "root/index" or something.
 
+or a separate folder
+
 ### 01/01/2026
 
 10:04 PM
