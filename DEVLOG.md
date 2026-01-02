@@ -1,3 +1,15 @@
+### 12/23/2025
+
+I've been thinking about this more
+
+I had this thought of a nested folder/file system to declare menus
+
+There would be a config file, a folder for images, then you'd have another folder to go deeper
+
+The icons would have a coordinate map, it would be proportional so it could hopefully adapt to different screen sizes
+
+Functions to call when the icon is clicked
+
 ### 12/16/2025
 
 9:01 PM
