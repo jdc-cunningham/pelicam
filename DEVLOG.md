@@ -1,3 +1,15 @@
+### 01/02/2026
+
+12:13 AM
+
+You can see in this menu-map for the Pi Zero HQ Cam the number of screens
+
+<img src="./devlog-images/pi-zero-hq-cam-menu-map.JPG"/>
+
+Will reproduce that but through the nested folder/files instead of this [POS](https://github.com/jdc-cunningham/pi-zero-hq-cam/blob/master/camera/software/menu/menu.py) that I made
+
+Will be interesting on first boot to check for changes, you'd have to remove the flattened menu image to generate a new one based on specified icon image files and location
+
 ### 01/01/2026
 
 10:04 PM
