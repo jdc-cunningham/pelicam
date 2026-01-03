@@ -1,3 +1,15 @@
+### 01/03/2026
+
+12:04 AM
+
+Yesterday I interfaced with the 2.8" DSI waveshare display which was new to me since it was not just showing an image straight up like with SPI displays
+
+So after I figured out how to use a windowing system eg. x11 through openbox, that changed my idea of how this menu will work
+
+This menu will just be a state machine pretty much where you specify a state and it outputs a menu
+
+The top of the layer is the dimension/click coordinate and that feeds the state machine
+
 ### 01/02/2026
 
 12:13 AM
