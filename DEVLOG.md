@@ -1,3 +1,17 @@
+### 01/04/2026
+
+9:08 PM
+
+I'm mentally drained at this point but I did put out a video
+
+I still gotta actually write the menu walker
+
+I've had some thoughts come up already like how do I handle dynamic text with regard to menu state
+
+It's one thing to produce the images but if you have dynamic text it's kind of pointless to make the image ahead of time
+
+It might make more sense to just store it in memory and render it on the fly (taking into account "caching" where you don't repaint the screen unless something changed)
+
 ### 01/03/2026
 
 12:04 AM
