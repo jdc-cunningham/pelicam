@@ -12,6 +12,12 @@ It's one thing to produce the images but if you have dynamic text it's kind of p
 
 It might make more sense to just store it in memory and render it on the fly (taking into account "caching" where you don't repaint the screen unless something changed)
 
+9:37 PM
+
+one thing I was thinking about with the touch screen is a slider, that would be interesting to render, the PIL display process wouldn't work great, could be a standalone view but yeah... can just use arrow keys
+
+For saving tuning/lens profiles I was thinking I'd need a split keyboard where you'd take a standard qwerty, cut it in half and just toggle to each side that you need the letter on
+
 ### 01/03/2026
 
 12:04 AM
