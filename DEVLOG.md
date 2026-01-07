@@ -1,3 +1,15 @@
+- [ ] PC dev menu
+  - this would be an OpenCV window
+    - [ ] keyboard interface (d-pad, enter, backspace, button for shutter like p I guess)
+- [ ] folder, file, config, structure
+- [ ] walker
+- [ ] functional-rendering
+
+### 01/06/2026
+
+7:30 PM
+Damn I'm so tired, eyes hurt... funny too I left my clothes at the gym, I was like wtf did I forget
+
 ### 01/04/2026
 
 9:08 PM
