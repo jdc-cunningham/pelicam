@@ -1,8 +1,8 @@
-### Playground
+# Playground
 This opens a window on your PC using OpenCV to serve up a GUI in a window. The rendered content in the window is the menu. The menu will be rendered through a nested-tree structure that a walker will loop over.
 
 
-### Installation
+## Installation
 In this folder run:
 
 - `$python -m venv .pelicam`
@@ -14,7 +14,7 @@ Use `$pip install opencv-python` to get OpenCV
 
 Then run `$pip install -r requirements.txt` for the rest
 
-### Run the menu
+## Run the menu
 `$python run.py`
 
 navigation - use d-pad to navigate
