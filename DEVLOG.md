@@ -65,6 +65,9 @@ So the folders in the menu folder are like keys to an object.
 
 So accessing "settings" is just "settings" but if settings had a subpage then it would be `settings.sub_page`
 
+8:10 PM
+Oh... it can also just literally have "page_name"
+
 ### 01/06/2026
 
 7:30 PM
