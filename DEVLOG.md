@@ -5,6 +5,16 @@
 - [ ] walker
 - [ ] functional-rendering
 
+### 01/07/2026
+
+6:26 PM
+Alright just came back from the gym did my half hour of inclined walking
+This little fatty trying to lose that gut, I've bulked up from the lifting but still a chubby
+
+Going to setup a "playground" where you can run the OpenCV with specific bound buttons and it'll also traverse a menu/render it for testing
+
+
+
 ### 01/06/2026
 
 7:30 PM

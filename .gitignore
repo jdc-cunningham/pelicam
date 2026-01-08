@@ -1,0 +1,6 @@
+# files
+.pelicam
+.env
+
+# folders
+.pycache
