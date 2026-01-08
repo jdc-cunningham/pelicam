@@ -13,7 +13,11 @@ This little fatty trying to lose that gut, I've bulked up from the lifting but s
 
 Going to setup a "playground" where you can run the OpenCV with specific bound buttons and it'll also traverse a menu/render it for testing
 
+7:26 PM
+Damn... struggle bus
 
+But I've got an OpenCV GUI with keys listening and clicks
+Now I can do a prototype of the menu tree rendering and traverse it (active box)
 
 ### 01/06/2026
 
