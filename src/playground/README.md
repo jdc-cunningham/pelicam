@@ -3,6 +3,8 @@ This opens a window on your PC using OpenCV to serve up a GUI in a window. The r
 
 
 ## Installation
+This whole project uses Python so you definitely need that.
+
 In this folder run:
 
 - `$python -m venv .pelicam`
