@@ -1,5 +1,14 @@
 {
   "page_name": "settings",
   "background_type": "color",
-  "background_color": "black"
+  "background_color": "black",
+  "items": [
+    {
+      "name": "settings_title",
+      "type": "text",
+      "text": "Settings",
+      "location": [12, 10],
+      "dimensions": [93, 33]
+    }
+  ]
 }

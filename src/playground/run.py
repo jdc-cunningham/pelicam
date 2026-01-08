@@ -50,12 +50,9 @@ def on_mouse(event, x, y, flags, param):
 # setup GUI
 # black bg
 img = np.zeros((480, 640, 3), dtype=np.uint8)
-
 window_name = "Pelicam"
 window_width = 640
 window_height = 480
-font = cv2.FONT_HERSHEY_SIMPLEX
-
 cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
 cv2.setWindowProperty(window_name, window_width, window_height)
 cv2.setMouseCallback(window_name, on_mouse)

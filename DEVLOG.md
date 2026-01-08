@@ -68,10 +68,14 @@ So accessing "settings" is just "settings" but if settings had a subpage then it
 8:10 PM
 Oh... it can also just literally have "page_name"
 
+---
+
 ### 01/06/2026
 
 7:30 PM
 Damn I'm so tired, eyes hurt... funny too I left my clothes at the gym, I was like wtf did I forget
+
+---
 
 ### 01/04/2026
 
@@ -93,6 +97,8 @@ one thing I was thinking about with the touch screen is a slider, that would be 
 
 For saving tuning/lens profiles I was thinking I'd need a split keyboard where you'd take a standard qwerty, cut it in half and just toggle to each side that you need the letter on
 
+---
+
 ### 01/03/2026
 
 12:04 AM
@@ -104,6 +110,8 @@ So after I figured out how to use a windowing system eg. x11 through openbox, th
 This menu will just be a state machine pretty much where you specify a state and it outputs a menu
 
 The top of the layer is the dimension/click coordinate and that feeds the state machine
+
+---
 
 ### 01/02/2026
 
@@ -122,6 +130,8 @@ That popup question about battery being charged though... which is based on an "
 I'm not sure how to define that yet in the menu. Maybe same depth but you don't say "root/index" or something.
 
 or a separate folder
+
+---
 
 ### 01/01/2026
 
@@ -153,6 +163,8 @@ The folders are recursively traversed to build the menu and bind all the functio
 
 I should be able to reproduce the current menu that [modular-pi-cam](https://github.com/jdc-cunningham/modular-pi-cam) and [pi-zero-hq-cam](https://github.com/jdc-cunningham/pi-zero-hq-cam) are using.
 
+---
+
 ### 12/23/2025
 
 I've been thinking about this more
@@ -164,6 +176,8 @@ There would be a config file, a folder for images, then you'd have another folde
 The icons would have a coordinate map, it would be proportional so it could hopefully adapt to different screen sizes
 
 Functions to call when the icon is clicked
+
+---
 
 ### 12/16/2025
 
