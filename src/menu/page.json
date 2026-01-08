@@ -1,0 +1,64 @@
+{
+  "background_type": "color",
+  "background_color": "black",
+  "items": [
+    {
+      "name": "photo_video_mode",
+      "type": "text",
+      "text": "photo",
+      "location": [25, 18],
+      "dimensions": [93, 49]
+    },
+    {
+      "name": "battery_time_left",
+      "type": "text",
+      "text": "7.1 hrs",
+      "location": [108, 15],
+      "dimensions": [73, 34]
+    },
+    {
+      "name": "battery_icon",
+      "type": "sprite",
+      "path": "sprites/battery-charge-level-100-percent-black-icon.png",
+      "location": [176, 18],
+      "dimensions": [47, 29]
+    },
+    {
+      "name": "camera_status",
+      "type": "text",
+      "text": "camera on",
+      "location": [54, 84],
+      "dimensions": [140, 40]
+    },
+    {
+      "name": "awb_mode",
+      "type": "text",
+      "text": "auto",
+      "location": [28, 176],
+      "dimensions": [62, 38]
+    },
+    {
+      "name": "file_count",
+      "type": "text",
+      "text": "0",
+      "location": [111, 171],
+      "dimensions": [40, 40]
+    },
+    {
+      "name": "file_icon",
+      "type": "sprite",
+      "path": "sprites/folder-line-icon.png",
+      "location": [54, 84],
+      "dimensions": [40, 40]
+    },
+    {
+      "name": "settings_icon",
+      "type": "sprite",
+      "path": "sprites/setting-line-icon.png",
+      "location": [94, 84],
+      "dimensions": [40, 40],
+      "click_type": "navigation",
+      "open_page": "settings"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
-- [ ] PC dev menu
+- [x] PC dev menu
   - this would be an OpenCV window
-    - [ ] keyboard interface (d-pad, enter, backspace, button for shutter like p I guess)
+    - [x] keyboard interface (d-pad, enter, backspace, button for shutter like p I guess)
 - [ ] folder, file, config, structure
 - [ ] walker
 - [ ] functional-rendering
@@ -18,6 +18,52 @@ Damn... struggle bus
 
 But I've got an OpenCV GUI with keys listening and clicks
 Now I can do a prototype of the menu tree rendering and traverse it (active box)
+
+7:38 PM
+
+I'm working on defining the config files to render a menu scene right now
+
+Ugh... now I'm thinking you'd want a menu generator thing... arrange icons and what not on a scene, then spit out the JSON from it, future...
+
+Right now I'm just trying to reproduce the existing menu to get a handle on how to do this
+
+<img src="./devlog-images/menu-definition.JPG"/>
+
+I'm using MS Paint to get a rough position, the menu was designed to be a square so it'll get moved around
+
+The thing is I'll start adding things like shutter speed, exposure, AWB, etc... on the menu as well
+
+I'll first render one page and then work on adding more/doing the walking then state management
+
+7:52 PM
+
+I'll source icons from UX Wing 64px looks like a good size for sprites
+
+7:55 PM
+
+The way I think the walker will work, when you first boot the camera, it pre-renders all of the menu pages as is. Then depending on the camera state, certain values are filled in on the fly like an updating battery hours left indicator for example.
+
+First menu I'm working on is black text/icons on white
+
+Unfortunately automatic dynamic menu scaling is not considered right now, where you specify the base menu system and scale it up or down, it's easy to do if it's a square but if you go to rectangle or circle then the coordinates don't match
+
+It could be CSS-based lol
+
+8:03 PM
+
+The sprites folder will be flat I decided since some may be re-used
+
+<img src="./devlog-images/nesting.JPG"/>
+
+This is where it starts to get challenging.
+
+So settings for example, it says `click_type` is navigation, and it specifies where it goes with `open_page`
+
+I feel like they have to be chained right... like dot notation
+
+So the folders in the menu folder are like keys to an object.
+
+So accessing "settings" is just "settings" but if settings had a subpage then it would be `settings.sub_page`
 
 ### 01/06/2026
 
