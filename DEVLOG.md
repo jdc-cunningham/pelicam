@@ -68,6 +68,26 @@ So accessing "settings" is just "settings" but if settings had a subpage then it
 8:10 PM
 Oh... it can also just literally have "page_name"
 
+8:29 PM
+
+I feel like this makes sense?...
+
+You preload the images, they're stored in memory and when you need to update them you just overwrite them while the camera is running.
+
+Oh... the one problem is you would have to re-render the entire page because of left over text being stacked imagine going from long to short text... or you paste the area over the original image but probably easier to just re-render the entire page.
+
+I need to see the passthrough but I'm still waiting for the HQ cam I ordered
+
+I think this was decent progress, let me do the looper that renders the menu not the walker, the walker I need to look at more, referencing this:
+
+https://stackoverflow.com/a/20199213
+
+8:40 PM
+
+<img src="./devlog-images/render-page.JPG"/>
+
+Alright that's not quite right but working
+
 ---
 
 ### 01/06/2026

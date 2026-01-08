@@ -20,7 +20,7 @@
     {
       "name": "battery_icon",
       "type": "sprite",
-      "path": "sprites/battery-charge-level-100-percent-black-icon.png",
+      "path": "menu/sprites/battery-charge-level-100-percent-black-icon.png",
       "location": [176, 18],
       "dimensions": [47, 29]
     },
@@ -48,14 +48,14 @@
     {
       "name": "file_icon",
       "type": "sprite",
-      "path": "sprites/folder-line-icon.png",
+      "path": "menu/sprites/folder-line-icon.png",
       "location": [54, 84],
       "dimensions": [40, 40]
     },
     {
       "name": "settings_icon",
       "type": "sprite",
-      "path": "sprites/setting-line-icon.png",
+      "path": "menu/sprites/setting-line-icon.png",
       "location": [94, 84],
       "dimensions": [40, 40],
       "click_type": "navigation",

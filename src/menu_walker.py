@@ -7,7 +7,8 @@ from PIL import Image, ImageDraw, ImageFont, ImageColor
 
 
 display = [640, 480]
-
+small_font = ImageFont.truetype("./menu/font/alt-font.ttc", 13)
+large_font = ImageFont.truetype("./menu/font/alt-font.ttc", 16)
 
 # render menu image in same path
 def render_page(page_config_path):
@@ -15,6 +16,20 @@ def render_page(page_config_path):
     page_config = json.load(page_json)
     page = Image.new("RGB", (display[0], display[1]), "BLACK")
     draw = ImageDraw.Draw(page)
+
+    for item in page_config["items"]:
+      if item["type"] == "text":
+        draw.text(
+          (item["location"][0], item["location"][1]),
+          item["text"],
+          fill="WHITE",
+          font=large_font
+        )
+
+      if item["type"] == "sprite":
+        icon = Image.open(item["path"])
+        page.paste(icon, (item["location"][0], item["location"][1]))
+
     save_path = page_config_path.split('page.json')[0]
     page.save(f"{save_path}page.png")
 
