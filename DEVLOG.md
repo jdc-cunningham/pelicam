@@ -88,6 +88,12 @@ https://stackoverflow.com/a/20199213
 
 Alright that's not quite right but working
 
+8:53 PM
+
+<img src="./devlog-images/resizing.gif"/>
+
+Hey this is pretty cool, I'm reducing the sizes of the icons and regenerating the menu image
+
 ---
 
 ### 01/06/2026

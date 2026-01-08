@@ -49,15 +49,15 @@
       "name": "file_icon",
       "type": "sprite",
       "path": "menu/sprites/folder-line-icon.png",
-      "location": [54, 84],
-      "dimensions": [40, 40]
+      "location": [154, 184],
+      "dimensions": [20, 20]
     },
     {
       "name": "settings_icon",
       "type": "sprite",
       "path": "menu/sprites/setting-line-icon.png",
-      "location": [94, 84],
-      "dimensions": [40, 40],
+      "location": [194, 184],
+      "dimensions": [20, 20],
       "click_type": "navigation",
       "open_page": "settings"
     }

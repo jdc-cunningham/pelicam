@@ -14,7 +14,7 @@ large_font = ImageFont.truetype("./menu/font/alt-font.ttc", 16)
 def render_page(page_config_path):
   with open(page_config_path) as page_json:
     page_config = json.load(page_json)
-    page = Image.new("RGB", (display[0], display[1]), "BLACK")
+    page = Image.new("RGB", (display[0], display[1]), "WHITE")
     draw = ImageDraw.Draw(page)
 
     for item in page_config["items"]:
@@ -22,13 +22,14 @@ def render_page(page_config_path):
         draw.text(
           (item["location"][0], item["location"][1]),
           item["text"],
-          fill="WHITE",
+          fill="BLACK",
           font=large_font
         )
 
       if item["type"] == "sprite":
         icon = Image.open(item["path"])
-        page.paste(icon, (item["location"][0], item["location"][1]))
+        resized_icon = icon.resize((item["dimensions"][0], item["dimensions"][1]), Image.Resampling.LANCZOS)
+        page.paste(resized_icon, (item["location"][0], item["location"][1]), mask=resized_icon)
 
     save_path = page_config_path.split('page.json')[0]
     page.save(f"{save_path}page.png")
