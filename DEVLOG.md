@@ -1,7 +1,7 @@
 - [x] PC dev menu
   - this would be an OpenCV window
     - [x] keyboard interface (d-pad, enter, backspace, button for shutter like p I guess)
-- [ ] folder, file, config, structure
+- [x] folder, file, config, structure
 - [ ] walker
 - [ ] functional-rendering
 
