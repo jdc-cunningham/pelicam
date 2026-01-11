@@ -8,6 +8,26 @@
 
 ### 01/11/2026
 
+- [ ] splash screen
+- [ ] battery charged
+- [ ] home
+  - [ ] camera settings
+  - [ ] toggle mode
+    - [ ] tap to record
+  - [ ] files
+    - [ ] file view (this one is interesting, where do the preview images come from)
+    - [ ] no files
+  - [ ] settings
+    - [ ] settings page
+      - [ ] raw telemetry (what is this for)
+      - [ ] battery profiler
+        - [ ] profiling battery
+      - [ ] reset battery
+      - [ ] timelapse
+        - timelapse page
+      - [ ] transfer to USB (hasn't worked lately even FAT32 format)
+      - [ ] delete all files
+
 3:33 PM
 
 Alright... I think I have a hangover, feel like crap
@@ -21,6 +41,22 @@ Just the waiting between the 9-5 job and the weekend
 Going out and doing photography was fun, I went near the city and put a couple videos up on the Vanta Wing YouTube channel
 
 Let's see... I have at least 16 scenes to make to replicate the current menu
+
+3:56 PM
+
+Starting now, the other thing I was thinking about, the camera pass through will have overlaid text on it, the video has it already for recording and elapsed time
+
+Camera stream will be faked on desktop with a static image, it could do a loop if you really wanted to, set an array somewhere and count... that would make it more convincing
+
+4:09 PM
+
+I'm really tempted to make that menu maker, it would be web based and spits out the JSON
+
+I think one of the hard things is the snapping/you'd need a grid thing but really it's not bad
+
+It's just one of those things, the time to make it, takes as long to manually write these out... but I think it will be a necessity at some point because writing JSON files manually to describe each menu page is pretty brutal
+
+
 
 ---
 
