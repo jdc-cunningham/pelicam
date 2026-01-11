@@ -11,7 +11,7 @@
 - [ ] splash screen
 - [ ] battery charged
 - [ ] home
-  - [ ] camera settings
+  - [x] camera settings
   - [ ] toggle mode
     - [ ] tap to record
   - [ ] files
@@ -56,7 +56,13 @@ I think one of the hard things is the snapping/you'd need a grid thing but reall
 
 It's just one of those things, the time to make it, takes as long to manually write these out... but I think it will be a necessity at some point because writing JSON files manually to describe each menu page is pretty brutal
 
+4:24 PM
 
+Yeah that menu designer thing will have to be made as it would account for things like outer padding (20px right now) and space between things
+
+4:29 PM
+
+Damn... 1 down
 
 ---
 

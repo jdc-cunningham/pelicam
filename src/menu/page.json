@@ -6,58 +6,63 @@
     {
       "name": "photo_video_mode",
       "type": "text",
+      "font_size": "small",
       "text": "photo",
-      "location": [25, 18],
+      "location": [20, 20],
       "dimensions": [93, 49]
     },
     {
       "name": "battery_time_left",
       "type": "text",
+      "font_size": "small",
       "text": "7.1 hrs",
-      "location": [108, 15],
+      "location": [450, 15],
       "dimensions": [73, 34]
     },
     {
       "name": "battery_icon",
       "type": "sprite",
       "path": "menu/sprites/battery-charge-level-100-percent-black-icon.png",
-      "location": [176, 18],
+      "location": [573, 20],
       "dimensions": [47, 29]
     },
     {
       "name": "camera_status",
       "type": "text",
+      "font_size": "large",
       "text": "camera on",
-      "location": [54, 84],
+      "location": [200, 220],
       "dimensions": [140, 40]
     },
     {
-      "name": "awb_mode",
+      "name": "auto_manual",
       "type": "text",
+      "font_size": "small",
       "text": "auto",
-      "location": [28, 176],
+      "location": [20, 422],
       "dimensions": [62, 38]
     },
     {
       "name": "file_count",
       "type": "text",
+      "font_size": "small",
       "text": "0",
-      "location": [111, 171],
+      "location": [480, 420],
       "dimensions": [40, 40]
     },
     {
       "name": "file_icon",
       "type": "sprite",
       "path": "menu/sprites/folder-line-icon.png",
-      "location": [154, 184],
-      "dimensions": [20, 20]
+      "location": [520, 420],
+      "dimensions": [40, 40]
     },
     {
       "name": "settings_icon",
       "type": "sprite",
       "path": "menu/sprites/setting-line-icon.png",
-      "location": [194, 184],
-      "dimensions": [20, 20],
+      "location": [580, 420],
+      "dimensions": [40, 40],
       "click_type": "navigation",
       "open_page": "settings"
     }

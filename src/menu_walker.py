@@ -7,8 +7,8 @@ from PIL import Image, ImageDraw, ImageFont, ImageColor
 
 
 display = [640, 480]
-small_font = ImageFont.truetype("./menu/font/alt-font.ttc", 13)
-large_font = ImageFont.truetype("./menu/font/alt-font.ttc", 16)
+small_font = ImageFont.truetype("./menu/font/alt-font.ttc", 34)
+large_font = ImageFont.truetype("./menu/font/alt-font.ttc", 48)
 
 # render menu image in same path
 def render_page(page_config_path):
@@ -23,7 +23,7 @@ def render_page(page_config_path):
           (item["location"][0], item["location"][1]),
           item["text"],
           fill="BLACK",
-          font=large_font
+          font=small_font if item["font_size"] == "small" else large_font
         )
 
       if item["type"] == "sprite":
