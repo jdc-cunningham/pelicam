@@ -72,6 +72,10 @@ This is what my screen looks like as I make these menu scenes
 
 It'll be great to see this rendered on the actual DSI display
 
+4:43 PM
+
+What will be interesting too is how to handle extra displays like the camera I'm currently designing has the main 2.8" DSI display and a 0.91" thin rectangle OLED
+
 ---
 
 ### 01/07/2026
