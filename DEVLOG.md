@@ -76,6 +76,16 @@ It'll be great to see this rendered on the actual DSI display
 
 What will be interesting too is how to handle extra displays like the camera I'm currently designing has the main 2.8" DSI display and a 0.91" thin rectangle OLED
 
+5:15 PM
+
+It's crazy what you can make... I was thinking the top display could be a little animated thing... like the camera is alive
+
+Idk I like the Skippy gun from the game Cyberpunk 2077.
+
+Yeah thinking about a cyberpunk style menu would be neat too...
+
+I'm already thinking of another to design/make, it's ESP32 based which I know not high megapixel count but the thing is it's designed to be like a card and the lens is on the top-right (facing you).
+
 ---
 
 ### 01/07/2026
