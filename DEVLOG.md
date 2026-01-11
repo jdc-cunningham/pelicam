@@ -2,8 +2,27 @@
   - this would be an OpenCV window
     - [x] keyboard interface (d-pad, enter, backspace, button for shutter like p I guess)
 - [x] folder, file, config, structure
+- [ ] make all menu scenes from current menu
 - [ ] walker
 - [ ] functional-rendering
+
+### 01/11/2026
+
+3:33 PM
+
+Alright... I think I have a hangover, feel like crap
+
+I did workout, just ate a big meal (have to cook the potatoes before they go bad)
+
+I am kind of losing momentum on this project but I will complete it
+
+Just the waiting between the 9-5 job and the weekend
+
+Going out and doing photography was fun, I went near the city and put a couple videos up on the Vanta Wing YouTube channel
+
+Let's see... I have at least 16 scenes to make to replicate the current menu
+
+---
 
 ### 01/07/2026
 
