@@ -86,6 +86,10 @@ Yeah thinking about a cyberpunk style menu would be neat too...
 
 I'm already thinking of another to design/make, it's ESP32 based which I know not high megapixel count but the thing is it's designed to be like a card and the lens is on the top-right (facing you).
 
+Today is unfortunately wasted, I feel tired/not into anything.
+
+I'll keep plugging away at this though with the menu screens as I still have to port over the camera software itself
+
 ---
 
 ### 01/07/2026
