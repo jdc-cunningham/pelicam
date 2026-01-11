@@ -64,6 +64,14 @@ Yeah that menu designer thing will have to be made as it would account for thing
 
 Damn... 1 down
 
+4:31 PM
+
+This is what my screen looks like as I make these menu scenes
+
+<img src="./devlog-images/screen.JPG"/>
+
+It'll be great to see this rendered on the actual DSI display
+
 ---
 
 ### 01/07/2026
