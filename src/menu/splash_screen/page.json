@@ -8,15 +8,15 @@
       "type": "sprite",
       "path": "menu/sprites/logo.png",
       "transparent": false,
-      "location": [60, 110],
+      "location": [60, 130],
       "dimensions": [512, 215]
     },
     {
       "name": "version",
       "type": "text",
-      "font_size": "small",
+      "font_size": "smaller",
       "text": "ver 0.0.1",
-      "location": [260, 330],
+      "location": [520, 430],
       "dimensions": [93, 33]
     }
   ]

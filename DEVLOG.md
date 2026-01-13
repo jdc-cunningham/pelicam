@@ -8,7 +8,7 @@
 
 ### 01/12/2026
 
-- [ ] splash screen
+- [x] splash screen (logo)
 - [ ] battery charged
 - [ ] home
   - [x] camera settings
