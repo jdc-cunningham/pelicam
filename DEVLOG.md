@@ -11,6 +11,7 @@
 - [x] splash screen (logo)
 - [x] battery charged
 - [ ] home
+  - [x] base scene
   - [ ] camera settings (need to figure out layout)
     - shutter
     - exposure
