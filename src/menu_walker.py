@@ -20,6 +20,13 @@ def get_font_size(font_size):
 
   if font_size == "large":
     return large_font
+  
+def draw_box(draw, loc_x, loc_y, dim_x, dim_y):
+  padding = 8
+  draw.line([(loc_x - padding, loc_y - padding), (loc_x + dim_x + padding, loc_y - padding)], fill = "ORANGE", width = 4)
+  draw.line([(loc_x - padding, loc_y - padding), (loc_x - padding, loc_y + dim_y + padding)], fill = "ORANGE", width = 4)
+  draw.line([(loc_x - padding, loc_y + dim_y + padding), (loc_x + dim_x + padding, loc_y + dim_y + padding)], fill = "ORANGE", width = 4)
+  draw.line([(loc_x + dim_x + padding, loc_y + dim_y + padding), (loc_x + dim_x + padding, loc_y - padding)], fill = "ORANGE", width = 4)
 
 # render menu image in same path
 def render_page(page_config_path):
@@ -29,23 +36,38 @@ def render_page(page_config_path):
     draw = ImageDraw.Draw(page)
 
     for item in page_config["items"]:
+      loc_x = item["location"][0]
+      loc_y = item["location"][1]
+      dim_x = item["dimensions"][0]
+      dim_y = item["dimensions"][1]
+
       if item["type"] == "text":
         draw.text(
-          (item["location"][0], item["location"][1]),
+          (loc_x, loc_y),
           item["text"],
           fill="BLACK",
           font=get_font_size(item["font_size"])
         )
 
+        if "highlighted" in item:
+          if item["highlighted"]:
+            draw_box(
+              draw,
+              loc_x,
+              loc_y,
+              dim_x,
+              dim_y
+            )
+
       if item["type"] == "sprite":
         icon = Image.open(item["path"])
-        resized_icon = icon.resize((item["dimensions"][0], item["dimensions"][1]), Image.Resampling.LANCZOS)
+        resized_icon = icon.resize((dim_x, dim_y), Image.Resampling.LANCZOS)
 
         if "transparent" in item:
           if not item["transparent"]:
-            page.paste(resized_icon, (item["location"][0], item["location"][1]))
+            page.paste(resized_icon, (loc_x, loc_y))
           else:
-            page.paste(resized_icon, (item["location"][0], item["location"][1]), mask=resized_icon)
+            page.paste(resized_icon, (loc_x, loc_y), mask=resized_icon)
 
     save_path = page_config_path.split('page.json')[0]
     page.save(f"{save_path}page.png")
@@ -53,4 +75,4 @@ def render_page(page_config_path):
 def walk_menu():
   pass
 
-render_page('./menu/splash_screen/page.json')
+render_page('./menu/battery_charged/page.json')

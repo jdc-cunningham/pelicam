@@ -1,0 +1,32 @@
+{
+  "page_name": "battery_charged",
+  "background_type": "color",
+  "background_color": "black",
+  "items": [
+    {
+      "name": "title",
+      "type": "text",
+      "font_size": "large",
+      "text": "Battery Charged?",
+      "location": [140, 160],
+      "dimensions": [93, 33]
+    },
+    {
+      "name": "yes",
+      "type": "text",
+      "font_size": "large",
+      "text": "Yes",
+      "location": [200, 240],
+      "dimensions": [93, 33]
+    },
+    {
+      "name": "no",
+      "type": "text",
+      "font_size": "large",
+      "text": "No",
+      "highlighted": true,
+      "location": [360, 240],
+      "dimensions": [62, 52]
+    }
+  ]
+}
