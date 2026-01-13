@@ -5,7 +5,6 @@ import json
 import os
 from PIL import Image, ImageDraw, ImageFont, ImageColor
 
-
 display = [640, 480]
 smaller_font = ImageFont.truetype("./menu/font/alt-font.ttc", 24)
 small_font = ImageFont.truetype("./menu/font/alt-font.ttc", 34)

@@ -39,7 +39,9 @@ Gonna work on some menus, I feel spent
 
 I got to take out the Vivitar 75-200mm which is super telephoto with this 5.5 crop, that was pretty fun though the vibration/no stabilization meant a lot of bad pictures and video
 
+8:40 PM
 
+One thing I have to figure out right away is loading this menu in OpenCV and then traversing through the menu state, that's a core functionality, the rest is just work
 
 ---
 
