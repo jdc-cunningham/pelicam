@@ -9,9 +9,14 @@
 ### 01/12/2026
 
 - [x] splash screen (logo)
-- [ ] battery charged
+- [x] battery charged
 - [ ] home
-  - [x] camera settings
+  - [ ] camera settings (need to figure out layout)
+    - shutter
+    - exposure
+    - f-stop
+      - detect electronic aperture if not manual (no value)
+    - white balance
   - [ ] toggle mode
     - [ ] tap to record
   - [ ] files
