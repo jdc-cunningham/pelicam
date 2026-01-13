@@ -29,7 +29,12 @@ def render_page(page_config_path):
       if item["type"] == "sprite":
         icon = Image.open(item["path"])
         resized_icon = icon.resize((item["dimensions"][0], item["dimensions"][1]), Image.Resampling.LANCZOS)
-        page.paste(resized_icon, (item["location"][0], item["location"][1]), mask=resized_icon)
+
+        if "transparent" in item:
+          if not item["transparent"]:
+            page.paste(resized_icon, (item["location"][0], item["location"][1]))
+          else:
+            page.paste(resized_icon, (item["location"][0], item["location"][1]), mask=resized_icon)
 
     save_path = page_config_path.split('page.json')[0]
     page.save(f"{save_path}page.png")
@@ -37,4 +42,4 @@ def render_page(page_config_path):
 def walk_menu():
   pass
 
-render_page('./menu/page.json')
+render_page('./menu/splash_screen/page.json')

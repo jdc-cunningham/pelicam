@@ -1,0 +1,23 @@
+{
+  "page_name": "splash_screen",
+  "background_type": "color",
+  "background_color": "black",
+  "items": [
+    {
+      "name": "battery_icon",
+      "type": "sprite",
+      "path": "menu/sprites/logo.png",
+      "transparent": false,
+      "location": [60, 110],
+      "dimensions": [512, 215]
+    },
+    {
+      "name": "version",
+      "type": "text",
+      "font_size": "small",
+      "text": "ver 0.0.1",
+      "location": [260, 330],
+      "dimensions": [93, 33]
+    }
+  ]
+}

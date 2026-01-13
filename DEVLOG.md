@@ -6,7 +6,7 @@
 - [ ] walker
 - [ ] functional-rendering
 
-### 01/11/2026
+### 01/12/2026
 
 - [ ] splash screen
 - [ ] battery charged
@@ -27,6 +27,18 @@
         - timelapse page
       - [ ] transfer to USB (hasn't worked lately even FAT32 format)
       - [ ] delete all files
+
+7:38 PM
+
+Gonna work on some menus, I feel spent
+
+I got to take out the Vivitar 75-200mm which is super telephoto with this 5.5 crop, that was pretty fun though the vibration/no stabilization meant a lot of bad pictures and video
+
+
+
+---
+
+### 01/11/2026
 
 3:33 PM
 

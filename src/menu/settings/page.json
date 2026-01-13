@@ -6,6 +6,7 @@
     {
       "name": "settings_title",
       "type": "text",
+      "font_size": "small",
       "text": "Settings",
       "location": [12, 10],
       "dimensions": [93, 33]
