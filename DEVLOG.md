@@ -6,6 +6,16 @@
 - [ ] walker
 - [ ] functional-rendering
 
+### 01/16/2026
+
+5:44 PM
+
+One thing I was thinking about is shooting in RAW. I really want to maximize the image I can get out of this thing. I'm a noob photographer so I primarily shoot in auto.
+
+But I've seen RAW images other people have taken and corrected with this sensor and they're pretty good, granted they are large objects, not things like leaves which look bad so far on this sensor.
+
+---
+
 ### 01/12/2026
 
 - [x] splash screen (logo)
