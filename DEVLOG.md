@@ -6,17 +6,7 @@
 - [ ] walker
 - [ ] functional-rendering
 
-### 01/16/2026
-
-5:44 PM
-
-One thing I was thinking about is shooting in RAW. I really want to maximize the image I can get out of this thing. I'm a noob photographer so I primarily shoot in auto.
-
-But I've seen RAW images other people have taken and corrected with this sensor and they're pretty good, granted they are large objects, not things like leaves which look bad so far on this sensor.
-
----
-
-### 01/12/2026
+### 01/21/2026
 
 - [x] splash screen (logo)
 - [x] battery charged
@@ -43,6 +33,32 @@ But I've seen RAW images other people have taken and corrected with this sensor 
         - timelapse page
       - [ ] transfer to USB (hasn't worked lately even FAT32 format)
       - [ ] delete all files
+
+7:08 PM
+
+Alright so at this point I've got a fully assembled camera, pretty rad, but it needs a menu
+
+<img src="./devlog-images/jdc34-camera.JPG"/>
+
+I need to go and make some updates to the STL files real quick as they were broken.
+
+Well what I want to get done real quick is have an auto-boot script that loads the GUI and it shows pelicam on the screen
+
+
+
+---
+
+### 01/16/2026
+
+5:44 PM
+
+One thing I was thinking about is shooting in RAW. I really want to maximize the image I can get out of this thing. I'm a noob photographer so I primarily shoot in auto.
+
+But I've seen RAW images other people have taken and corrected with this sensor and they're pretty good, granted they are large objects, not things like leaves which look bad so far on this sensor.
+
+---
+
+### 01/12/2026
 
 7:38 PM
 
