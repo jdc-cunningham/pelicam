@@ -83,6 +83,20 @@ This seems to have worked, I now see a `raspberry login: _`
 
 Still unable to open display damn
 
+I might just nuke it and start over so I can fully document the steps
+
+8:33 PM
+
+This is weird... I guess I have to run `startx` and then it opens a window... but then you can only use this window... odd
+
+I don't remember doing this before... I would wipe this pi but I have to take the camera apart lmao
+
+8:42 PM
+
+ugh... damnnnnnnn this is brutal
+
+I'm gonna wipe the pi, I have to take it apart lmao
+
 ---
 
 ### 01/16/2026
