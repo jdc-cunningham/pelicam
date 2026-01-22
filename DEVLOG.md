@@ -127,6 +127,10 @@ I thought of it because it just died and I wasn't sure if it was on or not (pi i
 
 Nooooo the pi doesn't have enough power keeps rebooting mid command lol
 
+10:43 PM
+
+Alright I'm gonna have to let it charge for a while, it's not able to keep up while plugged into the 1A charger
+
 ---
 
 ### 01/16/2026
