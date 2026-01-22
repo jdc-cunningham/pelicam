@@ -97,6 +97,32 @@ ugh... damnnnnnnn this is brutal
 
 I'm gonna wipe the pi, I have to take it apart lmao
 
+8:51 PM
+
+Ugh... so sad, I have to start over from scratch, reeeeeeeeeeeeeee
+
+<img src="./devlog-images/reflash-raspbian-os-lite-64bit.JPG"/>
+
+9:05 PM
+
+I have to cook and eat food but it's reflashed...
+
+First thing you have to do is do the DT overlay stuff to get the screen to work
+
+Oh man.... I forgot about all those steps I did reeee
+
+I'm gonna log this stuff in a dedicated file
+
+10:02 PM
+
+There is one thing I did not do which is to get a current draw for the system.
+
+The Pi 4B is a hungry boy as it idles at 500mA apparently and that's without the camera running and not factoring in the display.
+
+So it's possible it uses like 1A peak which means this 3400 mAh battery or whatever will only last say 2-3 hrs vs. 6-7 on the pi zero 2w
+
+I thought of it because it just died and I wasn't sure if it was on or not (pi is inside lol and no display out yet)
+
 ---
 
 ### 01/16/2026
