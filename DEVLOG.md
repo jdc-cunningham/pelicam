@@ -123,6 +123,10 @@ So it's possible it uses like 1A peak which means this 3400 mAh battery or whate
 
 I thought of it because it just died and I wasn't sure if it was on or not (pi is inside lol and no display out yet)
 
+10:29 PM
+
+Nooooo the pi doesn't have enough power keeps rebooting mid command lol
+
 ---
 
 ### 01/16/2026
