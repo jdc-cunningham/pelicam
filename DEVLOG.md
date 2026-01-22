@@ -6,8 +6,6 @@
 - [ ] walker
 - [ ] functional-rendering
 
-### 01/21/2026
-
 - [x] splash screen (logo)
 - [x] battery charged
 - [ ] home
@@ -33,6 +31,18 @@
         - timelapse page
       - [ ] transfer to USB (hasn't worked lately even FAT32 format)
       - [ ] delete all files
+
+### 01/22/2026
+
+12:16 AM
+
+well... unfortunately that's it for today
+
+I need to zip tie the charger down as the heat made the charger unglue itself and now I can't plug the micro usb in lmao... ugh
+
+---
+
+### 01/21/2026
 
 7:08 PM
 
