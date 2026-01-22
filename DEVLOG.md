@@ -44,6 +44,17 @@ I need to go and make some updates to the STL files real quick as they were brok
 
 Well what I want to get done real quick is have an auto-boot script that loads the GUI and it shows pelicam on the screen
 
+7:14 PM
+
+I also want to time how long it takes to boot
+
+7:30 PM
+
+I had to do a bunch of cleaning, kind of spacing out
+
+- systemd boot script
+- load image in opencv
+
 
 
 ---

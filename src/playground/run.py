@@ -3,6 +3,8 @@ import numpy as np
 import time
 from pynput.keyboard import Key, Listener
 
+img_path = "logo.png"
+boot_scene = cv2.imread(img_path)
 
 # setup keypress listener
 def on_press(key):
@@ -26,7 +28,6 @@ def on_press(key):
   if key == Key.space:
     print("spacebar")
 
-
 def on_release(key):
   # print('{0} release'.format(key))
 
@@ -40,12 +41,10 @@ keyboard_listener = Listener(
 
 keyboard_listener.start()
 
-
 # capture mouse-click coordinate
 def on_mouse(event, x, y, flags, param):
   if event == cv2.EVENT_LBUTTONDOWN:
     print(f'click {x}, {y}')
-
 
 # setup GUI
 # black bg
@@ -56,12 +55,12 @@ window_height = 480
 cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
 cv2.setWindowProperty(window_name, window_width, window_height)
 cv2.setMouseCallback(window_name, on_mouse)
-cv2.imshow(window_name, img)
+cv2.imshow(window_name, boot_scene)
 
 # render menu
 while True:
   try:
-    cv2.imshow(window_name, img)
+    cv2.imshow(window_name, boot_scene)
     cv2.waitKey(17)
   except KeyboardInterrupt:
     break
