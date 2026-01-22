@@ -55,7 +55,33 @@ I had to do a bunch of cleaning, kind of spacing out
 - systemd boot script
 - load image in opencv
 
+7:54 PM
 
+Getting mixed up, so oddly I have this problem of "Failed to open display from the DISPLAY environment variable"
+
+I also was setting systemd wrong, forgetting it has to run openbox
+
+8:07 PM
+
+Help me step code I'm stuck
+
+For some reason I can't open the display
+
+8:24 PM
+
+It looks like my boot is corrupted actually, it hangs on this "raspberry pi completed socket interaction for boot stage final" message
+
+Lead me to this
+
+https://forums.raspberrypi.com/viewtopic.php?t=134454
+
+adding the empty `cloud-init.disabled` file to `/etc/cloud` and reboot
+
+This seems to have worked, I now see a `raspberry login: _`
+
+8:26 PM
+
+Still unable to open display damn
 
 ---
 
