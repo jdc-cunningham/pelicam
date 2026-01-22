@@ -131,6 +131,52 @@ Nooooo the pi doesn't have enough power keeps rebooting mid command lol
 
 Alright I'm gonna have to let it charge for a while, it's not able to keep up while plugged into the 1A charger
 
+11:09 PM
+
+Booted it back up, got past last install command I was running
+
+11:15 PM
+
+wtf is this... complaining about evdev
+
+11:21 PM
+
+Damn... failed to open display message again lol
+
+Ohhhh damn... I had to refer back to the openbox post
+
+You use `xinit` to launch the script
+
+https://forums.raspberrypi.com/viewtopic.php?t=152264
+
+11:37 PM
+
+This is so weird, I don't know why I can't reproduce this menu opening thing, it was the first thing I did
+
+omg it's a bash script so have to use the `./openbox`
+
+oof
+
+It's actually a good thing I had to do this over from scratch, there are so many steps I figured out but didn't write down
+
+11:48 PM
+
+Yeah another one, have to put python in the top of the file
+
+11:52 PM
+
+Finally...
+
+This display is so crisp holy shit...
+
+<img src="./devlog-images/nice-display.JPG"/>
+
+Now I gotta tie it to a startup mechanism
+
+11:59 PM
+
+Damn it just died... this display must use a lot of power damn
+
 ---
 
 ### 01/16/2026
