@@ -4,6 +4,8 @@
 
 Software for DIY handheld cameras specifically using the Raspberry Pi ecosystem (boards and camera modules).
 
+<img src="./devlog-images/nice-display.JPG"/>
+
 <img src="./cameras.JPG"/>
 
 ([modular](https://github.com/jdc-cunningham/modular-pi-cam) and [pi zero hq cam](https://github.com/jdc-cunningham/pi-zero-hq-cam))
