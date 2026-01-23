@@ -32,6 +32,18 @@
       - [ ] transfer to USB (hasn't worked lately even FAT32 format)
       - [ ] delete all files
 
+### 01/23/2026
+
+Alright so I had to use `sudo raspi-config` to connect to my wifi for some reason even though I had set it when writing the raspbian image to the SD card
+
+Anyway got past that and it was straight forward to have systemd run the `xinit ./openbox` command so now that's running on boot, although it will be disabled until it's done
+
+I literally had to plug in a keyboard to the camera to connect the wifi as mentioned above
+
+<img src="./devlog-images/fxi-wifi.JPG"/>
+
+---
+
 ### 01/22/2026
 
 12:16 AM
