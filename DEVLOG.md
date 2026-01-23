@@ -50,6 +50,8 @@ Why tf... I keep running into dumb ass problems
 
 But today was a good day, hung out with some people played indoor golf
 
+I did address the charging problem, I unfortunately just hot glued the f out of it, which it's funny, you have to wait for it to cool off for the hot glue to hold, because the charger gets hot enough to re-melt the hot glue
+
 ---
 
 ### 01/21/2026
