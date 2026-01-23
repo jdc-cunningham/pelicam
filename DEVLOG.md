@@ -40,6 +40,16 @@ well... unfortunately that's it for today
 
 I need to zip tie the charger down as the heat made the charger unglue itself and now I can't plug the micro usb in lmao... ugh
 
+10:42 PM
+
+Well I was gonna try and bust out the quick short where it boots into pelicam but for some reason.... MF fuck... it won't show an IP address so I can't ssh into it
+
+So I'm gonna have to take it apart and plug a keyboard into it I guess
+
+Why tf... I keep running into dumb ass problems
+
+But today was a good day, hung out with some people played indoor golf
+
 ---
 
 ### 01/21/2026
