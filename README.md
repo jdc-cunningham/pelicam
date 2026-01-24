@@ -4,7 +4,7 @@
 
 Software for DIY handheld cameras specifically using the Raspberry Pi ecosystem (boards and camera modules).
 
-<img src="./devlog-images/nice-display.JPG"/>
+<img src="./pelicam-on-cam.JPG"/>
 
 <img src="./cameras.JPG"/>
 
