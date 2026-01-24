@@ -42,6 +42,12 @@ I literally had to plug in a keyboard to the camera to connect the wifi as menti
 
 <img src="./devlog-images/fxi-wifi.JPG"/>
 
+6:51 PM
+
+There's gonna be a big snow storm this weekend, I'm going nowhere!
+
+I'm gonnna bust this menu out.
+
 ---
 
 ### 01/22/2026
