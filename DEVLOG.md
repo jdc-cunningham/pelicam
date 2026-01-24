@@ -32,6 +32,16 @@
       - [ ] transfer to USB (hasn't worked lately even FAT32 format)
       - [ ] delete all files
 
+### 01/24/2026
+
+3:32 PM
+
+I am unfortunately recovering from a hangover but I'll get something done today
+
+I'm gonna 3D print those small correction pieces for the camera like the OLED gap and the broken screw holder that joins the two body shell parts together
+
+---
+
 ### 01/23/2026
 
 Alright so I had to use `sudo raspi-config` to connect to my wifi for some reason even though I had set it when writing the raspbian image to the SD card
