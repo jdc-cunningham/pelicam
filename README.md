@@ -4,6 +4,8 @@
 
 Software for DIY handheld cameras specifically using the Raspberry Pi ecosystem (boards and camera modules).
 
+This software factors in display type eg. SPI or DSI
+
 <img src="./pelicam-on-cam.JPG"/>
 
 <img src="./cameras.JPG"/>
@@ -14,17 +16,15 @@ Software for DIY handheld cameras specifically using the Raspberry Pi ecosystem 
 
 #### boards
 
-- Pi Zero 2 (preferred)
+- Full-sized Raspberry Pi's eg. Pi 4B
+- Pi Zero 2 (preferred for SPI refresh rate)
 
 #### cameras
 
+- v1 5MP
 - v2 8MP
 - v3 12MP (wide and narrow)
 - HQ 12.3MP
-
-#### Other cameras
-
-- Arducam IMX477 (same as HQ cam)
 
 #### Operating systems
 
