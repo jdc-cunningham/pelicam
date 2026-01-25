@@ -40,6 +40,22 @@ I am unfortunately recovering from a hangover but I'll get something done today
 
 I'm gonna 3D print those small correction pieces for the camera like the OLED gap and the broken screw holder that joins the two body shell parts together
 
+10:02 PM
+
+Redemption, I am present
+
+Let's do some work
+
+I'm really tempted to write that menu builder... the issue is you're dealing with writing to file system which the web can't do
+
+So I'd have to make a desktop app that can access the file system/write to it
+
+I'm not actually gonna be able to do anything hard right now, I'm already lit (but moderately lit)
+
+This camera body is really growing on me though, it's cool, it's green
+
+
+
 ---
 
 ### 01/23/2026

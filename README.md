@@ -33,4 +33,4 @@ This software factors in display type eg. SPI or DSI
 
 #### Interfaces
 
-- tactile currently
+- tactile and touch

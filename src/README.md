@@ -1,5 +1,7 @@
 # Pelicam
 
+<img src="./menu-layers.png"/>
+
 There are up to 3-layers depending on what environment the menu is running in:
 
 - PC (2)
@@ -10,9 +12,7 @@ There are up to 3-layers depending on what environment the menu is running in:
   - OpenCV GUI
   - rendered menu
 
-## The menu system
-
-(fill this out)
+The layers aren't really important. Openbox you just run it... don't really do much. OpenCV is what shows the menu on the screen. It sits above the actual camera menu/software.
 
 ## Sprites
 
