@@ -54,7 +54,9 @@ I'm not actually gonna be able to do anything hard right now, I'm already lit (b
 
 This camera body is really growing on me though, it's cool, it's green
 
+10:55 AM
 
+I am going to design another menu where it's cyberpunk looking just to show you that you can literally make any menu style you want, it's a screen and better than SPI in terms of refresh rate
 
 ---
 
