@@ -32,6 +32,22 @@
       - [ ] transfer to USB (hasn't worked lately even FAT32 format)
       - [ ] delete all files
 
+### 01/26/2026
+
+5:07 PM
+
+Yeah... I did waste my weekend but I'll get better with productivity
+
+This is what I'm thinking, if I can prove out that Electron can write to file system then I will write this desktop app with ReactJS.
+
+<img src="./devlog-images/menu-builder.JPG"/>
+
+You would specifiy your menu size, it shows a window. Then you can start adding depth/sprites and positioning them. The end result is it generates JSON files that define each menu and the linked pages/functions.
+
+The functions part I'd have to look into.
+
+---
+
 ### 01/24/2026
 
 3:32 PM
