@@ -106,9 +106,9 @@ At the very least a crude implementation of focus peaking using the laplace vari
 
 I use my own photos for my ultrawide desktop display wallpaper, I hide all the icons so it's just a huge image and I do use the photos taken by the RPi HQ Cam, I used to Sony Alpha A7II and A7R3 and I have you know "perfect" pictures from those because of the full frame sensor, 42MP and big lenses...
 
-<img src="./devlog-images/soft-example.JPG"/>
-
 If you see below, this is an RPi HQ cam image I took and I could have gotten this to be shaper if I had a higher resolution display or the focus checking algorithm running
+
+<img src="./devlog-images/soft-example.JPG"/>
 
 ---
 
