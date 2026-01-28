@@ -64,7 +64,23 @@ I came up with a new logo too, it shows the outline of a Pelican with the dot on
 
 <img src="./devlog-images/alt-menu.JPG"/>
 
-There's too much going on anyway so may just stick to the simple Pelicam with the i being a lens... this is dumb stuff need the working code first.
+There's too much going on anyway so may just stick to the simple Pelicam with the dot of the i being a lens... this is dumb stuff need the working code first.
+
+8:43 PM
+
+So the sprites get drag-dropped into the app and they get written to the host. I could turn them into base64/hold em in memory but I think it makes sense to actually store them.
+
+Then you can drag the sprite and drop it onto the page.
+
+8:49 PM
+
+I think today I can get the basic skeleton done of the desktop app.
+
+Once I prove out the key parts, the rest is easy coding for me as I'm primarily web dev although lately I've been working in the cloud eg. writing Cloudformation templates but I have a heavy background in Python as well, as all of our AI-related source code is written in python.
+
+It's mostly the planning that I gotta think about, like the nesting (referencing the menu design below, the + stair-step deal).
+
+If it conceptually makes sense to a non-developer.
 
 ---
 
