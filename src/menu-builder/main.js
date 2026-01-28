@@ -3,6 +3,7 @@
 const electron = require('electron');
 const url = require('url');
 const path = require('path');
+const fs = require('fs');
 const { app, BrowserWindow, Menu } = electron;
 const macPlatform = process.platform == 'darwin';
 let mainWindow;
@@ -15,6 +16,9 @@ app.on('ready', () => {
     height: 900,
     icon: path.join(__dirname, 'menu-builder-icon.png')
   });
+
+  try { fs.writeFileSync('myfile.txt', 'the text to write in the file', 'utf-8'); }
+  catch(e) { alert('Failed to save the file !'); }
 
   // load html file into window
   mainWindow.loadURL(url.format({

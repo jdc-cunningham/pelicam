@@ -42,7 +42,9 @@ Alright let me try and prototype this Electron app real quick, I need to make su
 
 My bad I got sidetracked but found a cool song Take Five by Filo the slow version with his kid
 
+8:12 PM
 
+So far it's looking good, I was able to save to the app directory and I just need to do screenshot to file which seems possible with html2canvas
 
 ---
 
