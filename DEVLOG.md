@@ -2,10 +2,10 @@
   - this would be an OpenCV window
     - [x] keyboard interface (d-pad, enter, backspace, button for shutter like p I guess)
 - [x] folder, file, config, structure
+- [ ] make menu builder desktop app
 - [ ] make all menu scenes from current menu
 - [ ] walker
 - [ ] functional-rendering
-
 - [x] splash screen (logo)
 - [x] battery charged
 - [ ] home
@@ -31,6 +31,20 @@
         - timelapse page
       - [ ] transfer to USB (hasn't worked lately even FAT32 format)
       - [ ] delete all files
+
+### 01/27/2026
+
+7:17 PM
+
+Alright let me try and prototype this Electron app real quick, I need to make sure I can write to the file system. The plan is to output directly into the menu folder.
+
+7:51 PM
+
+My bad I got sidetracked but found a cool song Take Five by Filo the slow version with his kid
+
+
+
+---
 
 ### 01/26/2026
 
