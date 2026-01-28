@@ -1,6 +1,7 @@
 # Playground
 This opens a window on your PC using OpenCV to serve up a GUI in a window. The rendered content in the window is the menu. The menu will be rendered through a nested-tree structure that a walker will loop over.
 
+Eventually your camera does the same thing but it uses Openbox to serve the OpenCV window.
 
 ## Installation
 This whole project uses Python so you definitely need that.
