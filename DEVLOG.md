@@ -60,6 +60,12 @@ There are some things I'm instill unsure on, I mean I'm going to port all of the
 
 I also don't know how to handle the hand off between OpenCV and raw image rendering for the SPI displays. I would think for the SPI case you're not going to use OpenCV in there at all... but maybe.
 
+I came up with a new logo too, it shows the outline of a Pelican with the dot on the i being a lense... what's bad is it vaguely resembles the Golden Eagle and yeah... don't want to do that.
+
+<img src="./devlog-images/alt-menu.JPG"/>
+
+There's too much going on anyway so may just stick to the simple Pelicam with the i being a lens... this is dumb stuff need the working code first.
+
 ---
 
 ### 01/26/2026
