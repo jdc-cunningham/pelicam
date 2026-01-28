@@ -7,7 +7,7 @@ This source code has 3 parts:
 
 ## How the software runs on the camera
 
-You have to specify what type of display your display is eg. is it DSI (flat cable) or SPI, this determines how the menu is rendered on your camera.
+You have to specify what type of display your display is eg. is it DSI (flat cable) or SPI, this determines how the menu is rendered on your camera. DSI uses a GUI wrapper around the menu and SPI displays images as fast as the RPi/SPI display can render it.
 
 <img src="./menu-layers.png"/>
 
