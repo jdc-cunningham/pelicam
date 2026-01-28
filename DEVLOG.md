@@ -32,6 +32,12 @@
       - [ ] transfer to USB (hasn't worked lately even FAT32 format)
       - [ ] delete all files
 
+- [ ] menu builder
+  - [x] verify Electron can write to host
+  - [ ] poc of drag-drop using react-dnd
+  - [ ] save image from html
+  - [ ] build out interface
+
 ### 01/27/2026
 
 7:17 PM
