@@ -46,6 +46,12 @@ My bad I got sidetracked but found a cool song Take Five by Filo the slow versio
 
 So far it's looking good, I was able to save to the app directory and I just need to do screenshot to file which seems possible with html2canvas
 
+8:24 PM
+
+There are some things I'm instill unsure on, I mean I'm going to port all of the existing functionality from [modular-pi-cam's software](https://github.com/jdc-cunningham/modular-pi-cam/tree/master/cameras/pi-zero/large-display/software) but the menu icon binding to service/hardware calls kind of thing.
+
+
+
 ---
 
 ### 01/26/2026
