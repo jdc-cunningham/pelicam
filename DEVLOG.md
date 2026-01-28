@@ -82,6 +82,20 @@ It's mostly the planning that I gotta think about, like the nesting (referencing
 
 If it conceptually makes sense to a non-developer.
 
+10:17 PM
+
+Let me do this real quick screenshot for the gram
+
+This is not much but shows clear progress
+
+<img src="./devlog-images/start-of-menu-builder.JPG"/>
+
+I'll add the top-bottom part of the right panel, with the snippets portion having drag-drop on it to add sprites.
+
+Have to make the left side have fixed/dynamic sizing where you enter the display dimensions and then it's snappable with react-dnd
+
+I'd probably put the title of the menu scene above the menu display as you click through the items on the right.
+
 ---
 
 ### 01/26/2026
