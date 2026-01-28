@@ -96,6 +96,14 @@ Have to make the left side have fixed/dynamic sizing where you enter the display
 
 I'd probably put the title of the menu scene above the menu display as you click through the items on the right.
 
+10:30 PM
+
+I really want to get good, sharp pictures in the future
+
+This high resolution display and extra compute (during passthrough) will come in handy
+
+At the very least a crude implementation of focus peaking using the laplace variance and display a number that increases/decreases depending on how blurry or focused the scene is
+
 ---
 
 ### 01/26/2026
