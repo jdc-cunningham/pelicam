@@ -22,12 +22,16 @@ app.on('ready', () => {
     }
   });
 
+  // https://stackoverflow.com/a/43488020
   ipcMain.on('sendImgData', (e, args) => {
-    console.log(args);
+    if (args?.imgData) {
+      const imgData = args.imgData.replace(/^data:image\/\w+;base64,/, "");
+      const buff = Buffer.from(imgData, 'base64');
+      const imgPath = path.join(app.getAppPath(), './menu-output/sprites/pic.png');
+      try { fs.writeFileSync(imgPath, buff); }
+      catch(e) { alert('Failed to save the file !'); }
+    }
   });
-
-  // try { fs.writeFileSync('myfile.txt', 'the text to write in the file', 'utf-8'); }
-  // catch(e) { alert('Failed to save the file !'); }
 
   // load html file into window
   mainWindow.loadURL(url.format({

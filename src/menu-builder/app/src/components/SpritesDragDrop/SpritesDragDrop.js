@@ -12,8 +12,11 @@ const SpritesDragDrop = (props) => {
     
     reader.onload = (e) => {
       if (e.target.result) {
-        console.log(e.target.result);
-        window.api.sendImgData('yo');
+        if (e.target.result.includes('data:image')) {
+          window.api.sendImgData({
+            imgData: e.target.result
+          });
+        }
       } else {
         console.warn("No img data");
       }
