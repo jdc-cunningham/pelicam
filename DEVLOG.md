@@ -50,7 +50,7 @@ Don't let your dreams be memes
 
 I'm aiming to have a functional camera by end of this weekend, means this menu builder is at a "finished" point and I actually develop the 1:1 feature parity menu that the modular pi cam has and I will add that laplace variance focus peaking.
 
-There will be the rough functional build of the menu then the nice features for example what I'm going to work on write now is the sprite part where you drag-drop the sprite into the box and it shows up there as an availabe sprite to use.
+There will be the rough functional build of the menu then the nice features for example what I'm going to work on right now is the sprite part where you drag-drop the sprite into the box and it shows up there as an availabe sprite to use.
 
 - [ ] drag-drop feature on sprites (non-positional)
   - [x] drag-drop image saves to filesystem
@@ -104,6 +104,14 @@ These icons would have to be draggable/drop it onto the menu scene
 The menu scene needs to have that snap interface at a specific grid size like 10px
 
 Should also be able to manually set the pixel x,y coordinate and dimension (scaling)
+
+8:54 PM
+
+I have this lens I'm picking up tomorrow it's a Cannon TV Zoom J5x15 15-75mm f2.1 Cine Lens C Mount, sadly it has haze... I think normally it's like `$300` so this one was `$75`
+
+But the haze kinda looks bad like damn oh well
+
+If it actually focuses then that's already better than the other lens I bought this Computar 8-48mm which I could not get to focus, maybe it'd work on the Arducam IMX477 sensor which I believe has a lower flange than the RPi HQ cam.
 
 ---
 
