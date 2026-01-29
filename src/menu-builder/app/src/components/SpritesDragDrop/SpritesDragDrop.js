@@ -6,14 +6,23 @@ import './SpritesDragDrop.scss';
 const SpritesDragDrop = (props) => {
   const processSprite = (file) => {
     const reader = new FileReader();
+    const fileName = file.name;
+
+    // add filename check only alphanumeric and underscore allowed
+
+    console.log(file);
     
     reader.readAsDataURL(file);
     
     reader.onload = (e) => {
       if (e.target.result) {
+        console.log(e.target);
         if (e.target.result.includes('data:image')) {
           window.api.sendImgData({
-            imgData: e.target.result
+            imgInfo: {
+              name: fileName,
+              data: e.target.result
+            }
           });
         }
       } else {

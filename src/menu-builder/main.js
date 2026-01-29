@@ -24,15 +24,16 @@ app.on('ready', () => {
 
   // https://stackoverflow.com/a/43488020
   ipcMain.on('sendImgData', (e, args) => {
-    if (args?.imgData) {
-      const imgData = args.imgData.replace(/^data:image\/\w+;base64,/, "");
+    if (args?.imgInfo) {
+      const { name, data } = args.imgInfo;
+      const imgData = data.replace(/^data:image\/\w+;base64,/, "");
       const buff = Buffer.from(imgData, 'base64');
-      const imgPath = path.join(app.getAppPath(), './menu-output/sprites/pic.png');
+      const imgPath = path.join(app.getAppPath(), `./menu-output/sprites/${name}`);
 
       try {
         fs.writeFileSync(imgPath, buff);
         e.reply("imgAdded", {
-          name: 'pic',
+          name,
           data: imgData
         });
       } catch(e) {
