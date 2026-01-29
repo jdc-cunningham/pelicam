@@ -89,6 +89,10 @@ This is a pretty cool demo, you see me drag the file from a folder into another 
 
 But yeah this shows that I can genarate menus, assuming the html2canvas part works which it should, I did a lot of html to canvas/pdf stuff in 2021 damn... RIP that startup.
 
+I'm feeling pretty drained already but I think I'll at least add that file name regex check tonight
+
+It should use underscores in consideration of python although it would be a string so technically doesn't matter but looks neater.
+
 ---
 
 ### 01/27/2026

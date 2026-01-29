@@ -4,14 +4,26 @@ import { useEffect, useRef } from 'react';
 import './SpritesDragDrop.scss';
 
 const SpritesDragDrop = (props) => {
+  const verifyFileName = (fileName) => {
+    const fn = fileName.split('.png').join('');
+    const re = new RegExp("^[a-zA-Z0-9_]*$");
+
+    if (re.test(fn)) {
+      return fn + '.png';
+    }
+
+    return false;
+  };
+
   const processSprite = (file) => {
     const reader = new FileReader();
-    const fileName = file.name;
+    const fileName = verifyFileName(file.name);
 
-    // add filename check only alphanumeric and underscore allowed
+    if (!fileName) {
+      alert('File name needs to be letters, characters and underscores only eg. sprite_name.png');
+      return;
+    }
 
-    console.log(file);
-    
     reader.readAsDataURL(file);
     
     reader.onload = (e) => {
