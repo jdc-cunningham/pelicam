@@ -4,7 +4,7 @@ const electron = require('electron');
 const url = require('url');
 const path = require('path');
 const fs = require('fs');
-const { app, BrowserWindow, Menu } = electron;
+const { app, BrowserWindow, ipcMain } = electron;
 const macPlatform = process.platform == 'darwin';
 let mainWindow;
 
@@ -14,11 +14,20 @@ app.on('ready', () => {
   mainWindow = new BrowserWindow({
     width: 1400,
     height: 900,
-    icon: path.join(__dirname, 'menu-builder-icon.png')
+    icon: path.join(__dirname, 'menu-builder-icon.png'),
+    webPreferences: {
+      preload: path.join(app.getAppPath(), './app/public/preload.js'),
+      worldSafeExecuteJavaScript:  true,
+      contextIsolation: true
+    }
   });
 
-  try { fs.writeFileSync('myfile.txt', 'the text to write in the file', 'utf-8'); }
-  catch(e) { alert('Failed to save the file !'); }
+  ipcMain.on('sendImgData', (e, args) => {
+    console.log(args);
+  });
+
+  // try { fs.writeFileSync('myfile.txt', 'the text to write in the file', 'utf-8'); }
+  // catch(e) { alert('Failed to save the file !'); }
 
   // load html file into window
   mainWindow.loadURL(url.format({

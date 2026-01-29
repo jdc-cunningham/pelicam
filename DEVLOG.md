@@ -61,6 +61,14 @@ I've built a drag-drop image to base64 thing before see [here](https://github.co
 
 I just gotta remember how it works
 
+7:19 PM
+
+Referencing this for the React to Electron bridge
+
+https://wykrhm.medium.com/creating-standalone-desktop-applications-with-react-electron-and-sqlite3-269dbb310aee
+
+I remember doing this for something I've made before
+
 ---
 
 ### 01/27/2026

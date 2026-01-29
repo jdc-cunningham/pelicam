@@ -15,3 +15,7 @@ Is the Electron part and the `app` folder is the react-app that is built as stat
 You can develop the react-app in the browser by going into the `app` folder and using `npm start`.
 
 You can run the Electron desktop app through `npm start` in the `menu-builder` folder.
+
+### Disclaimer
+
+Be aware this desktop app is going to take whatever image you drag-drop into it and write it to your filesystem (in this repo).
