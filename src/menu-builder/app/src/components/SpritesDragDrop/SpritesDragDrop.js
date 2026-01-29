@@ -56,11 +56,6 @@ const SpritesDragDrop = (props) => {
 
   useEffect(() => {
     window.api.imgAdded((event, data) => console.log(data));
-    // dropTargetRef.addEventListener('drop', (e) => {
-    //   e.stopPropagation();
-    //   e.preventDefault();
-    //   //  getBase64(e.dataTransfer.files[0], imgDrop, id, clientId);
-    // });
   }, []);
 
   return (
