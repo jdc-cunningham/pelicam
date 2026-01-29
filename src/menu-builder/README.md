@@ -16,6 +16,10 @@ You can develop the react-app in the browser by going into the `app` folder and 
 
 You can run the Electron desktop app through `npm start` in the `menu-builder` folder.
 
+Note that you have to build the react app first before running the electron portion (needs static files to show).
+
+Compiled sources will be provided for windows, mac and linux but you can also compile it yourself.
+
 ### Disclaimer
 
 Be aware this desktop app is going to take whatever image you drag-drop into it and write it to your filesystem (in this repo).
