@@ -1,4 +1,5 @@
 import './App.scss';
+import SpritesDragDrop from './components/SpritesDragDrop/SpritesDragDrop'
 
 function App() {
   return (
@@ -8,12 +9,7 @@ function App() {
       </div>
       <div className="App__right">
         <div className="App__right-menu-tree"></div>
-        <div className="App__right-sprites">
-          <h2>Sprites</h2>
-          <div class="App__right-sprites-body">
-            <p>Drag and drop sprites here</p>
-          </div>
-        </div>
+        <SpritesDragDrop />
       </div>
     </div>
   );

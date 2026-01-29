@@ -1,0 +1,23 @@
+.App__right-sprites {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 1rem);
+  height: 25%;
+  margin: 0.5rem;
+  border: 1px solid #282828;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+
+  h2 {
+    font-size: 1.25rem;
+  }
+}
+
+.App__right-sprites-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  flex: 1;
+}
