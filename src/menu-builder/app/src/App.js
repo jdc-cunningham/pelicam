@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
@@ -6,7 +6,15 @@ function App() {
       <div className="App__left">
         <div className="App__left-display"></div>
       </div>
-      <div className="App__right"></div>
+      <div className="App__right">
+        <div className="App__right-menu-tree"></div>
+        <div className="App__right-sprites">
+          <h2>Sprites</h2>
+          <div class="App__right-sprites-body">
+            <p>Drag and drop sprites here</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

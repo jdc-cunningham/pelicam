@@ -38,6 +38,31 @@
   - [ ] save image from html
   - [ ] build out interface
 
+### 01/28/2026
+
+6:36 PM
+
+I am here, I am present
+
+Hiaksimaru
+
+Don't let your dreams be memes
+
+I'm aiming to have a functional camera by end of this weekend, means this menu builder is at a "finished" point and I actually develop the 1:1 feature parity menu that the modular pi cam has and I will add that laplace variance focus peaking.
+
+There will be the rough functional build of the menu then the nice features for example what I'm going to work on write now is the sprite part where you drag-drop the sprite into the box and it shows up there as an availabe sprite to use.
+
+- [ ] drag-drop feature on sprites (non-positional)
+  - [ ] advanced feature show toggle to show icons vs. list
+
+6:42 PM
+
+I've built a drag-drop image to base64 thing before see [here](https://github.com/jdc-cunningham/freelancer-journal/blob/master/react-app/src/components/right-body/RightBody.js)
+
+I just gotta remember how it works
+
+---
+
 ### 01/27/2026
 
 7:17 PM
