@@ -55,6 +55,8 @@ There will be the rough functional build of the menu then the nice features for 
 - [ ] drag-drop feature on sprites (non-positional)
   - [x] drag-drop image saves to filesystem
   - [ ] advanced feature show toggle to show icons vs. list
+- [ ] droppable menu with snap grid
+  - [ ] manual input for x,y and scale
 - [ ] save menu page with html2canvas
 
 6:42 PM
@@ -92,6 +94,16 @@ But yeah this shows that I can genarate menus, assuming the html2canvas part wor
 I'm feeling pretty drained already but I think I'll at least add that file name regex check tonight
 
 It should use underscores in consideration of python although it would be a string so technically doesn't matter but looks neater.
+
+8:36 PM
+
+Yeah so next I'll have to render what comes back from Electron on the React side
+
+These icons would have to be draggable/drop it onto the menu scene
+
+The menu scene needs to have that snap interface at a specific grid size like 10px
+
+Should also be able to manually set the pixel x,y coordinate and dimension (scaling)
 
 ---
 
