@@ -81,6 +81,14 @@ One hard thing down
 
 I do need that reply turns out
 
+8:10 PM
+
+This is a pretty cool demo, you see me drag the file from a folder into another folder lol
+
+<img src="./devlog-images/here-there.gif"/>
+
+But yeah this shows that I can genarate menus, assuming the html2canvas part works which it should, I did a lot of html to canvas/pdf stuff in 2021 damn... RIP that startup.
+
 ---
 
 ### 01/27/2026
