@@ -55,6 +55,7 @@ There will be the rough functional build of the menu then the nice features for 
 - [ ] drag-drop feature on sprites (non-positional)
   - [x] drag-drop image saves to filesystem
   - [ ] advanced feature show toggle to show icons vs. list
+  - [ ] when the desktop app first starts up it has to scan existing files and send them to the client to render
 - [ ] droppable menu with snap grid
   - [ ] manual input for x,y and scale
 - [ ] save menu page with html2canvas
