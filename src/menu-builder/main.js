@@ -28,8 +28,16 @@ app.on('ready', () => {
       const imgData = args.imgData.replace(/^data:image\/\w+;base64,/, "");
       const buff = Buffer.from(imgData, 'base64');
       const imgPath = path.join(app.getAppPath(), './menu-output/sprites/pic.png');
-      try { fs.writeFileSync(imgPath, buff); }
-      catch(e) { alert('Failed to save the file !'); }
+
+      try {
+        fs.writeFileSync(imgPath, buff);
+        e.reply("imgAdded", {
+          name: 'pic',
+          data: imgData
+        });
+      } catch(e) {
+        alert('Failed to save the file !');
+      }
     }
   });
 

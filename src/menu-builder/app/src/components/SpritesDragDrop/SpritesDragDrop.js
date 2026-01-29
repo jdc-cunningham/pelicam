@@ -5,7 +5,6 @@ import './SpritesDragDrop.scss';
 
 const SpritesDragDrop = (props) => {
   const processSprite = (file) => {
-    console.log(file);
     const reader = new FileReader();
     
     reader.readAsDataURL(file);
@@ -35,6 +34,7 @@ const SpritesDragDrop = (props) => {
   };
 
   useEffect(() => {
+    window.api.imgAdded((event, data) => console.log(data));
     // dropTargetRef.addEventListener('drop', (e) => {
     //   e.stopPropagation();
     //   e.preventDefault();

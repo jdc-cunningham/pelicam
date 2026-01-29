@@ -53,7 +53,9 @@ I'm aiming to have a functional camera by end of this weekend, means this menu b
 There will be the rough functional build of the menu then the nice features for example what I'm going to work on write now is the sprite part where you drag-drop the sprite into the box and it shows up there as an availabe sprite to use.
 
 - [ ] drag-drop feature on sprites (non-positional)
+  - [x] drag-drop image saves to filesystem
   - [ ] advanced feature show toggle to show icons vs. list
+- [ ] save menu page with html2canvas
 
 6:42 PM
 
@@ -68,6 +70,16 @@ Referencing this for the React to Electron bridge
 https://wykrhm.medium.com/creating-standalone-desktop-applications-with-react-electron-and-sqlite3-269dbb310aee
 
 I remember doing this for something I've made before
+
+7:44 PM
+
+Damn that was good... works
+
+Now I need to make sure the actual files sync with the react side but this is great.
+
+One hard thing down
+
+I do need that reply turns out
 
 ---
 
