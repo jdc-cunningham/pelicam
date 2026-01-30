@@ -38,6 +38,25 @@
   - [ ] save image from html
   - [ ] build out interface
 
+### 01/29/2026
+
+7:52 PM
+
+It's probably bad I'm already imagining a new camera
+
+It's more for video though (shaped as a camcorder) and it's purple!
+
+With a flip-out and rotating display... but the main thing it would have is a mecnahical IBIS
+
+Which may make it too big... but yeah
+
+Today I think I will get the icons to render in the drag-drop area.
+
+- [ ] need folder/file watcher to make sure folder matches desktop app (like deleting in folder)
+- [ ] add button bindings in the menu (by function name)
+
+---
+
 ### 01/28/2026
 
 6:36 PM
