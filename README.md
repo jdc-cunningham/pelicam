@@ -1,3 +1,5 @@
+#### Status: still in development
+
 <img src="./pelicam-logo.JPG"/>
 
 ### Pelicam
