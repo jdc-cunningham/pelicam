@@ -38,6 +38,14 @@
   - [ ] save image from html
   - [ ] build out interface
 
+### 01/30/2026
+
+5:49 PM
+
+Chilling today, did a little bit of development, will dive into this over the weekend and get a functioning menu on the camera
+
+---
+
 ### 01/29/2026
 
 7:52 PM
