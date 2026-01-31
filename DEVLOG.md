@@ -125,6 +125,14 @@ This code is not the greatest, like the CSS class names in BEM are f'd but I'm j
 
 End of the day what I care about is rendering nested menus and connecting it to the hardware binding code
 
+12:22 PM
+
+More progress
+
+<img src="./devlog-images/dynamics.gif"/>
+
+Oh yeah I need scaling next to make the icon smaller or larger
+
 ---
 
 ### 01/29/2026
