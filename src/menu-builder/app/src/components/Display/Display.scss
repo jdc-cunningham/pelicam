@@ -63,6 +63,32 @@
   }
 }
 
+.App__left-display-padding {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin-top: 0.5rem;
+  font-size: 1.125rem;
+  
+  input {
+    font-size: 1.125rem;
+    padding: 0.25rem;
+    margin-left: 0.5rem;
+    max-width: 50px;
+  }
+}
+
+.App__left-display-scene-padding-visual-guide {
+  position: absolute;
+  border: 1px dashed orange;
+}
+
 .App__left-display-sprite {
   position: absolute;
+  cursor: pointer;
+
+  &.active {
+    border: 1px solid red;
+  }
 }

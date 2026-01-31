@@ -6,10 +6,11 @@ const Display = (props) => {
 
   const [displayInfo, setDisplayInfo] = useState({
     type: 'DSI',
-    resolution: [640, 480] // jdc34 cam resolution
+    resolution: [640, 480], // jdc34 cam resolution
+    padding: 20 // visual aid
   });
 
-  const [lastActiveSprite, setLastActiveSprite] = useState({});
+  const [lastActiveSprite, setLastActiveSprite] = useState(null);
 
   const computePosition = (e, spriteName) => {
     const rect = e.target.getBoundingClientRect();
@@ -64,7 +65,7 @@ const Display = (props) => {
         <img
           key={index}
           alt="sprite"
-          className="App__left-display-sprite"
+          className={`App__left-display-sprite ${lastActiveSprite.name === sprite.name ? 'active': ''}`}
           src={sprite.data}
           title={sprite.name}
           draggable="true"
@@ -125,6 +126,17 @@ const Display = (props) => {
             />
           </span>
         </div>
+        <div className="App__left-display-padding">
+          <h3>Padding in px:</h3>
+          <input
+            type="number"
+            step="1"
+            value={displayInfo.padding}
+            onChange={
+              (e) => updateDisplayInfo('padding', e.target.value)
+            }
+          />
+        </div>
         <p className="disclaimer">Note that the font rendered below is different compared to your physical display font</p>
       </div>
       <div className="App__left-display">
@@ -138,10 +150,19 @@ const Display = (props) => {
           }}
         >
           {Object.keys(sprites).length > 0 && renderSprites()}
+          <div
+            className="App__left-display-scene-padding-visual-guide"
+            style={{
+              top: displayInfo.padding,
+              left: displayInfo.padding,
+              width: (displayInfo.resolution[0] - (displayInfo.padding * 2)),
+              height: (displayInfo.resolution[1] - (displayInfo.padding * 2))
+            }}
+          ></div>
         </div>
       </div>
       <div className="App__left-display-sprite-info">
-
+        {lastActiveSprite && <h3>Selected icon: {lastActiveSprite.name}</h3>}
       </div>
     </div>
   );
