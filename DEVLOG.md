@@ -70,6 +70,7 @@ I will add a padding for the display config, oh yeah that could be json file pre
 - [ ] menu nesting logic
 - [ ] should be able to produce all menu pages
 - [ ] extra/future - set color of display and font/icons(svg)
+- [ ] out of bounds check
 
 Waiting for my coffee
 
@@ -78,6 +79,14 @@ I'm thinking today I'll get the menu stuff done, tomorrow I'll get the hardware 
 10:15 AM
 
 I need the sprite dimensions so I'll go back in and add that
+
+11:14 AM
+
+So we've got this right now
+
+<img src="./devlog-images/drag-drop-to-display-reposition.gif"/>
+
+You can see it's a little off and it goes out of bounds, but I'm going to add a menu on the bottom based on the last icon you selected, where you can reposition it.
 
 ### 01/30/2026
 
