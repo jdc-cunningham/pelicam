@@ -103,6 +103,42 @@ It's funny my keyboard keeps feeling gross as I type so I will spray it with 91%
 
 So I thought at first that I would have the button bindings above menu tree but I think it makes sense for the button bindings to come after since the menu/icon has to exist before it can be bound to something.
 
+This software when fully built will have the software that JDC34 camera is using... so that it means it will have a boot splash screen.
+
+Other required menu scenes like battery reset (based on time not current shunt eg. DB)
+
+12:45 PM
+
+I need to do some drawing real quick to see how this would work
+
+12:52 PM
+
+<img src="./devlog-images/menu-tree.JPG"/>
+
+You can see how this would work, you'd have sibling menus and one of them would be the "entry point" for the actual runtime of the menu.
+
+There are other specific menu scenes like the boot splash screen or asking if the battery has been recharged to reset the counter.
+
+This also does not factor in the 2nd OLED screen I think I'll use that to display statuses or do like a little creature emotion thing like the previous camera where it winks on boot
+
+It will definitely be used though because it's so cool the blue display
+
+The sibling position doesn't matter right now, what determines the menu linking is the entry point and the nesting of menus inside that set of menu scenes
+
+12:57 AM
+
+So in the past I manually rendered some menu scenes, this is the end goal of the state for these menu scenes
+
+<img src="./devlog-images/json-render.JPG"/>
+
+Got a distraction
+
+<img src="./devlog-images/gato.JPG"/>
+
+Hehe he just woke up, sweepy boy
+
+
+
 ---
 
 ### 01/30/2026
