@@ -100,6 +100,7 @@ const Display = (props) => {
             <input type="number" step="1" value={displayInfo.resolution[1]}/>
           </span>
         </div>
+        <p className="disclaimer">Note that the font rendered below is different compared to your physical display font</p>
       </div>
       <div
         className="App__left-display"

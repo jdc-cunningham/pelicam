@@ -101,6 +101,20 @@ Thought of a layout update
 
 <img src="./devlog-images/layout.png"/>
 
+11:34 AM
+
+I decided I'm not going to do draggable-nested menus on the right sidebar, I'll just do click-add way. It'll still be visually indented/look like they're attached but there won't be drag-drop/snapping, that's extra nice to have.
+
+Another thing to consider is dynamic text, the font is based on what will be used on the python/physical display side
+
+It's a ttc font maybe I can use it in web.
+
+Okay that does not seem doable from quick SO searches, so it'll just use the robot font and a note about it
+
+11:39 AM
+
+Damn I'll need a font-drag drop thing
+
 ---
 
 ### 01/29/2026

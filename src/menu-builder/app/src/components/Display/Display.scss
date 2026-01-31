@@ -3,6 +3,11 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
+
+  p.disclaimer {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+  }
 }
 
 .App__left-display {
