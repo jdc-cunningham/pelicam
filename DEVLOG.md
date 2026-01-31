@@ -99,6 +99,10 @@ The display info needs to be written/synced with file system as well
 
 It's funny my keyboard keeps feeling gross as I type so I will spray it with 91% alcohol to clean it, then wash my hand with Dove bar soap so it doesn't feel oily but grippy.
 
+11:38 PM
+
+So I thought at first that I would have the button bindings above menu tree but I think it makes sense for the button bindings to come after since the menu/icon has to exist before it can be bound to something.
+
 ---
 
 ### 01/30/2026
