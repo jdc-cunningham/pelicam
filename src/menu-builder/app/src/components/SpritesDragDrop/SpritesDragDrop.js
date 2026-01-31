@@ -5,6 +5,7 @@ import './SpritesDragDrop.scss';
 
 const SpritesDragDrop = (props) => {
   const [sprites, setSprites] = useState([]); // {name, data}
+  // need original dimensions per sprite to scale
   
   const verifyFileName = (fileName) => {
     const fn = fileName.split('.png').join('');
