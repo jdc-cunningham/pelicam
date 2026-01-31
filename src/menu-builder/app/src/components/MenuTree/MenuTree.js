@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './MenuTree.scss';
 
 const MenuTree = (props) => {
   const { sprites } = props;
-  const [showAddSceneModal, setShowAddSceneModal] = useState(true);
+  const [showAddSceneModal, setShowAddSceneModal] = useState(false);
+  const [newMenuSceneName, setNewMenuSceneName] = useState('');
+  const [menuParent, setMenuParent] = useState('');
 
   const [menuScenes, setMenuScenes] = useState({
     // "boot_splash_screen": {
@@ -30,34 +32,96 @@ const MenuTree = (props) => {
     // }
   });
 
-  const renderMenuSceneTabs = () => (
-    Object.keys(menuScenes).map(menuSceneName => (
-      <div className="App__right-menu-tree-scene" title="click to view">
-        <p>{menuSceneName}</p>
-        <button title="add sub-menu scene">+</button>
-      </div>
-    ))
+  const renderMenuSceneTab = (menuSceneName, altIndex, isChild, marginLeft) => (
+    <div
+      key={altIndex}
+      className={`App__right-menu-tree-scene ${isChild ? 'child' : ''}`}
+      title="click to view"
+      style={{
+        marginLeft: `${marginLeft}px`,
+        width: `calc(100% - ${marginLeft})`
+      }}
+    >
+      <p>{menuSceneName}</p>
+      <button
+        title="add sub-menu scene"
+        type="button"
+        onClick={
+          () => {
+            setMenuParent(menuSceneName);
+            setShowAddSceneModal(true);
+          }
+        }>+</button>
+    </div>
   );
+
+  const renderMenuSceneGroup = () => {
+    const marginLefts = {};
+
+    return Object.keys(menuScenes).map((menuSceneName, index) => {
+      const parentMenu = menuScenes[menuSceneName].parent;
+
+      if (parentMenu) {
+        if (parentMenu in marginLefts) {
+          marginLefts[menuSceneName] += 10;
+        } else {
+          marginLefts[menuSceneName] = 10;
+        }
+      }
+
+      console.log(marginLefts);
+
+      return renderMenuSceneTab(menuSceneName, index, parentMenu, marginLefts[menuSceneName]);
+    })
+  };
+
+  const addMenuScene = () => {
+    const re = new RegExp("^[a-zA-Z0-9_]*$");
+
+    if (!re.test(newMenuSceneName)) {
+      alert("Only letters, numbers and underscores allowed");
+      return;
+    }
+
+    setMenuScenes(prevMenuScenes => ({
+      ...prevMenuScenes,
+      [newMenuSceneName]: {
+        parent: menuParent
+      }
+    }));
+
+    setMenuParent('');
+    setShowAddSceneModal(false);
+  };
+
+  useEffect(() => {
+    console.log(menuScenes);
+  }, [menuScenes]);
 
   return (
     <div className="App__right-menu-tree">
       <div className="App__right-menu-tree-add-menu">
         <h2>Menu tree</h2>
-        <button type="button">Add scene +</button>
+        <button type="button" onClick={() => setShowAddSceneModal(true)}>Add scene +</button>
       </div>
       {
         showAddSceneModal &&
         <div className="App__right-menu-tree-add-scene-modal">
-          <button type="button" className="close" title="cancel">X</button>
+          <button type="button" className="close" title="cancel" onClick={() => setShowAddSceneModal(false)}>X</button>
           <span>
             <p>Name</p>
-            <input type="text" placeholder="example_name"/>
+            <input type="text" placeholder="example_name" value={newMenuSceneName} onChange={(e) => setNewMenuSceneName(e.target.value)}/>
           </span>
-          <button type="button" className="save">Add</button>
+          <button type="button" className="save" onClick={() => addMenuScene()}>Add</button>
         </div>
       }
       <div className="App__right-menu-tree-scenes">
-        {Object.keys(menuScenes).length > 0 && renderMenuSceneTabs()}
+        {
+          Object.keys(menuScenes).length > 0 &&
+          <div className="App__right-menu-tree-scene-group">
+            {renderMenuSceneGroup()}
+          </div>
+        }
       </div>
     </div>
   );

@@ -177,6 +177,28 @@ My chair keeps sinking lmao the piston thing, cheap $20 Walmart chair
 
 I feel like this is a cliche pattern, like a website menu, or a linked-list maybe, the JSON has an inner JSON sort of deal and it's recursive
 
+1:54 PM
+
+Damn this song's good, don't drink don't smoke...
+
+Time to lock in if I haven't already been
+
+2:20 PM
+
+Dang... I'm on the recursive bit now always a bit of a challenge, gotta thinky
+
+2:29 PM
+
+Lol I'm struggling oh no, I'm weak on algo stuff
+
+I've written recursive things before but yeah always have to think about it
+
+What's challenging is you're not only traversing a nested object but you have to build html which do you build that in JSX or a string...
+
+If you can traverse the object then feeding the params into a function that outputs html should be straight forward
+
+
+
 ---
 
 ### 01/30/2026
