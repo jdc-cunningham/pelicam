@@ -6,7 +6,7 @@ It is a desktop app in order to write to your file system.
 
 You will be asked what type of display you have and the resolution before you can start making menu scenes and placing icons to the snap grid.
 
-### main.js
+### electron.js
 
 Is the Electron part and the `app` folder is the react-app that is built as static files/rendered by the Electron desktop wrapper.
 

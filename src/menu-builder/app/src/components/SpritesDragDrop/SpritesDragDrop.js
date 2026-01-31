@@ -4,7 +4,14 @@ import { useState, useEffect, useRef } from 'react';
 import './SpritesDragDrop.scss';
 
 const SpritesDragDrop = (props) => {
-  const [sprites, setSprites] = useState([]); // {name, data}
+  const [sprites, setSprites] = useState([
+    {
+      name: 'folder_line_icon',
+      data: 'iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABlklEQVR4nO2bsUrDUBhGT0txcq5Onbro4Cy4OjopiPgETj6GPoOTsw59BycpODqIq6KTqEW0Wm0cYrZcmra5/xfJf+BSmob0/IeQpbfgOI7j1JfG32sH2AeWSrjmM3AEfJdwLRPWgVcgKXGdmk4wJ33KHT5bx5ZDzMMPcQIkwKHhHDMTa/iENO6u3SizETNAAnwCm2bTTEmDVDI2A2AHuDf4riIMgIfsTew7oKrrAmhb3QFVpVf3AMO6B6BV4Jx34CW2SCRaQHvSSaGHxCOwTbFIVaYLXBKeM/fgCFgTyMZiGfhgigB9iWZccu+CZuDkoZWVIV95B0MBaoMHUAuo8QBqATUeQC2gxgOoBdR4ALWAGg+gFlDjAdQCajyAWkCNB1ALqPEAagE1HkAtoMYDqAXUeAC1gJpQgC6wYCliQCf0Qeh38xP+/96AjAMCc07aInMDnANPsQ0j0QQ2SDd65N7ttd8j5A9BYKyWEDJuAldqCyG3AKvAHfqtq9ZrBGxlf5lZBPaAFerxXHgDzoBrtYjjOI6j5BelzD/57vYDcAAAAABJRU5ErkJggg==',
+      width: 64,
+      height: 64
+    }
+  ]); // {name, data}
   // need original dimensions per sprite to scale
   
   const verifyFileName = (fileName) => {
@@ -32,12 +39,25 @@ const SpritesDragDrop = (props) => {
     reader.onload = (e) => {
       if (e.target.result) {
         if (e.target.result.includes('data:image')) {
-          window.api.sendImgData({
-            imgInfo: {
-              name: fileName,
-              data: e.target.result
+          const img = new Image();
+
+          img.onload = () => {
+            const height = img.height;
+            const width = img.width;
+
+            if (window?.api?.sendImgData) { // web context no electron
+              window.api.sendImgData({
+                imgInfo: {
+                  name: fileName,
+                  data: e.target.result,
+                  width,
+                  height
+                }
+              });
             }
-          });
+          };
+
+          img.src = e.target.result;
         }
       } else {
         console.warn("No img data");
@@ -65,7 +85,7 @@ const SpritesDragDrop = (props) => {
   )
 
   useEffect(() => {
-    if (window?.api) {
+    if (window?.api) { // web context no electron
       window.api.imgAdded((event, data) => {
         if (sprites.find(sprite => sprite.name !== data.name)) {
           setSprites(prevSprites => ([
@@ -84,8 +104,8 @@ const SpritesDragDrop = (props) => {
     <div className="App__right-sprites">
       <h2>Sprites</h2>
       <div className={`App__right-sprites-body ${sprites.length ? 'has-sprites': ''}`} onDragOver={(e) => {e.preventDefault()}} onDrop={imgDrop}>
-        {!sprites.length && <p>Drag and drop sprites here</p>}
-        {sprites.length && renderSprites()}
+        {!sprites.length > 0 && <p>Drag and drop sprites here</p>}
+        {sprites.length > 0 && renderSprites()}
       </div>
     </div>
   );

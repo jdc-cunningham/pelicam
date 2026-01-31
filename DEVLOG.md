@@ -38,6 +38,46 @@
   - [ ] save image from html
   - [ ] build out interface
 
+### 01/31/2026
+
+10:02 AM
+
+Alright... got some decent sleep
+
+No hangover
+
+It will be a day of days
+
+I try to tackle the hardest/unknown thing first in case it takes me longer than I expect to figure it out.
+
+So what I'm going to work on next is the snap grid on the menu.
+
+I will use a preloaded image like before.
+
+10:07 AM
+
+Alright I looked through DND and it does not have grid-snapping built in, it's just a drag-drop which I already have... so I'll skip the grid thing myself, what will happen is the user can drag it into place and dial it in with x,y coordinates for now
+
+I will add a padding for the display config, oh yeah that could be json file pre-baked
+
+- [ ] drop an img element on the scene
+- [ ] add way to dial it in perfectly
+- [ ] scale
+- [ ] flatten/produce an image
+- [ ] JSON nesting
+- [ ] sidebar update
+- [ ] include button binding
+- [ ] menu nesting logic
+- [ ] should be able to produce all menu pages
+
+Waiting for my coffee
+
+I'm thinking today I'll get the menu stuff done, tomorrow I'll get the hardware service calls done and bridge the two together
+
+10:15 AM
+
+I need the sprite dimensions so I'll go back in and add that
+
 ### 01/30/2026
 
 5:49 PM
