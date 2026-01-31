@@ -6,7 +6,6 @@ const MenuTree = (props) => {
 
   const [menuScenes, setMenuScenes] = useState({
     "boot_splash_screen": {
-      "scene_name": "boot_splash_screen",
       "background_type": "color",
       // "background_color": "white", // optional, takes global bg color
       "items": [
@@ -30,9 +29,23 @@ const MenuTree = (props) => {
     }
   });
 
+  const renderMenuSceneTabs = () => (
+    Object.keys(menuScenes).map(menuSceneName => (
+      <div className="App__right-menu-tree-scene">
+        <p>{menuSceneName}</p>
+      </div>
+    ))
+  );
+
   return (
     <div className="App__right-menu-tree">
       <h2>Menu tree</h2>
+      <div className="App__right-menu-tree-add-menu">
+        <button>add scene +</button>
+      </div>
+      <div className="App__right-menu-tree-scenes">
+        {Object.keys(menuScenes).length > 0 && renderMenuSceneTabs()}
+      </div>
     </div>
   );
 };
