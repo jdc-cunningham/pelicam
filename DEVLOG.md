@@ -60,7 +60,8 @@ Alright I looked through DND and it does not have grid-snapping built in, it's j
 
 I will add a padding for the display config, oh yeah that could be json file pre-baked
 
-- [ ] drop an img element on the scene
+- [x] drop an img element on the scene
+- [ ] padding hint
 - [ ] add way to dial it in perfectly
 - [ ] scale
 - [ ] flatten/produce an image

@@ -4,6 +4,11 @@ import './Display.scss';
 const Display = (props) => {
   const [sprites, setSprites] = useState({}); // {filename: fileInfo}
 
+  const [displayInfo, setDisplayInfo] = useState({
+    type: 'DSI',
+    resolution: [640, 480] // jdc34 cam resolution
+  });
+
   const computePosition = (e, spriteName) => {
     const rect = e.target.getBoundingClientRect();
     const spriteInfo = sprites[spriteName];
@@ -18,8 +23,6 @@ const Display = (props) => {
         left: Math.round(e.clientX - rect.x - (spriteWidth / 2))
       }
     }));
-    
-    console.log(e, spriteName);
   };
 
   const imgDrop = (e) => {
@@ -77,12 +80,37 @@ const Display = (props) => {
   }));
 
   return (
-    <div
-      className="App__left-display"
-      onDragOver={(e) => {e.preventDefault()}}
-      onDrop={imgDrop}
-    >
-      {Object.keys(sprites).length > 0 && renderSprites()}
+    <div className="App__left-display-container">
+      <div className="App__left-display-info">
+        <div className="App__left-display-info-type">
+          <h3>What type of display does your camera use?</h3>
+          <select>
+            <option>DSI (flat ribbon cable)</option>
+            <option>SPI (4 wire)</option>
+          </select>
+        </div>
+        <div className="App__left-display-resolution">
+          <h3>Your display resolution in px:</h3>
+          <span>
+            <p>width:</p>
+            <input type="number" step="1" value={displayInfo.resolution[0]}/>
+          </span>
+          <span>
+            <p>height:</p>
+            <input type="number" step="1" value={displayInfo.resolution[1]}/>
+          </span>
+        </div>
+      </div>
+      <div
+        className="App__left-display"
+        onDragOver={(e) => {e.preventDefault()}}
+        onDrop={imgDrop}
+      >
+        {Object.keys(sprites).length > 0 && renderSprites()}
+      </div>
+      <div className="App__left-display-sprite-info">
+
+      </div>
     </div>
   );
 };
