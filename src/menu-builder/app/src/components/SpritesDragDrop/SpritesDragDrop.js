@@ -126,12 +126,12 @@ const SpritesDragDrop = (props) => {
 
   return (
     <div className="App__right-sprites">
-      <h2>Sprites</h2>
       <div
         className={`App__right-sprites-body ${sprites.length ? 'has-sprites': ''}`}
         onDragOver={(e) => {e.preventDefault()}}
         onDrop={imgDrop}
       >
+        <h2>Sprites</h2>
         {!sprites.length > 0 && <p>Drag and drop sprites here</p>}
         {sprites.length > 0 && renderSprites()}
       </div>

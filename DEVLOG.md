@@ -155,6 +155,16 @@ You could eyeball that until an elegant solution comes up
 
 Ehh... I gotta move the shared state up to the parent.
 
+1:33 PM
+
+<img src="./devlog-images/taking-shape.JPG"/>
+
+Hmm... not a huge fan of the design but focusing on functionality
+
+Hmm... I guess there should be no limit on depth, it's up to the user to make sure the harrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr lol my keyboard fk'n up
+
+To make sure the hardware maps to the menu and the states match
+
 ---
 
 ### 01/30/2026

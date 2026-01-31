@@ -31,16 +31,17 @@ const MenuTree = (props) => {
 
   const renderMenuSceneTabs = () => (
     Object.keys(menuScenes).map(menuSceneName => (
-      <div className="App__right-menu-tree-scene">
+      <div className="App__right-menu-tree-scene" title="click to view">
         <p>{menuSceneName}</p>
+        <button title="add sub-menu scene">v</button>
       </div>
     ))
   );
 
   return (
     <div className="App__right-menu-tree">
-      <h2>Menu tree</h2>
       <div className="App__right-menu-tree-add-menu">
+        <h2>Menu tree</h2>
         <button>add scene +</button>
       </div>
       <div className="App__right-menu-tree-scenes">
