@@ -95,7 +95,9 @@ Okay need to do the hard things... next will be the Button binding and menu sect
 
 The display info needs to be written/synced with file system as well
 
+12:36 PM
 
+It's funny my keyboard keeps feeling gross as I type so I will spray it with 91% alcohol to clean it, then wash my hand with Dove bar soap so it doesn't feel oily but grippy.
 
 ---
 
