@@ -7,6 +7,7 @@ const MenuTree = (props) => {
   const [newMenuSceneName, setNewMenuSceneName] = useState('');
   const [menuParent, setMenuParent] = useState('');
 
+  // unsorted
   const [menuScenes, setMenuScenes] = useState({
     // "boot_splash_screen": {
     //   "background_type": "color",
@@ -32,6 +33,8 @@ const MenuTree = (props) => {
     // }
   });
 
+  const [menuTree, setMenuTree] = useState({});
+
   const renderMenuSceneTab = (menuSceneName, altIndex, isChild, marginLeft) => (
     <div
       key={altIndex}
@@ -56,23 +59,31 @@ const MenuTree = (props) => {
   );
 
   const renderMenuSceneGroup = () => {
-    const marginLefts = {};
+    // const marginLefts = {};
 
-    return Object.keys(menuScenes).map((menuSceneName, index) => {
-      const parentMenu = menuScenes[menuSceneName].parent;
+    // return Object.keys(menuScenes).map((menuSceneName, index) => {
+    //   const parentMenu = menuScenes[menuSceneName].parent;
 
-      if (parentMenu) {
-        if (parentMenu in marginLefts) {
-          marginLefts[menuSceneName] += 10;
-        } else {
-          marginLefts[menuSceneName] = 10;
-        }
-      }
+    //   console.log(menuSceneName, parentMenu);
 
-      console.log(marginLefts);
+    //   if (!parentMenu) {
+    //     marginLefts[menuSceneName] = {
+    //       items: [menuSceneName]
+    //     };
+    //   } else {
+    //     Object.keys(marginLefts).forEach(parent => {
+    //       if (marginLefts[parent].items.includes(parentMenu)) {
+    //         marginLefts[parent].items.push(menuSceneName);
+    //       }
+    //     });
+    //   }
 
-      return renderMenuSceneTab(menuSceneName, index, parentMenu, marginLefts[menuSceneName]);
-    })
+    //   console.log(marginLefts);
+
+    //   const marginLeft = ((marginLefts[menuSceneName]?.items.length - 1) * 10);
+
+    //   return renderMenuSceneTab(menuSceneName, index, parentMenu, marginLeft);
+    // })
   };
 
   const addMenuScene = () => {
@@ -92,10 +103,13 @@ const MenuTree = (props) => {
 
     setMenuParent('');
     setShowAddSceneModal(false);
+    setNewMenuSceneName('');
   };
 
   useEffect(() => {
     console.log(menuScenes);
+    // update tree
+
   }, [menuScenes]);
 
   return (

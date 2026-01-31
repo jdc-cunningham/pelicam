@@ -197,7 +197,40 @@ What's challenging is you're not only traversing a nested object but you have to
 
 If you can traverse the object then feeding the params into a function that outputs html should be straight forward
 
+2:56 PM
 
+I think I have it, the menu names or even letters have to be unique, if they're not unique can't group them correctly
+
+Ehh... this way seems bad, I was thinking of using array of arrays
+
+```
+[
+  ['a', 'b', 'c'],
+  ['d', 'e', 'f']
+]
+```
+
+That represnts
+
+```
+{
+  "a": {
+    "b": {
+      "c": {}
+    }
+  }
+}
+```
+
+The whole point right now is adding indents the deeper you go down a chain
+
+3:05 PM
+
+Once I figure this out I'm going to take a break, cook some food
+
+3:17 PM
+
+Still don't have it, taking a break
 
 ---
 
