@@ -66,12 +66,13 @@ I will add a padding for the display config, oh yeah that could be json file pre
 - [x] scale
 - [ ] flatten/produce an image
 - [ ] JSON nesting
-- [ ] sidebar update
-- [ ] include button binding
+- [x] sidebar update
+- [x] include button binding
 - [ ] menu nesting logic
 - [ ] should be able to produce all menu pages
 - [ ] extra/future - set color of display and font/icons(svg)
-- [ ] out of bounds check
+- [ ] out of bounds check for sprite dragging
+- [ ] text placement should be editable regarding size and coordinates
 
 Waiting for my coffee
 
@@ -164,6 +165,17 @@ Hmm... not a huge fan of the design but focusing on functionality
 Hmm... I guess there should be no limit on depth, it's up to the user to make sure the harrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr lol my keyboard fk'n up
 
 To make sure the hardware maps to the menu and the states match
+
+1:40 PM
+
+My chair keeps sinking lmao the piston thing, cheap $20 Walmart chair
+
+- [ ] add scene modal
+- [ ] process to add sub-scene with modal
+
+1:42 PM
+
+I feel like this is a cliche pattern, like a website menu, or a linked-list maybe, the JSON has an inner JSON sort of deal and it's recursive
 
 ---
 
