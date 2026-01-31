@@ -25,14 +25,16 @@ const Display = (props) => {
       [spriteName]: {
         ...prevSprites[spriteName],
         top: spriteTop,
-        left: spriteLeft
+        left: spriteLeft,
+        scale: 1
       }
     }));
 
     setLastActiveSprite({
       ...sprites[spriteName],
       top: spriteTop,
-      left: spriteLeft
+      left: spriteLeft,
+      scale: 1
     });
   };
 
@@ -60,14 +62,16 @@ const Display = (props) => {
         [spriteData.name]: {
           ...spriteData,
           top: spriteTop,
-          left: spriteLeft
+          left: spriteLeft,
+          scale: 1
         }
       }));
 
       setLastActiveSprite({
         ...spriteData,
         top: spriteTop,
-        left: spriteLeft
+        left: spriteLeft,
+        scale: 1
       });
     }
   };
@@ -93,7 +97,9 @@ const Display = (props) => {
           }}
           style={{
             top: sprite.top,
-            left: sprite.left
+            left: sprite.left,
+            width: `${Math.round(sprite.width * sprite.scale)}px`,
+            height: `${Math.round(sprite.height * sprite.scale)}px`
           }}
         />
       );
@@ -210,6 +216,33 @@ const Display = (props) => {
                 }
               />
             </span>
+          </span>
+        }
+        {
+          lastActiveSprite &&
+          <span>
+            <p>Scale:</p>
+            <input
+              type="number"
+              step="0.1"
+              value={lastActiveSprite?.scale}
+              onChange={
+                (e) => {
+                  setLastActiveSprite(prevLastActiveSprite => ({
+                    ...prevLastActiveSprite,
+                    scale: e.target.value
+                  }));
+
+                  setSprites(prevSprites => ({
+                    ...prevSprites,
+                    [lastActiveSprite.name]: {
+                      ...prevSprites[lastActiveSprite.name],
+                      scale: e.target.value
+                    }
+                  }));
+                }
+              }
+            />
           </span>
         }
       </div>
