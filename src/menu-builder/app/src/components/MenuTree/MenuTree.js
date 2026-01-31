@@ -59,6 +59,7 @@ const MenuTree = (props) => {
   );
 
   const renderMenuSceneGroup = () => {
+    return Object.keys(menuScenes).map((menuName, index) => (renderMenuSceneTab(menuName, index, menuScenes[menuName].parent, 0)));
     // const marginLefts = {};
 
     // return Object.keys(menuScenes).map((menuSceneName, index) => {
@@ -86,6 +87,19 @@ const MenuTree = (props) => {
     // })
   };
 
+  // this is specificically looking for the parent prop
+  const traverseGroup = (key, obj, objOut) => {
+
+  };
+
+  const sortMenuTree = () => {
+    // const tree = {};
+
+    // Object.keys(menuScenes).forEach(menuName => {
+
+    // });
+  };
+
   const addMenuScene = () => {
     const re = new RegExp("^[a-zA-Z0-9_]*$");
 
@@ -108,8 +122,7 @@ const MenuTree = (props) => {
 
   useEffect(() => {
     console.log(menuScenes);
-    // update tree
-
+    sortMenuTree();
   }, [menuScenes]);
 
   return (

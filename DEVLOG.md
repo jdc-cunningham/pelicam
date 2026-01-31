@@ -232,6 +232,58 @@ Once I figure this out I'm going to take a break, cook some food
 
 Still don't have it, taking a break
 
+4:03 PM
+
+Alright I'm back on
+
+I literally had to write this same code a few months ago to make a nested menu system so I can do it, it's just not trivial
+
+In recusrive functions there's usually two parts:
+
+The outer function that does the calling and then the looping function that consumes itself until it runs out, the nested list
+
+4:11 PM
+
+Noooo I'm feeling spent already, must keep going
+
+Times like these... good to get into jsfiddle do a focus sesh, isolated problem
+
+4:23 PM
+
+Come on Jacob this is leetcode lvl 1
+
+<img src="./devlog-images/algo.JPG"/>
+
+4:29 PM
+
+I wonder if it's a sign I'm old if my brain gives out this easily lmao, 5 hrs of coding and I'm done? 
+
+W E A K!
+
+<img src="./devlog-images/traverse.JPG"/>
+
+How do you traverse all these branches in order?
+
+That's what I gotta figure out. Logging is easier than collecting...
+
+4:39 PM
+
+Okay here is this one which is easier since the object is already grouped
+
+<img src="./devlog-images/traverse-objects.JPG"/>
+
+That will output: "a, b, l" "c, d, e, f, m", etc... when ran
+
+4:45 PM
+
+Come on Jacob you can do it
+
+<img src="./devlog-images/memes.png"/>
+
+4:50 PM
+
+Quick break
+
 ---
 
 ### 01/30/2026
