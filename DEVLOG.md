@@ -119,6 +119,12 @@ Damn I'll need a font-drag drop thing
 
 Funny I feel overwhelmed so much work to do, but it will be done
 
+12:14 PM
+
+This code is not the greatest, like the CSS class names in BEM are f'd but I'm just trying to get this done this weekend
+
+End of the day what I care about is rendering nested menus and connecting it to the hardware binding code
+
 ---
 
 ### 01/29/2026

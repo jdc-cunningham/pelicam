@@ -17,15 +17,23 @@ const Display = (props) => {
     const spriteInfo = sprites[spriteName];
     const spriteWidth = spriteInfo.width;
     const spriteHeight = spriteInfo.height;
+    const spriteTop = Math.round(e.clientY - rect.y - (spriteHeight / 2));
+    const spriteLeft = Math.round(e.clientX - rect.x - (spriteWidth / 2));
 
     setSprites(prevSprites => ({
       ...prevSprites,
       [spriteName]: {
         ...prevSprites[spriteName],
-        top: Math.round(e.clientY - rect.y - (spriteHeight / 2)),
-        left: Math.round(e.clientX - rect.x - (spriteWidth / 2))
+        top: spriteTop,
+        left: spriteLeft
       }
     }));
+
+    setLastActiveSprite({
+      ...sprites[spriteName],
+      top: spriteTop,
+      left: spriteLeft
+    });
   };
 
   const imgDrop = (e) => {
@@ -40,20 +48,27 @@ const Display = (props) => {
     }
 
     if ('width' in spriteData) {
+      // this is duplicated above but the sprite doesn't exist yet
       const rect = e.target.getBoundingClientRect();
       const spriteWidth = spriteData.width;
       const spriteHeight = spriteData.height;
+      const spriteTop = Math.round(e.clientY - rect.y - (spriteHeight / 2));
+      const spriteLeft = Math.round(e.clientX - rect.x - (spriteWidth / 2));
 
       setSprites(prevSprites => ({
         ...prevSprites,
         [spriteData.name]: {
           ...spriteData,
-          top: Math.round(e.clientY - rect.y - (spriteHeight / 2)),
-          left: Math.round(e.clientX - rect.x - (spriteWidth / 2))
+          top: spriteTop,
+          left: spriteLeft
         }
       }));
 
-      setLastActiveSprite(spriteData);
+      setLastActiveSprite({
+        ...spriteData,
+        top: spriteTop,
+        left: spriteLeft
+      });
     }
   };
 
@@ -162,7 +177,41 @@ const Display = (props) => {
         </div>
       </div>
       <div className="App__left-display-sprite-info">
-        {lastActiveSprite && <h3>Selected icon: {lastActiveSprite.name}</h3>}
+        <h3>Active sprite: {lastActiveSprite?.name || ""}</h3>
+        {
+          lastActiveSprite &&
+          <span>
+            <p>Update coordinates:</p>
+            <span>
+              <p className="indent">X</p>
+              <input
+                type="number"
+                step="1"
+                value={lastActiveSprite?.left}
+                onChange={
+                  (e) => setLastActiveSprite(prevLastActiveSprite => ({
+                    ...prevLastActiveSprite,
+                    width: e.target.value
+                  }))
+                }
+              />
+            </span>
+            <span>
+              <p className="indent">Y</p>
+              <input
+                type="number"
+                step="1"
+                value={lastActiveSprite?.top}
+                onChange={
+                  (e) => setLastActiveSprite(prevLastActiveSprite => ({
+                    ...prevLastActiveSprite,
+                    width: e.target.value
+                  }))
+                }
+              />
+            </span>
+          </span>
+        }
       </div>
     </div>
   );
