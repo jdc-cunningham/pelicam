@@ -12,7 +12,11 @@ const SpritesDragDrop = (props) => {
       height: 64
     }
   ]); // {name, data}
-  // need original dimensions per sprite to scale
+
+  const [displayInfo, setDisplayInfo] = useState({
+    type: '',
+    dimensions: [0, 0]
+  });
   
   const verifyFileName = (fileName) => {
     const fn = fileName.split('.png').join('');

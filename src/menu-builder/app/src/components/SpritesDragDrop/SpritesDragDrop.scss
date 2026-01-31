@@ -4,12 +4,10 @@
   width: calc(100% - 1rem);
   height: 25%;
   margin: 0.5rem;
-  border: 1px solid #282828;
-  border-radius: 0.5rem;
   padding: 0.25rem;
 
   h2 {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 }
 
@@ -20,19 +18,21 @@
   width: 100%;
   height: auto;
   flex: 1;
+  border: 1px solid #282828;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
 
   &.has-sprites {
     display: block;
-    padding-top: 0.25rem;
   }
 }
 
 .App__right-sprites-body-sprite {
   display: inline-block;
   position: relative;
-  width: calc((100% / 5) - 0.25rem);
+  width: calc((100% / 5) - 0.5rem);
   height: auto;
-  margin: 0.25rem;
+  margin: 0.5rem;
   border: 1px solid #282828;
   border-radius: 0.25rem;
   cursor: pointer;
