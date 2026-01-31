@@ -1,6 +1,11 @@
 .App__left-display {
+  position: relative;
   width: 600px;
   height: 40%;
   border: 1px solid #282828;
   background-color: white;
+}
+
+.App__left-display-sprite {
+  position: absolute;
 }

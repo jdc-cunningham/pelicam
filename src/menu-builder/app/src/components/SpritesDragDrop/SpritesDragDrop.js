@@ -7,7 +7,7 @@ const SpritesDragDrop = (props) => {
   const [sprites, setSprites] = useState([
     {
       name: 'folder_line_icon',
-      data: 'iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABlklEQVR4nO2bsUrDUBhGT0txcq5Onbro4Cy4OjopiPgETj6GPoOTsw59BycpODqIq6KTqEW0Wm0cYrZcmra5/xfJf+BSmob0/IeQpbfgOI7j1JfG32sH2AeWSrjmM3AEfJdwLRPWgVcgKXGdmk4wJ33KHT5bx5ZDzMMPcQIkwKHhHDMTa/iENO6u3SizETNAAnwCm2bTTEmDVDI2A2AHuDf4riIMgIfsTew7oKrrAmhb3QFVpVf3AMO6B6BV4Jx34CW2SCRaQHvSSaGHxCOwTbFIVaYLXBKeM/fgCFgTyMZiGfhgigB9iWZccu+CZuDkoZWVIV95B0MBaoMHUAuo8QBqATUeQC2gxgOoBdR4ALWAGg+gFlDjAdQCajyAWkCNB1ALqPEAagE1HkAtoMYDqAXUeAC1gJpQgC6wYCliQCf0Qeh38xP+/96AjAMCc07aInMDnANPsQ0j0QQ2SDd65N7ttd8j5A9BYKyWEDJuAldqCyG3AKvAHfqtq9ZrBGxlf5lZBPaAFerxXHgDzoBrtYjjOI6j5BelzD/57vYDcAAAAABJRU5ErkJggg==',
+      data: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABlklEQVR4nO2bsUrDUBhGT0txcq5Onbro4Cy4OjopiPgETj6GPoOTsw59BycpODqIq6KTqEW0Wm0cYrZcmra5/xfJf+BSmob0/IeQpbfgOI7j1JfG32sH2AeWSrjmM3AEfJdwLRPWgVcgKXGdmk4wJ33KHT5bx5ZDzMMPcQIkwKHhHDMTa/iENO6u3SizETNAAnwCm2bTTEmDVDI2A2AHuDf4riIMgIfsTew7oKrrAmhb3QFVpVf3AMO6B6BV4Jx34CW2SCRaQHvSSaGHxCOwTbFIVaYLXBKeM/fgCFgTyMZiGfhgigB9iWZccu+CZuDkoZWVIV95B0MBaoMHUAuo8QBqATUeQC2gxgOoBdR4ALWAGg+gFlDjAdQCajyAWkCNB1ALqPEAagE1HkAtoMYDqAXUeAC1gJpQgC6wYCliQCf0Qeh38xP+/96AjAMCc07aInMDnANPsQ0j0QQ2SDd65N7ttd8j5A9BYKyWEDJuAldqCyG3AKvAHfqtq9ZrBGxlf5lZBPaAFerxXHgDzoBrtYjjOI6j5BelzD/57vYDcAAAAABJRU5ErkJggg==',
       width: 64,
       height: 64
     }
@@ -17,7 +17,7 @@ const SpritesDragDrop = (props) => {
     type: '',
     dimensions: [0, 0]
   });
-  
+
   const verifyFileName = (fileName) => {
     const fn = fileName.split('.png').join('');
     const re = new RegExp("^[a-zA-Z0-9_]*$");
@@ -82,8 +82,15 @@ const SpritesDragDrop = (props) => {
 
   const renderSprites = () => (
     sprites.map((sprite, index) => (
-      <div key={index} className="App__right-sprites-body-sprite">
-        <img src={`data:image/png;base64,${sprite.data}`} alt="sprite"/>
+      <div
+        key={index}
+        className="App__right-sprites-body-sprite"
+        draggable="true"
+        onDragStart={(e) => {
+          e.dataTransfer.setData('text/plain', JSON.stringify(sprite));          
+        }}
+      >
+        <img src={sprite.data} alt="sprite"/>
       </div>
     ))
   )
@@ -96,7 +103,7 @@ const SpritesDragDrop = (props) => {
             ...prevSprites,
             {
               name: data.name,
-              data: data.data
+              data: `data:image/png;base64,${data.data}`
             }
           ]));
         }

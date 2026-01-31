@@ -69,6 +69,7 @@ I will add a padding for the display config, oh yeah that could be json file pre
 - [ ] include button binding
 - [ ] menu nesting logic
 - [ ] should be able to produce all menu pages
+- [ ] extra/future - set color of display and font/icons(svg)
 
 Waiting for my coffee
 
