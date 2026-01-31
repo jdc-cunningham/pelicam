@@ -2,6 +2,8 @@ import { useState } from 'react';
 import './MenuTree.scss';
 
 const MenuTree = (props) => {
+  const { sprites } = props;
+
   const [menuScenes, setMenuScenes] = useState({
     "boot_splash_screen": {
       "scene_name": "boot_splash_screen",
@@ -11,7 +13,7 @@ const MenuTree = (props) => {
         {
           "name": "logo",
           "type": "sprite",
-          "path": "menu/sprites/logo.png",
+          "path": "sprites/logo.png",
           "transparent": false,
           "location": [60, 110],
           "dimensions": [512, 215]

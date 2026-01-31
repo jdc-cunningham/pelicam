@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Display.scss';
 
 const Display = (props) => {
-  const [sprites, setSprites] = useState({}); // {filename: fileInfo}
+  const { sprites, setSprites } = props;
 
   const [displayInfo, setDisplayInfo] = useState({
     type: 'DSI',
@@ -25,8 +25,7 @@ const Display = (props) => {
       [spriteName]: {
         ...prevSprites[spriteName],
         top: spriteTop,
-        left: spriteLeft,
-        scale: 1
+        left: spriteLeft
       }
     }));
 
@@ -49,6 +48,7 @@ const Display = (props) => {
       return; // local dragging
     }
 
+    // initial sprite save
     if ('width' in spriteData) {
       // this is duplicated above but the sprite doesn't exist yet
       const rect = e.target.getBoundingClientRect();
@@ -63,7 +63,8 @@ const Display = (props) => {
           ...spriteData,
           top: spriteTop,
           left: spriteLeft,
-          scale: 1
+          scale: 1,
+          path: `sprites/${spriteData.name}.png` // assumes png
         }
       }));
 

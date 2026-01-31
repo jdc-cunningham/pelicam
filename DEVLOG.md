@@ -137,7 +137,23 @@ Got a distraction
 
 Hehe he just woke up, sweepy boy
 
+1:09 PM
 
+Whoa this is cool
+
+Sometimes you see something and it clicks in your mind
+
+<img src="./devlog-images/logo-drag.JPG"/>
+
+1:10 PM
+
+Oh man... sucks... so static text is fine as you make that in the web, it's part of the scene, dynamic text is problematic
+
+You have to match or in terms of scale/position get it close to what the real thing displays (font on display)
+
+You could eyeball that until an elegant solution comes up
+
+Ehh... I gotta move the shared state up to the parent.
 
 ---
 
