@@ -61,9 +61,9 @@ Alright I looked through DND and it does not have grid-snapping built in, it's j
 I will add a padding for the display config, oh yeah that could be json file pre-baked
 
 - [x] drop an img element on the scene
-- [ ] padding hint
-- [ ] add way to dial it in perfectly
-- [ ] scale
+- [x] padding hint
+- [x] add way to dial it in perfectly
+- [x] scale
 - [ ] flatten/produce an image
 - [ ] JSON nesting
 - [ ] sidebar update
@@ -88,6 +88,16 @@ So we've got this right now
 <img src="./devlog-images/drag-drop-to-display-reposition.gif"/>
 
 You can see it's a little off and it goes out of bounds, but I'm going to add a menu on the bottom based on the last icon you selected, where you can reposition it.
+
+12:30 PM
+
+Okay need to do the hard things... next will be the Button binding and menu section on the right, I'll do the menu nesting thing first, involves writing to file system
+
+The display info needs to be written/synced with file system as well
+
+
+
+---
 
 ### 01/30/2026
 

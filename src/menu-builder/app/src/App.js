@@ -1,6 +1,8 @@
 import './App.scss';
 import Display from './components/Display/Display';
 import SpritesDragDrop from './components/SpritesDragDrop/SpritesDragDrop';
+import MenuTree from './components/MenuTree/MenuTree';
+import ButtonBindings from './components/ButtonBindings/ButtonBindings';
 
 function App() {
   return (
@@ -9,8 +11,9 @@ function App() {
         <Display/>
       </div>
       <div className="App__right">
-        <div className="App__right-menu-tree"></div>
-        <SpritesDragDrop />
+        <MenuTree/>
+        <ButtonBindings/>
+        <SpritesDragDrop/>
       </div>
     </div>
   );
