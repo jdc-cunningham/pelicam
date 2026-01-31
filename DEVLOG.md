@@ -115,6 +115,10 @@ Okay that does not seem doable from quick SO searches, so it'll just use the rob
 
 Damn I'll need a font-drag drop thing
 
+11:48 AM
+
+Funny I feel overwhelmed so much work to do, but it will be done
+
 ---
 
 ### 01/29/2026

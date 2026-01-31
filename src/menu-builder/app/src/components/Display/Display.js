@@ -9,6 +9,8 @@ const Display = (props) => {
     resolution: [640, 480] // jdc34 cam resolution
   });
 
+  const [lastActiveSprite, setLastActiveSprite] = useState({});
+
   const computePosition = (e, spriteName) => {
     const rect = e.target.getBoundingClientRect();
     const spriteInfo = sprites[spriteName];
@@ -49,6 +51,8 @@ const Display = (props) => {
           left: Math.round(e.clientX - rect.x - (spriteWidth / 2))
         }
       }));
+
+      setLastActiveSprite(spriteData);
     }
   };
 
@@ -79,12 +83,19 @@ const Display = (props) => {
       );
   }));
 
+  const updateDisplayInfo = (field, value) => {
+    setDisplayInfo(prevDisplayInfo => ({
+      ...displayInfo,
+      [field]: value
+    }))
+  };
+
   return (
     <div className="App__left-display-container">
       <div className="App__left-display-info">
         <div className="App__left-display-info-type">
           <h3>What type of display does your camera use?</h3>
-          <select>
+          <select onChange={(e) => updateDisplayInfo('type', e.target.value)} value={displayInfo.type}>
             <option>DSI (flat ribbon cable)</option>
             <option>SPI (4 wire)</option>
           </select>
@@ -93,21 +104,41 @@ const Display = (props) => {
           <h3>Your display resolution in px:</h3>
           <span>
             <p>width:</p>
-            <input type="number" step="1" value={displayInfo.resolution[0]}/>
+            <input
+              type="number"
+              step="1"
+              value={displayInfo.resolution[0]}
+              onChange={
+                (e) => updateDisplayInfo('resolution', [e.target.value, displayInfo.resolution[1]])
+              }
+            />
           </span>
           <span>
             <p>height:</p>
-            <input type="number" step="1" value={displayInfo.resolution[1]}/>
+            <input
+              type="number"
+              step="1"
+              value={displayInfo.resolution[1]}
+              onChange={
+                (e) => updateDisplayInfo('resolution', [displayInfo.resolution[0], e.target.value])
+              }
+            />
           </span>
         </div>
         <p className="disclaimer">Note that the font rendered below is different compared to your physical display font</p>
       </div>
-      <div
-        className="App__left-display"
-        onDragOver={(e) => {e.preventDefault()}}
-        onDrop={imgDrop}
-      >
-        {Object.keys(sprites).length > 0 && renderSprites()}
+      <div className="App__left-display">
+        <div
+          className="App__left-display-scene"
+          onDragOver={(e) => {e.preventDefault()}}
+          onDrop={imgDrop}
+          style={{
+            width: `${displayInfo.resolution[0]}px`,
+            height: `${displayInfo.resolution[1]}px`
+          }}
+        >
+          {Object.keys(sprites).length > 0 && renderSprites()}
+        </div>
       </div>
       <div className="App__left-display-sprite-info">
 
