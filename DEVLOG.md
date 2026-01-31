@@ -44,6 +44,12 @@
 
 Chilling today, did a little bit of development, will dive into this over the weekend and get a functioning menu on the camera
 
+7:04 PM
+
+Thought of a layout update
+
+<img src="./devlog-images/layout.png"/>
+
 ---
 
 ### 01/29/2026
