@@ -97,6 +97,9 @@ const Display = (props) => {
               spriteName: sprite.name
             }))
           }}
+          onClick={(e) => {
+            setLastActiveSprite(sprite);
+          }}
           style={{
             top: sprite.top,
             left: sprite.left,
