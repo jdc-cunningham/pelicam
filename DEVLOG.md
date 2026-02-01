@@ -64,6 +64,7 @@ I will add a padding for the display config, oh yeah that could be json file pre
 - [x] padding hint
 - [x] add way to dial it in perfectly
 - [x] scale
+- [ ] sprites should have unique names, append random 6 char alphanum string
 - [ ] flatten/produce an image
 - [ ] JSON nesting
 - [x] sidebar update
@@ -301,6 +302,10 @@ My head literally hurts it's crazy
 One thing I'm wondering about is multi-touch on this display... can it be done...
 
 At the very least I could tap an area, click the 5D joystick to zoom in or quickly double tap actually
+
+7:41 PM
+
+Ahh shit the icons should use a random string on the end so you can have multiple instances
 
 ---
 
