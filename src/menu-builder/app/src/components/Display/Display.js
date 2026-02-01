@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './Display.scss';
 
 const Display = (props) => {
   const { sprites, setSprites } = props;
+  const dispRef = useRef(null);
 
   const [displayInfo, setDisplayInfo] = useState({
     type: 'DSI',
@@ -13,7 +14,7 @@ const Display = (props) => {
   const [lastActiveSprite, setLastActiveSprite] = useState(null);
 
   const computePosition = (e, spriteName) => {
-    const rect = e.target.getBoundingClientRect();
+    const rect = dispRef.current.getBoundingClientRect();
     const spriteInfo = sprites[spriteName];
     const spriteWidth = spriteInfo.width;
     const spriteHeight = spriteInfo.height;
@@ -51,7 +52,7 @@ const Display = (props) => {
     // initial sprite save
     if ('width' in spriteData) {
       // this is duplicated above but the sprite doesn't exist yet
-      const rect = e.target.getBoundingClientRect();
+      const rect = dispRef.current.getBoundingClientRect();
       const spriteWidth = spriteData.width;
       const spriteHeight = spriteData.height;
       const spriteTop = Math.round(e.clientY - rect.y - (spriteHeight / 2));
@@ -170,6 +171,7 @@ const Display = (props) => {
             width: `${displayInfo.resolution[0]}px`,
             height: `${displayInfo.resolution[1]}px`
           }}
+          ref={dispRef}
         >
           {Object.keys(sprites).length > 0 && renderSprites()}
           <div
