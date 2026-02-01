@@ -59,45 +59,49 @@ const MenuTree = (props) => {
   );
 
   const renderMenuSceneGroup = () => {
-    return Object.keys(menuScenes).map((menuName, index) => (renderMenuSceneTab(menuName, index, menuScenes[menuName].parent, 0)));
-    // const marginLefts = {};
-
-    // return Object.keys(menuScenes).map((menuSceneName, index) => {
-    //   const parentMenu = menuScenes[menuSceneName].parent;
-
-    //   console.log(menuSceneName, parentMenu);
-
-    //   if (!parentMenu) {
-    //     marginLefts[menuSceneName] = {
-    //       items: [menuSceneName]
-    //     };
-    //   } else {
-    //     Object.keys(marginLefts).forEach(parent => {
-    //       if (marginLefts[parent].items.includes(parentMenu)) {
-    //         marginLefts[parent].items.push(menuSceneName);
-    //       }
-    //     });
-    //   }
-
-    //   console.log(marginLefts);
-
-    //   const marginLeft = ((marginLefts[menuSceneName]?.items.length - 1) * 10);
-
-    //   return renderMenuSceneTab(menuSceneName, index, parentMenu, marginLeft);
-    // })
-  };
-
-  // this is specificically looking for the parent prop
-  const traverseGroup = (key, obj, objOut) => {
-
+    return Object.keys(menuScenes).map((menuName, index) => {
+      const parent = menuScenes[menuName].parent;
+      const marginLeft = parent in menuTree ? menuTree[parent][menuName] : 0;
+      return renderMenuSceneTab(menuName, index, parent, marginLeft);
+    });
   };
 
   const sortMenuTree = () => {
-    // const tree = {};
+    // const sortedGroup = {};
 
-    // Object.keys(menuScenes).forEach(menuName => {
+    // const traverseObj = (key, obj, depth) => {
+    //   depth += 1;
 
+    //   if (key in obj) {
+    //     return key;
+    //   } else {
+    //     Object.keys(obj).forEach(key => {
+    //       traverseObj(key, obj[key]);
+    //     });
+    //   }
+    // };
+
+    // Object.keys(menuScenes).forEach(key => {
+    //   const parent = menuScenes[key].parent;
+
+    //   if (!parent) {
+    //     sortedGroup[key] = {};
+    //   } else {
+    //     let depth = 1;
+    //     const parentKey = traverseObj(parent, menuScenes, depth);
+
+    //     sortedGroup[parentKey] = {
+    //       ...sortedGroup[parentKey],
+    //       [key]: depth * 10
+    //     };
+    //   }
     // });
+
+    // console.log(menuScenes);
+
+    // console.log(sortedGroup);
+
+    // setMenuTree(sortedGroup);
   };
 
   const addMenuScene = () => {
@@ -121,8 +125,9 @@ const MenuTree = (props) => {
   };
 
   useEffect(() => {
-    console.log(menuScenes);
-    sortMenuTree();
+    if (Object.keys(menuScenes).length) {
+      sortMenuTree();
+    }
   }, [menuScenes]);
 
   return (

@@ -1,6 +1,6 @@
 {
   "name": "pelicam-menu-builder",
-  "main": "electron.js",
+  "main": "main.js",
   "devDependencies": {
     "electron": "^40.0.0",
     "electron-packager": "^17.1.2"

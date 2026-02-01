@@ -38,6 +38,93 @@
   - [ ] save image from html
   - [ ] build out interface
 
+### 02/01/2026
+
+1:48 PM
+
+Late start today, woke up around 12PM, had to run some errands
+
+Distractions... but I'm on
+
+- [ ] menu nesting
+- [ ] text interface
+
+I was thinking about it
+
+I actually won't have the UI generate the menu images
+
+The python side will do it, it's primarily due to not guaranteeing a match between fonts
+
+Also there would be a challenge of keeping the file system synced with the memory web app regarding updating/re-rendering the menu scene every time the user makes a change
+
+So it could just be, you prodcue the JSON setting and the web app shows you what it would look like
+
+Also the dynamic text would have a dynamic label on them
+
+That only mattered for the possibility of having permanent text on a menu scene vs. overwriting it depending on camera state
+
+Focus mode till I get this menu nesting thing down
+
+2:27 PM
+
+Still distracted, on now
+
+2:37 PM
+
+Alright let's do this
+
+3:35 PM
+
+Had to eat
+
+Ughhhhh wish I just woke and started writing code right away
+
+Today will be fun though I'm gonna clean up my closet IoT garden, repot my plants and try to grow mangoes again
+
+3:41 PM
+
+Ahh my cat man why does he sit in front of the screen
+
+<img src="./devlog-images/cat.JPG"/>
+
+3:54 PM
+
+Alright I got it
+
+<img src="./devlog-images/desired-output.JPG"/>
+
+This is how the nesting/indenting will work
+
+4:14 PM
+
+Damn this is wrong... shiiiiiiiii
+
+That circled part, d should be 1 still not 2
+
+5:12 PM
+
+I did take a brief like 20 min break but if you want to see why this is hard
+
+https://stackoverflow.com/questions/5484673/javascript-how-to-dynamically-create-nested-objects-using-object-names-given-by
+
+5:32 PM
+
+Man I'm bad...
+
+Another way I was thinking of doing it is nested arrays
+
+But I think it would be the same as nested objects accessed by key:val pairs instead of numerical
+
+5:42 PM
+
+OMG I'm failing...
+
+<img src="./devlog-images/failing.JPG"/>
+
+REEEEEEE
+
+---
+
 ### 01/31/2026
 
 10:02 AM
