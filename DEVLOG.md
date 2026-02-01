@@ -132,6 +132,8 @@ So in the past I manually rendered some menu scenes, this is the end goal of the
 
 <img src="./devlog-images/json-render.JPG"/>
 
+Also it's supposed to be 0.1.0 I found out, I know it's major.minor.fix but yeah or is it breaking...
+
 Got a distraction
 
 <img src="./devlog-images/gato.JPG"/>
