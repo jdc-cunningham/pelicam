@@ -17,6 +17,7 @@
   width: 100%;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  overflow: hidden;
 }
 
 .App__left-display-scene {
@@ -115,6 +116,7 @@
 .App__left-display-sprite {
   position: absolute;
   cursor: pointer;
+  z-index: 1;
 
   &.active {
     border: 1px solid red;

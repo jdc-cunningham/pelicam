@@ -18,8 +18,8 @@ const Display = (props) => {
     const spriteInfo = sprites[spriteName];
     const spriteWidth = spriteInfo.width;
     const spriteHeight = spriteInfo.height;
-    const spriteTop = Math.round(e.clientY - rect.y - (spriteHeight / 2));
-    const spriteLeft = Math.round(e.clientX - rect.x - (spriteWidth / 2));
+    const spriteTop = Math.round(e.clientY - rect.y - ((spriteHeight * spriteInfo.scale) / 2));
+    const spriteLeft = Math.round(e.clientX - rect.x - ((spriteWidth * spriteInfo.scale) / 2));
 
     setSprites(prevSprites => ({
       ...prevSprites,
