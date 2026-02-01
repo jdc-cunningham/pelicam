@@ -296,6 +296,12 @@ Actually I started at 10PM so yeah
 
 My head literally hurts it's crazy
 
+7:31 PM
+
+One thing I'm wondering about is multi-touch on this display... can it be done...
+
+At the very least I could tap an area, click the 5D joystick to zoom in or quickly double tap actually
+
 ---
 
 ### 01/30/2026
