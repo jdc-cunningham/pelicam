@@ -77,7 +77,7 @@ Alright let's do this
 
 Had to eat
 
-Ughhhhh wish I just woke and started writing code right away
+Ughhhhh wish I just woke up and started writing code right away
 
 Today will be fun though I'm gonna clean up my closet IoT garden, repot my plants and try to grow mangoes again
 
@@ -122,6 +122,20 @@ OMG I'm failing...
 <img src="./devlog-images/failing.JPG"/>
 
 REEEEEEE
+
+<img src="./devlog-images/leetcode.JPG"/>
+
+Here it is Jacob, base pay $500K a year, how do you solve this?
+
+6:16 PM
+
+I'm close here, the "moving reference"
+
+https://stackoverflow.com/questions/18936915/dynamically-set-property-of-nested-object
+
+<img src="./devlog-images/dynamic.JPG"/>
+
+I almost have it, but I have the value not the reference so I can write at this depth
 
 ---
 
