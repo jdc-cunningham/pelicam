@@ -137,6 +137,18 @@ https://stackoverflow.com/questions/18936915/dynamically-set-property-of-nested-
 
 I almost have it, but I have the value not the reference so I can write at this depth
 
+6:33 PM
+
+Oh it is working, if you evaluate the reference then it shows the value but if you use it as a position to write then it works
+
+7:56 PM
+
+Sadly I'm already spent today
+
+https://jsfiddle.net/jgqdbpwv/
+
+Left off at that
+
 ---
 
 ### 01/31/2026
