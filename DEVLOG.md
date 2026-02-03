@@ -135,6 +135,16 @@ So now it's about making the JSON objects for the menus eg.
 
 I have not considered saving yet, maybe while I develop I'll save to local storage until I bridge it to Electron
 
+11:28 PM
+
+I am starting to imagine using this camera, I'm looking forward to getting to a functional version
+
+I really want to emphasize image quality and this higher resolution display and faster FPS will help with that, I can do focus peaking
+
+Also video settings can be changed too, in the past I'd just been recording automatic video
+
+Only becaue I was more interested in photography than video
+
 ---
 
 ### 02/01/2026
