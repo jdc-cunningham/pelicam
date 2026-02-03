@@ -108,6 +108,22 @@ yes sir...
 
 Probably the nastiest re-dundant algo but it works
 
+So text interface is next
+
+There is also the problem of duplicate checking with names for the menus and images
+
+10:10 PM
+
+I think an easy solution is to have a text input box show up under the menu display
+
+You could do a floating div that's content-editable
+
+10:20 PM
+
+Alright here's a functional text sprite
+
+<img src="./devlog-images/text-sprite.gif"/>
+
 ---
 
 ### 02/01/2026
@@ -118,7 +134,7 @@ Late start today, woke up around 12PM, had to run some errands
 
 Distractions... but I'm on
 
-- [ ] menu nesting
+- [x] menu nesting
 - [ ] text interface
 
 I was thinking about it

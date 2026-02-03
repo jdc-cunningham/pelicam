@@ -12,6 +12,7 @@ const Display = (props) => {
   });
 
   const [lastActiveSprite, setLastActiveSprite] = useState(null);
+  const [textSpriteText, setTextSpriteText] = useState('text');
 
   const computePosition = (e, spriteName) => {
     const rect = dispRef.current.getBoundingClientRect();
@@ -81,6 +82,36 @@ const Display = (props) => {
   const renderSprites = () => (
     Object.keys(sprites).map((spriteName, index) => {
       const sprite = sprites[spriteName];
+
+      if (sprite?.name === '_text_tool') {
+        return (
+          <div
+            key={index}
+            alt="sprite"
+            className={`App__left-display-sprite text ${lastActiveSprite.name === sprite.name ? 'active': ''}`}
+            title={sprite.name}
+            draggable="true"
+            width={sprite.width}
+            height={sprite.height}
+            onDragStart={(e) => {
+              e.dataTransfer.setData('text/plain', JSON.stringify({
+                spriteName: sprite.name
+              }))
+            }}
+            onClick={(e) => {
+              setLastActiveSprite(sprite);
+            }}
+            style={{
+              top: sprite.top,
+              left: sprite.left,
+              minWidth: `${Math.round(sprite.width * sprite.scale)}px`,
+              height: `${Math.round(sprite.height * sprite.scale)}px`
+            }}
+          >
+            {textSpriteText}
+          </div>
+        )
+      }
 
       return (
         <img
@@ -190,6 +221,18 @@ const Display = (props) => {
       </div>
       <div className="App__left-display-sprite-info">
         <h3>Active sprite: {lastActiveSprite?.name || ""}</h3>
+        {
+          lastActiveSprite &&
+          lastActiveSprite?.name === '_text_tool' &&
+          <span>
+            Text:
+            <input
+              type="text"
+              value={textSpriteText} onChange={(e) => setTextSpriteText(e.target.value)}
+              className="sprite-text"
+            />
+          </span>
+        }
         {
           lastActiveSprite &&
           <span>

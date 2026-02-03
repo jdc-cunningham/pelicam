@@ -110,6 +110,10 @@
     max-width: 50px;
     margin-left: 0.25rem;
     padding: 0.25rem;
+
+    &.sprite-text {
+      min-width: 150px;
+    }
   }
 }
 
@@ -120,5 +124,12 @@
 
   &.active {
     border: 1px solid red;
+  }
+
+  &.text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 2rem;
   }
 }
