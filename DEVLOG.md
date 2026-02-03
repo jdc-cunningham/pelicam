@@ -146,7 +146,7 @@ Late start today, woke up around 12PM, had to run some errands
 Distractions... but I'm on
 
 - [x] menu nesting
-- [ ] text interface
+- [x] text interface
 
 I was thinking about it
 
