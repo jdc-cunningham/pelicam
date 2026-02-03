@@ -124,6 +124,17 @@ Alright here's a functional text sprite
 
 <img src="./devlog-images/text-sprite.gif"/>
 
+So now it's about making the JSON objects for the menus eg.
+
+{
+  "home": {...},
+  "sub_page": {
+    ...
+  }
+}
+
+I have not considered saving yet, maybe while I develop I'll save to local storage until I bridge it to Electron
+
 ---
 
 ### 02/01/2026
