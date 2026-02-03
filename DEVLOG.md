@@ -38,6 +38,78 @@
   - [ ] save image from html
   - [ ] build out interface
 
+### 02/02/2026
+
+8:52 PM
+
+Late to go on today, was doing some work for work
+
+8:59 PM
+
+<img src="./devlog-images/linear-group.png"/>
+
+If you look at the image above, you can see that the menu scenes can be created in different orders
+
+They're linked by whatever "+" I con you clicked eg. that is the parent
+
+When the items are added, they're added to a flat object eg.
+
+```
+{
+  "a": {
+    "parent": ""
+  },
+  "b": {
+    "parent": "a"
+  },
+  ...
+}
+```
+
+or for the right side
+
+```
+{
+  "a": {
+    "parent": ""
+  },
+  "c": {
+    "parent": "a"
+  },
+  ...
+}
+```
+
+What I have to do is form a nested group from the linear group above like:
+
+```
+{
+  "a": {
+    "b": {
+      "c": {}
+    }
+  }
+}
+```
+
+Which follows the visual layout above and from that, you programmatically do the margin left indenting
+
+9:38 PM
+
+Alright I think I have a sorting algo here
+
+Let me test that I didn't just fit my test case
+
+10:04 PM
+
+yes sir...
+
+<img src="./devlog-images/sorted.JPG"/>
+
+Probably the nastiest re-dundant algo but it works
+
+---
+
 ### 02/01/2026
 
 1:48 PM

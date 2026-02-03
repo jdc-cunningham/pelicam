@@ -35,10 +35,10 @@ const MenuTree = (props) => {
 
   const [menuTree, setMenuTree] = useState({});
 
-  const renderMenuSceneTab = (menuSceneName, altIndex, isChild, marginLeft) => (
+  const renderMenuSceneTab = (menuSceneName, altIndex, marginLeft) => (
     <div
       key={altIndex}
-      className={`App__right-menu-tree-scene ${isChild ? 'child' : ''}`}
+      className='App__right-menu-tree-scene'
       title="click to view"
       style={{
         marginLeft: `${marginLeft}px`,
@@ -59,49 +59,38 @@ const MenuTree = (props) => {
   );
 
   const renderMenuSceneGroup = () => {
-    return Object.keys(menuScenes).map((menuName, index) => {
-      const parent = menuScenes[menuName].parent;
-      const marginLeft = parent in menuTree ? menuTree[parent][menuName] : 0;
-      return renderMenuSceneTab(menuName, index, parent, marginLeft);
+    const menus = [];
+
+    const traverseObjBranch = (obj, indent) => {
+      indent += 1;
+
+      Object.keys(obj).forEach(key2 => {
+        menus.push({
+          name: key2,
+          indent: indent
+        });
+
+        if (Object.keys(obj[key2]).length) {
+          traverseObjBranch(obj[key2], indent);
+        }
+      });
+    };
+
+    Object.keys(menuTree).forEach(key => {
+      let indent = 0;
+
+      menus.push({
+        name: key,
+        indent: indent
+      });
+
+      traverseObjBranch(menuTree[key], indent);
     });
-  };
 
-  const sortMenuTree = () => {
-    // const sortedGroup = {};
-
-    // const traverseObj = (key, obj, depth) => {
-    //   depth += 1;
-
-    //   if (key in obj) {
-    //     return key;
-    //   } else {
-    //     Object.keys(obj).forEach(key => {
-    //       traverseObj(key, obj[key]);
-    //     });
-    //   }
-    // };
-
-    // Object.keys(menuScenes).forEach(key => {
-    //   const parent = menuScenes[key].parent;
-
-    //   if (!parent) {
-    //     sortedGroup[key] = {};
-    //   } else {
-    //     let depth = 1;
-    //     const parentKey = traverseObj(parent, menuScenes, depth);
-
-    //     sortedGroup[parentKey] = {
-    //       ...sortedGroup[parentKey],
-    //       [key]: depth * 10
-    //     };
-    //   }
-    // });
-
-    // console.log(menuScenes);
-
-    // console.log(sortedGroup);
-
-    // setMenuTree(sortedGroup);
+    return menus.map((menu, index) => {
+      const marginLeft = menu.indent * 10;
+      return renderMenuSceneTab(menu.name, index, marginLeft);
+    });
   };
 
   const addMenuScene = () => {
@@ -122,6 +111,47 @@ const MenuTree = (props) => {
     setMenuParent('');
     setShowAddSceneModal(false);
     setNewMenuSceneName('');
+  };
+
+  const sortMenuTree = () => {
+    const sortedMenuTree = {};
+
+    const traverseObj = (targetKey, obj, currentKeys) => {
+      if (targetKey in obj) {
+        currentKeys.push(targetKey);
+        return currentKeys;
+      } else {
+        Object.keys(obj).forEach(key2 => {
+          currentKeys.push(key2);
+          traverseObj(targetKey, obj[key2], currentKeys);
+        });
+      }
+    };
+
+    const getObjRef = (targetKey, obj) => {
+      const currentKeys = [];
+      traverseObj(targetKey, obj, currentKeys);
+      let objRef = sortedMenuTree;
+
+      currentKeys.forEach(key => {
+        objRef = objRef[key];
+      });
+
+      return objRef;
+    }
+
+    Object.keys(menuScenes).forEach(key => {
+      const parent = menuScenes[key].parent;
+
+      if (!parent) {
+        sortedMenuTree[key] = {};
+      } else {
+        const ref = getObjRef(parent, sortedMenuTree);
+        ref[key] = {};
+      }
+    });
+    
+    setMenuTree(sortedMenuTree);
   };
 
   useEffect(() => {
