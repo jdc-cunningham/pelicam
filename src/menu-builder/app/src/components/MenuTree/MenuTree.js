@@ -36,7 +36,7 @@ const MenuTree = (props) => {
   const renderMenuSceneTab = (menuSceneName, altIndex, marginLeft) => (
     <div
       key={altIndex}
-      className='App__right-menu-tree-scene'
+      className={`App__right-menu-tree-scene ${activeMenuName === menuSceneName ? 'active' : ''}`}
       title="click to view"
       style={{
         marginLeft: `${marginLeft}px`,

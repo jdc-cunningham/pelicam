@@ -137,6 +137,21 @@ This state management is getting nasty
 
 So above you can see how you can toggle between menu scenes
 
+9:51 PM
+
+- [ ] unique icon names
+- [ ] unique menu scene names
+
+Need to add an alpha numeric generator and append it to the name
+
+The issue is the name is used for display, there needs to be another field like name or id
+
+But the objects were designed with the name of the menu as the key...
+
+Done when you can put two sprites on a scene and no conflict
+
+This will be something I'll have to untangle when I'm more fresh, pretty spent now
+
 ---
 
 ### 02/02/2026
@@ -244,7 +259,7 @@ I really want to emphasize image quality and this higher resolution display and 
 
 Also video settings can be changed too, in the past I'd just been recording automatic video
 
-Only becaue I was more interested in photography than video
+Only because I was more interested in photography than video
 
 ---
 
