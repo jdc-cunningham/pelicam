@@ -38,6 +38,28 @@
   - [ ] save image from html
   - [ ] build out interface
 
+### 02/03/2026
+
+7:05 PM
+
+Alright so right now I've been in the web space, not developing against electron
+
+What I need to do is build out this menu
+
+7:12 PM
+
+Distracted, I'm going to add a localStorage way to save menus as I build em out
+
+Although I first have to define the menus/nest it with the current nesting bit
+
+I just went with letters before, time to add more properties to the objects
+
+<img src="./devlog-images/menu-to-build.JPG"/>
+
+
+
+---
+
 ### 02/02/2026
 
 8:52 PM

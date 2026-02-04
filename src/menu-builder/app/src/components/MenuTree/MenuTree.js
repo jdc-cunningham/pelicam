@@ -6,6 +6,7 @@ const MenuTree = (props) => {
   const [showAddSceneModal, setShowAddSceneModal] = useState(false);
   const [newMenuSceneName, setNewMenuSceneName] = useState('');
   const [menuParent, setMenuParent] = useState('');
+  const [menuTree, setMenuTree] = useState({});
 
   // unsorted
   const [menuScenes, setMenuScenes] = useState({
@@ -33,7 +34,30 @@ const MenuTree = (props) => {
     // }
   });
 
-  const [menuTree, setMenuTree] = useState({});
+  const saveToLocalStorage = () => {
+    localStorage.setItem('pelicam-menu-scenes', JSON.stringify(menuScenes));
+    localStorage.setItem('pelicam-menu-tree', JSON.stringify(menuTree));
+  };
+
+  const getMenuTreeFromLocalStorage = () => {
+    const localStore = localStorage.getItem('pelicam-menu-tree');
+
+    if (localStore) {
+      return JSON.parse(localStore);
+    } else {
+      return {};
+    }
+  };
+
+  const getMenuScenesFromLocalStorage = () => {
+    const localStore = localStorage.getItem('pelicam-menu-scenes');
+
+    if (localStore) {
+      return JSON.parse(localStore);
+    } else {
+      return {};
+    }
+  };
 
   const renderMenuSceneTab = (menuSceneName, altIndex, marginLeft) => (
     <div
@@ -154,11 +178,25 @@ const MenuTree = (props) => {
     setMenuTree(sortedMenuTree);
   };
 
+  // temporary, will be saved in filesystem through Electron
+  useEffect(() => {
+    if (Object.keys(menuTree).length) {
+      saveToLocalStorage();
+    }
+  }, [menuTree]);
+
   useEffect(() => {
     if (Object.keys(menuScenes).length) {
       sortMenuTree();
     }
   }, [menuScenes]);
+
+  useEffect(() => {
+    const storedMenuScenes = getMenuScenesFromLocalStorage();
+    const storedMenuTrees = getMenuTreeFromLocalStorage();
+    if (Object.keys(storedMenuScenes).length) { setMenuScenes(storedMenuScenes) };
+    if (Object.keys(storedMenuTrees).length) { setMenuTree(storedMenuTrees) };
+  }, []);
 
   return (
     <div className="App__right-menu-tree">
