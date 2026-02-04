@@ -129,7 +129,13 @@ No mechanism right now to toggle between scenes
 
 This state management is getting nasty
 
+8:19 PM
 
+- [ ] can't backspace last letter text sprite
+
+<img src="./devlog-images/different-scenes.gif"/>
+
+So above you can see how you can toggle between menu scenes
 
 ---
 

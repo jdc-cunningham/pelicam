@@ -266,7 +266,7 @@ const Display = (props) => {
             Text:
             <input
               type="text"
-              value={sprites[lastActiveSprite.name]?.value}
+              value={sprites[lastActiveSprite.name]?.value || textSpriteText}
               onChange={(e) => setTextSpriteText(e.target.value)}
               placeholder="custom text"
               className="sprite-text"

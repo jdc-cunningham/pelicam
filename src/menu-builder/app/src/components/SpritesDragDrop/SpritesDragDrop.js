@@ -54,7 +54,6 @@ const SpritesDragDrop = (props) => {
     
     reader.onload = (e) => {
       if (e.target.result) {
-        console.log(e.target.result);
         if (e.target.result.includes('data:image')) {
           const img = new Image();
 
