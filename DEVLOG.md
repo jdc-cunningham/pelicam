@@ -152,6 +152,14 @@ Done when you can put two sprites on a scene and no conflict
 
 This will be something I'll have to untangle when I'm more fresh, pretty spent now
 
+10:11 PM
+
+Yeah I'm drained
+
+<img src="./devlog-images/interface.png"/>
+
+You can see how you'd use this camera, the menu state is shared between touch (coordinates/collision) and the physical buttons like the 5D joystick.
+
 ---
 
 ### 02/02/2026
