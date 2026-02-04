@@ -1,19 +1,20 @@
-import { useEffect, useState } from 'react';
+import { act, useEffect, useState } from 'react';
 import './MenuTree.scss';
 
 const MenuTree = (props) => {
-  const { sprites } = props;
+  const { sprites, lastActiveSprite } = props;
   const [showAddSceneModal, setShowAddSceneModal] = useState(false);
   const [newMenuSceneName, setNewMenuSceneName] = useState('');
   const [menuParent, setMenuParent] = useState('');
   const [menuTree, setMenuTree] = useState({});
+  const [activeMenuName, setActiveMenuName] = useState('');
 
   // unsorted
   const [menuScenes, setMenuScenes] = useState({
     // "boot_splash_screen": {
     //   "background_type": "color",
     //   // "background_color": "white", // optional, takes global bg color
-    //   "items": [
+    //   "menu_items": [
     //     {
     //       "name": "logo",
     //       "type": "sprite",
@@ -125,10 +126,15 @@ const MenuTree = (props) => {
       return;
     }
 
+    setActiveMenuName(newMenuSceneName);
+
     setMenuScenes(prevMenuScenes => ({
       ...prevMenuScenes,
       [newMenuSceneName]: {
-        parent: menuParent
+        background_type: "color",
+        background_color: "white",
+        parent: menuParent,
+        menu_items: []
       }
     }));
 
@@ -177,6 +183,21 @@ const MenuTree = (props) => {
     
     setMenuTree(sortedMenuTree);
   };
+
+  useEffect(() => {
+    if (lastActiveSprite) {
+      setMenuScenes(prevMenuScenes => ({
+        ...prevMenuScenes,
+        [activeMenuName]: {
+          ...prevMenuScenes[activeMenuName],
+          menu_items: {
+            ...prevMenuScenes[activeMenuName].menu_items,
+            [lastActiveSprite.name]: lastActiveSprite
+          }
+        }
+      }));
+    }
+  }, [lastActiveSprite]);
 
   // temporary, will be saved in filesystem through Electron
   useEffect(() => {

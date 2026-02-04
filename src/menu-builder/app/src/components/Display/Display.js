@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import './Display.scss';
 
 const Display = (props) => {
-  const { sprites, setSprites } = props;
+  const { sprites, setSprites, lastActiveSprite, setLastActiveSprite } = props;
   const dispRef = useRef(null);
 
   const [displayInfo, setDisplayInfo] = useState({
@@ -11,7 +11,6 @@ const Display = (props) => {
     padding: 20 // visual aid
   });
 
-  const [lastActiveSprite, setLastActiveSprite] = useState(null);
   const [textSpriteText, setTextSpriteText] = useState('text');
 
   const computePosition = (e, spriteName) => {

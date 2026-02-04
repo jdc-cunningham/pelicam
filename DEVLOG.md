@@ -37,6 +37,7 @@
   - [ ] poc of drag-drop using react-dnd
   - [ ] save image from html
   - [ ] build out interface
+  - [ ] ability to delete scene/scene branch
 
 ### 02/03/2026
 
@@ -55,6 +56,24 @@ Although I first have to define the menus/nest it with the current nesting bit
 I just went with letters before, time to add more properties to the objects
 
 <img src="./devlog-images/menu-to-build.JPG"/>
+
+7:30 PM
+
+I just realized there's no way to delete menu scenes right now
+
+I'll add a little x but damn means I gotta figure out how to delete single or entire stacks
+
+I'll handle that on another day like weekend
+
+7:32 PM
+
+I'm gonna start making this menu
+
+The active menu scene gets the details of whatever stuff is added to the scene
+
+7:45 PM
+
+The text coordinate update is bugged out
 
 
 

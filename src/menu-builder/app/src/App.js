@@ -7,14 +7,19 @@ import ButtonBindings from './components/ButtonBindings/ButtonBindings';
 
 function App() {
   const [sprites, setSprites] = useState({}); // {filename: fileInfo}
+  const [lastActiveSprite, setLastActiveSprite] = useState(null);
 
   return (
     <div className="App">
       <div className="App__left">
-        <Display sprites={sprites} setSprites={setSprites}/>
+        <Display
+          sprites={sprites}
+          setSprites={setSprites}
+          lastActiveSprite={lastActiveSprite}
+          setLastActiveSprite={setLastActiveSprite}/>
       </div>
       <div className="App__right">
-        <MenuTree sprites={sprites}/>
+        <MenuTree sprites={sprites} lastActiveSprite={lastActiveSprite}/>
         <ButtonBindings/>
         <SpritesDragDrop/>
       </div>
