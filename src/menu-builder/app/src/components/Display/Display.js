@@ -1,8 +1,17 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './Display.scss';
 
 const Display = (props) => {
-  const { sprites, setSprites, lastActiveSprite, setLastActiveSprite } = props;
+  const {
+    sprites,
+    setSprites,
+    lastActiveSprite,
+    setLastActiveSprite,
+    menuScenes,
+    setMenuScenes,
+    activeMenuName
+  } = props;
+
   const dispRef = useRef(null);
 
   const [displayInfo, setDisplayInfo] = useState({
@@ -11,7 +20,7 @@ const Display = (props) => {
     padding: 20 // visual aid
   });
 
-  const [textSpriteText, setTextSpriteText] = useState('text');
+  const [textSpriteText, setTextSpriteText] = useState('');
 
   const computePosition = (e, spriteName) => {
     const rect = dispRef.current.getBoundingClientRect();
@@ -87,7 +96,7 @@ const Display = (props) => {
           <div
             key={index}
             alt="sprite"
-            className={`App__left-display-sprite text ${lastActiveSprite.name === sprite.name ? 'active': ''}`}
+            className={`App__left-display-sprite text ${lastActiveSprite?.name === sprite.name ? 'active': ''}`}
             title={sprite.name}
             draggable="true"
             width={sprite.width}
@@ -107,7 +116,7 @@ const Display = (props) => {
               height: `${Math.round(sprite.height * sprite.scale)}px`
             }}
           >
-            {textSpriteText}
+            {sprite?.value || 'text'}
           </div>
         )
       }
@@ -116,7 +125,7 @@ const Display = (props) => {
         <img
           key={index}
           alt="sprite"
-          className={`App__left-display-sprite ${lastActiveSprite.name === sprite.name ? 'active': ''}`}
+          className={`App__left-display-sprite ${lastActiveSprite?.name === sprite.name ? 'active': ''}`}
           src={sprite.data}
           title={sprite.name}
           draggable="true"
@@ -146,6 +155,36 @@ const Display = (props) => {
       [field]: value
     }))
   };
+
+  useEffect(() => {
+    if (Object.keys(sprites).length) {
+      setMenuScenes(prevMenuScenes => ({
+        ...prevMenuScenes,
+        [activeMenuName]: {
+          ...prevMenuScenes[activeMenuName],
+          menu_items: sprites
+        }
+      }));
+    }
+  }, [sprites]);
+
+  useEffect(() => {
+    if (textSpriteText) {
+      setSprites(prevSprites => ({
+        ...prevSprites,
+        [lastActiveSprite?.name]: {
+          ...prevSprites[lastActiveSprite?.name],
+          value: textSpriteText
+        }
+      }));
+    }
+  }, [textSpriteText]);
+
+  useEffect(() => {
+    if (activeMenuName) {
+      setSprites(menuScenes[activeMenuName].menu_items);
+    }
+  }, [activeMenuName]);
 
   return (
     <div className="App__left-display-container">
@@ -227,7 +266,9 @@ const Display = (props) => {
             Text:
             <input
               type="text"
-              value={textSpriteText} onChange={(e) => setTextSpriteText(e.target.value)}
+              value={sprites[lastActiveSprite.name]?.value}
+              onChange={(e) => setTextSpriteText(e.target.value)}
+              placeholder="custom text"
               className="sprite-text"
             />
           </span>

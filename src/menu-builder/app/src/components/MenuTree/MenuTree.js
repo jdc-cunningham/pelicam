@@ -2,38 +2,11 @@ import { act, useEffect, useState } from 'react';
 import './MenuTree.scss';
 
 const MenuTree = (props) => {
-  const { sprites, lastActiveSprite } = props;
+  const { sprites, lastActiveSprite, menuScenes, setMenuScenes, activeMenuName, setActiveMenuName } = props;
   const [showAddSceneModal, setShowAddSceneModal] = useState(false);
   const [newMenuSceneName, setNewMenuSceneName] = useState('');
   const [menuParent, setMenuParent] = useState('');
   const [menuTree, setMenuTree] = useState({});
-  const [activeMenuName, setActiveMenuName] = useState('');
-
-  // unsorted
-  const [menuScenes, setMenuScenes] = useState({
-    // "boot_splash_screen": {
-    //   "background_type": "color",
-    //   // "background_color": "white", // optional, takes global bg color
-    //   "menu_items": [
-    //     {
-    //       "name": "logo",
-    //       "type": "sprite",
-    //       "path": "sprites/logo.png",
-    //       "transparent": false,
-    //       "location": [60, 110],
-    //       "dimensions": [512, 215]
-    //     },
-    //     {
-    //       "name": "version",
-    //       "type": "text",
-    //       "font_size": "small",
-    //       "text": "ver 0.0.1",
-    //       "location": [260, 330],
-    //       "dimensions": [93, 33]
-    //     }
-    //   ]
-    // }
-  });
 
   const saveToLocalStorage = () => {
     localStorage.setItem('pelicam-menu-scenes', JSON.stringify(menuScenes));
@@ -69,6 +42,7 @@ const MenuTree = (props) => {
         marginLeft: `${marginLeft}px`,
         width: `calc(100% - ${marginLeft})`
       }}
+      onClick={() => setActiveMenuName(menuSceneName)}
     >
       <p>{menuSceneName}</p>
       <button
@@ -217,6 +191,11 @@ const MenuTree = (props) => {
     const storedMenuTrees = getMenuTreeFromLocalStorage();
     if (Object.keys(storedMenuScenes).length) { setMenuScenes(storedMenuScenes) };
     if (Object.keys(storedMenuTrees).length) { setMenuTree(storedMenuTrees) };
+
+    if (Object.keys(menuScenes).length) {
+      console.log('set');
+      setActiveMenuName(Object.keys(menuScenes)[0]);
+    }
   }, []);
 
   return (

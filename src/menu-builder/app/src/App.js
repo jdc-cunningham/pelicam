@@ -8,6 +8,8 @@ import ButtonBindings from './components/ButtonBindings/ButtonBindings';
 function App() {
   const [sprites, setSprites] = useState({}); // {filename: fileInfo}
   const [lastActiveSprite, setLastActiveSprite] = useState(null);
+  const [menuScenes, setMenuScenes] = useState({});
+  const [activeMenuName, setActiveMenuName] = useState('');
 
   return (
     <div className="App">
@@ -16,10 +18,21 @@ function App() {
           sprites={sprites}
           setSprites={setSprites}
           lastActiveSprite={lastActiveSprite}
-          setLastActiveSprite={setLastActiveSprite}/>
+          setLastActiveSprite={setLastActiveSprite}
+          menuScenes={menuScenes}
+          setMenuScenes={setMenuScenes}
+          activeMenuName={activeMenuName}
+        />
       </div>
       <div className="App__right">
-        <MenuTree sprites={sprites} lastActiveSprite={lastActiveSprite}/>
+        <MenuTree
+          sprites={sprites}
+          lastActiveSprite={lastActiveSprite}
+          menuScenes={menuScenes}
+          setMenuScenes={setMenuScenes}
+          activeMenuName={activeMenuName}
+          setActiveMenuName={setActiveMenuName}
+        />
         <ButtonBindings/>
         <SpritesDragDrop/>
       </div>

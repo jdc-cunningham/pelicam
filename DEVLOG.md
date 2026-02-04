@@ -121,6 +121,16 @@ menu-tree
 {"boot_splash_screen":{}}
 ```
 
+7:50 PM
+
+No mechanism right now to toggle between scenes
+
+8:10 PM
+
+This state management is getting nasty
+
+
+
 ---
 
 ### 02/02/2026
