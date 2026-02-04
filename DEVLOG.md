@@ -75,7 +75,51 @@ The active menu scene gets the details of whatever stuff is added to the scene
 
 The text coordinate update is bugged out
 
+So below is an example of a menu scene
 
+<img src="./devlog-images/boot-splash-screen.JPG"/>
+
+And it's accompanying JSON
+
+menu-scenes
+
+```
+{
+  "boot_splash_screen":{
+    "background_type":"color",
+    "background_color":"white",
+    "parent":"",
+    "menu_items":{
+      "logo":{
+        "name":"logo",
+        "data":"data:image/png;base64,...",
+        "width":640,
+        "height":269,
+        "top":133,
+        "left":66,
+        "scale":1,
+        "path":"sprites/logo.png"
+      },
+      "_text_tool":{
+        "name":"_text_tool",
+        "data":"data:image/png;base64,...",
+        "width":64,
+        "height":64,
+        "top":408,
+        "left":483,
+        "scale":1,
+        "path":"sprites/_text_tool.png"
+      }
+    }
+  }
+}
+```
+
+menu-tree
+
+```
+{"boot_splash_screen":{}}
+```
 
 ---
 
