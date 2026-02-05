@@ -134,6 +134,12 @@ Yeah... I'm gonna re-investigate this menu traversing thing damn
 
 Shame on my family
 
+11:09 PM
+
+<img src="./devlog-images/task.JPG"/>
+
+This is literally all I gotta do
+
 ---
 
 ### 02/03/2026
