@@ -100,6 +100,11 @@ const MenuTree = (props) => {
       return;
     }
 
+    if (newMenuSceneName in menuScenes) {
+      alert("Scene name already used");
+      return;
+    }
+
     setActiveMenuName(newMenuSceneName);
 
     setMenuScenes(prevMenuScenes => ({

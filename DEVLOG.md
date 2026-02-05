@@ -47,7 +47,9 @@ Alright I'm back on, I need to fix the unique name problem
 
 The icons is a big one, need to be able to use multiple icons of the same type like text sprite
 
+6:56 PM
 
+Alright I've added some checks to prevent collisions, I could go further and allow menu scenes to be uniquely named but more stuff to do
 
 ---
 
