@@ -95,6 +95,11 @@ const MenuTree = (props) => {
   const addMenuScene = () => {
     const re = new RegExp("^[a-zA-Z0-9_]*$");
 
+    if (!newMenuSceneName) {
+      alert("Can't be empty");
+      return;
+    }
+
     if (!re.test(newMenuSceneName)) {
       alert("Only letters, numbers and underscores allowed");
       return;

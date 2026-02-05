@@ -43,7 +43,6 @@ const Display = (props) => {
       ...sprites[spriteId],
       top: spriteTop,
       left: spriteLeft,
-      scale: 1
     });
   };
 

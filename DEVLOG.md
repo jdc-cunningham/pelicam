@@ -98,6 +98,26 @@ Two more problems:
 
 I guess I never actually used the fine tune x y before
 
+8:35 PM
+
+Scale doesn't persist on movement
+
+8:37 PM
+
+I also finally realized this problem with Electron, when you have an alert, it stops focusing inputs
+
+Which other people experienced too
+
+https://stackoverflow.com/questions/71534851/unable-to-edit-input-element-after-an-alert-in-electron
+
+Which... there's no fix lol
+
+So I think I have to make an alert modal and not use the window.alert system
+
+Oh... focusing outside of the Electron windows seems to fix it?
+
+Like clicking on your desktop, anyway not acceptable
+
 ---
 
 ### 02/03/2026
