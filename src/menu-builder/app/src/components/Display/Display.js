@@ -54,6 +54,12 @@ const Display = (props) => {
   const imgDrop = (e) => {
     e.stopPropagation();
     e.preventDefault();
+
+    if (!activeMenuName) {
+      alert("Please add a menu scene");
+      return;
+    }
+
     const spriteDataPlainText = e.dataTransfer.getData('text/plain');
     const spriteData = spriteDataPlainText.includes('{') ? JSON.parse(spriteDataPlainText) : {};
 
@@ -167,7 +173,7 @@ const Display = (props) => {
   };
 
   useEffect(() => {
-    if (Object.keys(sprites).length) {
+    if (activeMenuName && Object.keys(sprites).length) {
       setMenuScenes(prevMenuScenes => ({
         ...prevMenuScenes,
         [activeMenuName]: {
@@ -247,7 +253,7 @@ const Display = (props) => {
       </div>
       <div className="App__left-display">
         <div
-          className="App__left-display-scene"
+          className={`App__left-display-scene ${Object.keys(sprites).length > 0 ? '' : 'centered'}`}
           onDragOver={(e) => {e.preventDefault()}}
           onDrop={imgDrop}
           style={{
@@ -266,6 +272,7 @@ const Display = (props) => {
               height: (displayInfo.resolution[1] - (displayInfo.padding * 2))
             }}
           ></div>
+          {!Object.keys(menuScenes).length && <p className="App__left-display-scene-init-msg">Add menu scene to begin</p>}
         </div>
       </div>
       <div className="App__left-display-sprite-info">

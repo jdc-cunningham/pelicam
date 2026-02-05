@@ -24,6 +24,20 @@
   position: relative;
   background-color: white;
   border: 1px solid #282828;
+  height: 100%;
+
+  &.centered {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+}
+
+.App__left-display-scene-init-msg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
 }
 
 .App__left-display-info-type {
