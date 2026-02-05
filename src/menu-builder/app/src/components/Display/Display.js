@@ -76,6 +76,7 @@ const Display = (props) => {
         ...prevSprites,
         [id]: {
           ...spriteData,
+          id,
           name: spriteData.name,
           top: spriteTop,
           left: spriteLeft,
@@ -86,6 +87,7 @@ const Display = (props) => {
 
       setLastActiveSprite({
         ...spriteData,
+        id,
         name: spriteData.name,
         top: spriteTop,
         left: spriteLeft,
@@ -104,7 +106,7 @@ const Display = (props) => {
           <div
             key={index}
             alt="sprite"
-            className={`App__left-display-sprite text ${lastActiveSprite?.name === spriteName ? 'active': ''}`}
+            className={`App__left-display-sprite text ${lastActiveSprite?.id === sprite.id ? 'active': ''}`}
             title={spriteName}
             draggable="true"
             width={sprite.width}
@@ -133,7 +135,7 @@ const Display = (props) => {
         <img
           key={index}
           alt="sprite"
-          className={`App__left-display-sprite ${lastActiveSprite?.name === spriteName ? 'active': ''}`}
+          className={`App__left-display-sprite ${lastActiveSprite?.id === sprite.id ? 'active': ''}`}
           src={sprite.data}
           title={spriteName}
           draggable="true"
@@ -181,7 +183,7 @@ const Display = (props) => {
     if (textSpriteText) {
       setSprites(prevSprites => ({
         ...prevSprites,
-        [lastActiveSprite?.name]: {
+        [lastActiveSprite?.id]: {
           ...prevSprites[lastActiveSprite?.id],
           value: textSpriteText
         }
@@ -267,7 +269,7 @@ const Display = (props) => {
         </div>
       </div>
       <div className="App__left-display-sprite-info">
-        <h3>Active sprite: {lastActiveSprite?.name || ""}</h3>
+        <h3>Active sprite: {lastActiveSprite?.id || ""}</h3>
         {
           lastActiveSprite &&
           lastActiveSprite?.name === '_text_tool' &&
