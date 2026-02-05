@@ -182,7 +182,6 @@ const Display = (props) => {
         }
       }));
     }
-    console.log(sprites);
   }, [sprites]);
 
   useEffect(() => {

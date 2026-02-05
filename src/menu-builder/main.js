@@ -33,6 +33,7 @@ app.on('ready', () => {
       try {
         fs.writeFileSync(imgPath, buff);
         e.reply("imgAdded", {
+          ...args.imgInfo,
           name,
           data: imgData
         });

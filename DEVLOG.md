@@ -71,6 +71,16 @@ I'm gonna do the Electron bridge as I need to drag-drop sprites
 
 Will see what's missing/broken
 
+7:13 PM
+
+Gonna try and build the menu again based on existing menu
+
+7:16 PM
+
+Interesting drag-drop image didn't work in Electron but text does, no error
+
+
+
 ---
 
 ### 02/03/2026

@@ -87,7 +87,7 @@ const SpritesDragDrop = (props) => {
         className="App__right-sprites-body-sprite"
         draggable="true"
         onDragStart={(e) => {
-          e.dataTransfer.setData('text/plain', JSON.stringify(sprite));          
+          e.dataTransfer.setData('text/plain', JSON.stringify(sprite));
         }}
       >
         <img src={sprite.data} alt="sprite"/>
@@ -102,6 +102,7 @@ const SpritesDragDrop = (props) => {
           setSprites(prevSprites => ([
             ...prevSprites,
             {
+              ...data,
               name: data.name,
               data: `data:image/png;base64,${data.data}`
             }

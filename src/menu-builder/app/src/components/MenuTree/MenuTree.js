@@ -198,7 +198,6 @@ const MenuTree = (props) => {
     if (Object.keys(storedMenuTrees).length) { setMenuTree(storedMenuTrees) };
 
     if (Object.keys(menuScenes).length) {
-      console.log('set');
       setActiveMenuName(Object.keys(menuScenes)[0]);
     }
   }, []);
