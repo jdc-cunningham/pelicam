@@ -166,7 +166,7 @@ const MenuTree = (props) => {
           ...prevMenuScenes[activeMenuName],
           menu_items: {
             ...prevMenuScenes[activeMenuName].menu_items,
-            [lastActiveSprite.name]: lastActiveSprite
+            [lastActiveSprite.id]: lastActiveSprite
           }
         }
       }));

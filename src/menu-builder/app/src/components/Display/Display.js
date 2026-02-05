@@ -22,9 +22,9 @@ const Display = (props) => {
 
   const [textSpriteText, setTextSpriteText] = useState('');
 
-  const computePosition = (e, spriteName) => {
+  const computePosition = (e, spriteId) => {
     const rect = dispRef.current.getBoundingClientRect();
-    const spriteInfo = sprites[spriteName];
+    const spriteInfo = sprites[spriteId];
     const spriteWidth = spriteInfo.width;
     const spriteHeight = spriteInfo.height;
     const spriteTop = Math.round(e.clientY - rect.y - ((spriteHeight * spriteInfo.scale) / 2));
@@ -32,20 +32,24 @@ const Display = (props) => {
 
     setSprites(prevSprites => ({
       ...prevSprites,
-      [spriteName]: {
-        ...prevSprites[spriteName],
+      [spriteId]: {
+        ...prevSprites[spriteId],
         top: spriteTop,
         left: spriteLeft
       }
     }));
 
     setLastActiveSprite({
-      ...sprites[spriteName],
+      ...sprites[spriteId],
       top: spriteTop,
       left: spriteLeft,
       scale: 1
     });
   };
+
+  // https://stackoverflow.com/a/12502559
+  // this does not have to be super unique as it's appended to a name
+  const getRandomStr = () => Math.random().toString(36).slice(2);
 
   const imgDrop = (e) => {
     e.stopPropagation();
@@ -54,7 +58,7 @@ const Display = (props) => {
     const spriteData = spriteDataPlainText.includes('{') ? JSON.parse(spriteDataPlainText) : {};
 
     if ('spriteName' in spriteData) {
-      computePosition(e, spriteData.spriteName);
+      computePosition(e, spriteData.id);
       return; // local dragging
     }
 
@@ -66,11 +70,13 @@ const Display = (props) => {
       const spriteHeight = spriteData.height;
       const spriteTop = Math.round(e.clientY - rect.y - (spriteHeight / 2));
       const spriteLeft = Math.round(e.clientX - rect.x - (spriteWidth / 2));
+      const id = `${spriteData.name}_${getRandomStr()}`;
 
       setSprites(prevSprites => ({
         ...prevSprites,
-        [spriteData.name]: {
+        [id]: {
           ...spriteData,
+          name: spriteData.name,
           top: spriteTop,
           left: spriteLeft,
           scale: 1,
@@ -80,6 +86,7 @@ const Display = (props) => {
 
       setLastActiveSprite({
         ...spriteData,
+        name: spriteData.name,
         top: spriteTop,
         left: spriteLeft,
         scale: 1
@@ -88,22 +95,23 @@ const Display = (props) => {
   };
 
   const renderSprites = () => (
-    Object.keys(sprites).map((spriteName, index) => {
-      const sprite = sprites[spriteName];
+    Object.keys(sprites).map((spriteId, index) => {
+      const sprite = sprites[spriteId];
+      const spriteName = sprite.name;
 
       if (sprite?.name === '_text_tool') {
         return (
           <div
             key={index}
             alt="sprite"
-            className={`App__left-display-sprite text ${lastActiveSprite?.name === sprite.name ? 'active': ''}`}
-            title={sprite.name}
+            className={`App__left-display-sprite text ${lastActiveSprite?.name === spriteName ? 'active': ''}`}
+            title={spriteName}
             draggable="true"
             width={sprite.width}
             height={sprite.height}
             onDragStart={(e) => {
               e.dataTransfer.setData('text/plain', JSON.stringify({
-                spriteName: sprite.name
+                spriteName
               }))
             }}
             onClick={(e) => {
@@ -125,15 +133,15 @@ const Display = (props) => {
         <img
           key={index}
           alt="sprite"
-          className={`App__left-display-sprite ${lastActiveSprite?.name === sprite.name ? 'active': ''}`}
+          className={`App__left-display-sprite ${lastActiveSprite?.name === spriteName ? 'active': ''}`}
           src={sprite.data}
-          title={sprite.name}
+          title={spriteName}
           draggable="true"
           width={sprite.width}
           height={sprite.height}
           onDragStart={(e) => {
             e.dataTransfer.setData('text/plain', JSON.stringify({
-              spriteName: sprite.name
+              spriteName
             }))
           }}
           onClick={(e) => {
@@ -166,6 +174,7 @@ const Display = (props) => {
         }
       }));
     }
+    console.log(sprites);
   }, [sprites]);
 
   useEffect(() => {
@@ -173,7 +182,7 @@ const Display = (props) => {
       setSprites(prevSprites => ({
         ...prevSprites,
         [lastActiveSprite?.name]: {
-          ...prevSprites[lastActiveSprite?.name],
+          ...prevSprites[lastActiveSprite?.id],
           value: textSpriteText
         }
       }));
@@ -266,7 +275,7 @@ const Display = (props) => {
             Text:
             <input
               type="text"
-              value={sprites[lastActiveSprite.name]?.value || textSpriteText}
+              value={sprites[lastActiveSprite.id]?.value || textSpriteText}
               onChange={(e) => setTextSpriteText(e.target.value)}
               placeholder="custom text"
               className="sprite-text"
@@ -324,8 +333,8 @@ const Display = (props) => {
 
                   setSprites(prevSprites => ({
                     ...prevSprites,
-                    [lastActiveSprite.name]: {
-                      ...prevSprites[lastActiveSprite.name],
+                    [lastActiveSprite.id]: {
+                      ...prevSprites[lastActiveSprite.id],
                       scale: e.target.value
                     }
                   }));

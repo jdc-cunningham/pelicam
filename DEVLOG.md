@@ -39,6 +39,18 @@
   - [ ] build out interface
   - [ ] ability to delete scene/scene branch
 
+### 02/04/2026
+
+6:25 PM
+
+Alright I'm back on, I need to fix the unique name problem
+
+The icons is a big one, need to be able to use multiple icons of the same type like text sprite
+
+
+
+---
+
 ### 02/03/2026
 
 7:05 PM
