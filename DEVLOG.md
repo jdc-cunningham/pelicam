@@ -87,6 +87,13 @@ The drag position is broken probably changing object structure id
 
 Alright fixed the img drag drop
 
+8:01 PM
+
+Two more problems:
+
+- [x] the text value doesn't reset when a new one is added
+- [ ] the x, y incrementers don't work
+
 ---
 
 ### 02/03/2026

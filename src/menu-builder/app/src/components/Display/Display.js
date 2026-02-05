@@ -78,6 +78,10 @@ const Display = (props) => {
       const spriteLeft = Math.round(e.clientX - rect.x - (spriteWidth / 2));
       const id = `${spriteData.name}_${getRandomStr()}`;
 
+      if (spriteData.name.includes('_text_tool')) {
+        setTextSpriteText('');
+      }
+
       setSprites(prevSprites => ({
         ...prevSprites,
         [id]: {
