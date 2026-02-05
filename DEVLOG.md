@@ -53,6 +53,12 @@ Alright I've added some checks to prevent collisions, I could go further and all
 
 Once I'm ready I need to do the menu scenes diffing between web and electron, as electron side/what the camera will use will not have the base64 images, it'll use the actual sprite images stored in the sprites folder
 
+7:03 PM
+
+man... I feel drained
+
+I've started dreaming up of other camera designs ha, like one where the sensor itself is hinged vs. the display, the display would be directly connected to the body, focusing on minimal physical buttons, just a shutter button, rest is touch screen
+
 ---
 
 ### 02/03/2026
