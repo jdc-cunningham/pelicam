@@ -118,6 +118,22 @@ Oh... focusing outside of the Electron windows seems to fix it?
 
 Like clicking on your desktop, anyway not acceptable
 
+8:53 PM
+
+Damn found another bug, nesting 3rd level throws error
+
+9:3 PM
+
+Ate my dinner, quick break
+
+Ugh... I guess the traversing nesting thing is not done yet, I didn't test beyond 2 layers
+
+9:52 PM
+
+Yeah... I'm gonna re-investigate this menu traversing thing damn
+
+Shame on my family
+
 ---
 
 ### 02/03/2026

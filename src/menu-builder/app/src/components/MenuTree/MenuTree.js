@@ -49,7 +49,9 @@ const MenuTree = (props) => {
         title="add sub-menu scene"
         type="button"
         onClick={
-          () => {
+          (e) => {
+            e.preventDefault();
+            e.stopPropagation();
             setMenuParent(menuSceneName);
             setShowAddSceneModal(true);
           }
@@ -136,17 +138,17 @@ const MenuTree = (props) => {
         return currentKeys;
       } else {
         Object.keys(obj).forEach(key2 => {
-          currentKeys.push(key2);
           traverseObj(targetKey, obj[key2], currentKeys);
         });
       }
     };
 
     const getObjRef = (targetKey, obj) => {
-      const currentKeys = [];
+      let currentKeys = [];
       traverseObj(targetKey, obj, currentKeys);
       let objRef = sortedMenuTree;
-
+      console.log('objRef', objRef);
+      console.log(currentKeys, sortedMenuTree);
       currentKeys.forEach(key => {
         objRef = objRef[key];
       });
