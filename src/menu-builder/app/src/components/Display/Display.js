@@ -128,8 +128,8 @@ const Display = (props) => {
               setLastActiveSprite(sprite);
             }}
             style={{
-              top: sprite.top,
-              left: sprite.left,
+              top: `${sprite.top}px`,
+              left: `${sprite.left}px`,
               minWidth: `${Math.round(sprite.width * sprite.scale)}px`,
               height: `${Math.round(sprite.height * sprite.scale)}px`
             }}
@@ -156,8 +156,8 @@ const Display = (props) => {
             setLastActiveSprite(sprite);
           }}
           style={{
-            top: sprite.top,
-            left: sprite.left,
+            top: `${sprite.top}px`,
+            left: `${sprite.left}px`,
             width: `${Math.round(sprite.width * sprite.scale)}px`,
             height: `${Math.round(sprite.height * sprite.scale)}px`
           }}
@@ -183,6 +183,17 @@ const Display = (props) => {
       }));
     }
   }, [sprites]);
+
+  useEffect(() => {
+    if (lastActiveSprite?.name) {
+      setSprites(prevSprites => ({
+        ...prevSprites,
+        [lastActiveSprite.id]: {
+          ...lastActiveSprite
+        }
+      }));
+    }
+  }, [lastActiveSprite]);
 
   useEffect(() => {
     if (textSpriteText) {
@@ -303,7 +314,7 @@ const Display = (props) => {
                 onChange={
                   (e) => setLastActiveSprite(prevLastActiveSprite => ({
                     ...prevLastActiveSprite,
-                    width: e.target.value
+                    left: e.target.value
                   }))
                 }
               />
@@ -317,7 +328,7 @@ const Display = (props) => {
                 onChange={
                   (e) => setLastActiveSprite(prevLastActiveSprite => ({
                     ...prevLastActiveSprite,
-                    width: e.target.value
+                    top: e.target.value
                   }))
                 }
               />

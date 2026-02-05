@@ -92,7 +92,11 @@ Alright fixed the img drag drop
 Two more problems:
 
 - [x] the text value doesn't reset when a new one is added
-- [ ] the x, y incrementers don't work
+- [x] the x, y incrementers don't work
+
+8:18 PM
+
+I guess I never actually used the fine tune x y before
 
 ---
 
