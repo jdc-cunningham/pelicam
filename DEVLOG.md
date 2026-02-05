@@ -59,6 +59,14 @@ man... I feel drained
 
 I've started dreaming up of other camera designs ha, like one where the sensor itself is hinged vs. the display, the display would be directly connected to the body, focusing on minimal physical buttons, just a shutter button, rest is touch screen
 
+7:06 PM
+
+Some scenes are special like the thumbnail, that you wouldn't necessarily make anything except for a title, the menu scene would exist and that's how you'd identify where to display the thumbnails from a python perspective
+
+I also realize how flawed it may be to use an image-based menu system vs. rendering a scene
+
+Something for the future, there is a difference between a weaker SPI-display/processor like Pi Zero 2 vs. Full Pi where an actual GUI may not make sense...
+
 ---
 
 ### 02/03/2026
