@@ -51,6 +51,8 @@ The icons is a big one, need to be able to use multiple icons of the same type l
 
 Alright I've added some checks to prevent collisions, I could go further and allow menu scenes to be uniquely named but more stuff to do
 
+Once I'm ready I need to do the menu scenes diffing between web and electron, as electron side/what the camera will use will not have the base64 images, it'll use the actual sprite images stored in the sprites folder
+
 ---
 
 ### 02/03/2026
