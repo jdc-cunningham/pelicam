@@ -29,6 +29,10 @@ const SpritesDragDrop = (props) => {
     return false;
   };
 
+  // https://stackoverflow.com/a/12502559
+  // this does not have to be super unique as it's appended to a name
+  const getRandomStr = () => Math.random().toString(36).slice(2);
+
   const processSprite = (file) => {
     const reader = new FileReader();
     const fileName = verifyFileName(file.name);
@@ -52,6 +56,7 @@ const SpritesDragDrop = (props) => {
             if (window?.api?.sendImgData) { // web context no electron
               window.api.sendImgData({
                 imgInfo: {
+                  // id: `${fileName}_${getRandomStr()}`,
                   name: fileName,
                   data: e.target.result,
                   width,

@@ -79,7 +79,13 @@ Gonna try and build the menu again based on existing menu
 
 Interesting drag-drop image didn't work in Electron but text does, no error
 
+7:41 PM
 
+The drag position is broken probably changing object structure id
+
+7:57 PM
+
+Alright fixed the img drag drop
 
 ---
 

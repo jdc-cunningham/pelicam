@@ -63,7 +63,7 @@ const Display = (props) => {
     const spriteDataPlainText = e.dataTransfer.getData('text/plain');
     const spriteData = spriteDataPlainText.includes('{') ? JSON.parse(spriteDataPlainText) : {};
 
-    if ('spriteName' in spriteData) {
+    if ('id' in spriteData) {
       computePosition(e, spriteData.id);
       return; // local dragging
     }
@@ -118,9 +118,7 @@ const Display = (props) => {
             width={sprite.width}
             height={sprite.height}
             onDragStart={(e) => {
-              e.dataTransfer.setData('text/plain', JSON.stringify({
-                spriteName
-              }))
+              e.dataTransfer.setData('text/plain', JSON.stringify(sprite))
             }}
             onClick={(e) => {
               setLastActiveSprite(sprite);
@@ -148,9 +146,7 @@ const Display = (props) => {
           width={sprite.width}
           height={sprite.height}
           onDragStart={(e) => {
-            e.dataTransfer.setData('text/plain', JSON.stringify({
-              spriteName
-            }))
+            e.dataTransfer.setData('text/plain', JSON.stringify(sprite))
           }}
           onClick={(e) => {
             setLastActiveSprite(sprite);
