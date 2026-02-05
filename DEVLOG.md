@@ -67,6 +67,10 @@ I also realize how flawed it may be to use an image-based menu system vs. render
 
 Something for the future, there is a difference between a weaker SPI-display/processor like Pi Zero 2 vs. Full Pi where an actual GUI may not make sense...
 
+I'm gonna do the Electron bridge as I need to drag-drop sprites
+
+Will see what's missing/broken
+
 ---
 
 ### 02/03/2026
