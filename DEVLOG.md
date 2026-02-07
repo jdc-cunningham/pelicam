@@ -39,6 +39,40 @@
   - [ ] build out interface
   - [ ] ability to delete scene/scene branch
 
+### 02/07/2026
+
+10:58 AM
+
+I had started working on the basic software that takes a picture and you can view it on screen
+
+I'm waiting for the camera to charge so I can run code against it
+
+I'll briefly go back to this nested thing I was trying to solve
+
+11:58 AM
+
+Ugh... this is one of those things, I might just accept defeat and use AI to give me this algorithm
+
+It's not really important to me that I know how it works, just that it works
+
+A black box function
+
+12:25 PM
+
+This is pretty sad, I still haven't gotten it lmao
+
+<img src="./devlog-images/over-and-over.JPG"/>
+
+12:43 PM
+
+Still strugglin
+
+12:58 PM
+
+I'm gonna take a cooking break, I'm on the 4th tab lol, 4th attempt
+
+---
+
 ### 02/04/2026
 
 6:25 PM
