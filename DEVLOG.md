@@ -73,6 +73,28 @@ Need to sit down and get this finally, gonna make some food
 
 Alright nvm they turned our water off for some reason
 
+3:23 PM
+
+Yeah I've lost momentum/distracted
+
+Kind of feeling like not doing anything
+
+This is what I have to solve:
+
+```
+const obj = {
+  a: {
+    b: {}
+  }
+};
+
+const targetKey = 'b';
+
+// get obj['a']['b'] write path
+```
+
+---
+
 ### 02/07/2026
 
 10:58 AM
