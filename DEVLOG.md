@@ -39,6 +39,28 @@
   - [ ] build out interface
   - [ ] ability to delete scene/scene branch
 
+### 02/16/2026
+
+1:21 PM
+
+Ugh... I had written some stuff in here an hour ago but VS Code did that thing where the window goes blank
+
+First time, I've seen it happen on Mac
+
+Anyway I'm back on the Menu Builder in Pelicam
+
+Trying to finish that up, I bought some new ToF sensors for the future robot watering arm
+
+But I gotta finish this menu and make the other camera which can adjust its flange via the flat-head screw on the RPi HQ Cam sensor
+
+I posted this algorithm thing I'm struggling with on [Reddit](https://www.reddit.com/r/algorithms/comments/1qyk7rq/pretty_sad_im_struggling_on_this/)
+
+Idk what it is but my mind does still panic/go to shit, lose the train of thought, mental limitation? idk
+
+Also posted on [RPi forums](https://forums.raspberrypi.com/viewtopic.php?p=2363884) about camera streaming stuff with regard to basic-software-3 branch of this repo
+
+Got some info regarding pan-zoom
+
 ### 02/07/2026
 
 10:58 AM

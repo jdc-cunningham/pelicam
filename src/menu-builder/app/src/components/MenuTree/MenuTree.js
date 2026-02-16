@@ -132,40 +132,38 @@ const MenuTree = (props) => {
   const sortMenuTree = () => {
     const sortedMenuTree = {};
 
-    const traverseObj = (targetKey, obj, currentKeys) => {
-      if (targetKey in obj) {
-        currentKeys.push(targetKey);
-        return currentKeys;
-      } else {
-        Object.keys(obj).forEach(key2 => {
-          traverseObj(targetKey, obj[key2], currentKeys);
-        });
-      }
-    };
+    // const traverseObj = (targetKey, obj, currentKeys) => {
+    //   if (targetKey in obj) {
+    //     currentKeys.push(targetKey);
+    //     return currentKeys;
+    //   } else {
+    //     Object.keys(obj).forEach(key2 => {
+    //       traverseObj(targetKey, obj[key2], currentKeys);
+    //     });
+    //   }
+    // };
 
-    const getObjRef = (targetKey, obj) => {
-      let currentKeys = [];
-      traverseObj(targetKey, obj, currentKeys);
-      let objRef = sortedMenuTree;
-      console.log('objRef', objRef);
-      console.log(currentKeys, sortedMenuTree);
-      currentKeys.forEach(key => {
-        objRef = objRef[key];
-      });
+    // const getObjRef = (targetKey, obj) => {
+    //   let currentKeys = [];
+    //   traverseObj(targetKey, obj, currentKeys);
+    //   let objRef = sortedMenuTree;
+    //   currentKeys.forEach(key => {
+    //     objRef = objRef[key];
+    //   });
 
-      return objRef;
-    }
+    //   return objRef;
+    // }
 
-    Object.keys(menuScenes).forEach(key => {
-      const parent = menuScenes[key].parent;
+    // Object.keys(menuScenes).forEach(key => {
+    //   const parent = menuScenes[key].parent;
 
-      if (!parent) {
-        sortedMenuTree[key] = {};
-      } else {
-        const ref = getObjRef(parent, sortedMenuTree);
-        ref[key] = {};
-      }
-    });
+    //   if (!parent) {
+    //     sortedMenuTree[key] = {};
+    //   } else {
+    //     const ref = getObjRef(parent, sortedMenuTree);
+    //     ref[key] = {};
+    //   }
+    // });
     
     setMenuTree(sortedMenuTree);
   };
