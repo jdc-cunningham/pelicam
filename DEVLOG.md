@@ -39,6 +39,58 @@
   - [ ] build out interface
   - [ ] ability to delete scene/scene branch
 
+### 02/20/2026
+
+6:56 PM
+
+I'm mentally drained right now
+
+But I did give up and use AI, literally asked Google:
+
+> give me a javascript function that will return the full key path of a nested object based on target key
+
+And it did...
+
+```
+const getPathToKey = (obj, targetKey, currentPath = '') => {
+  if (obj === null || typeof obj !== 'object') {
+    return undefined;
+  }
+
+  for (const key in obj) {
+    if (Object.hasOwnProperty.call(obj, key)) {
+      const newPath = currentPath ? `${currentPath}.${key}` : key;
+
+      if (key === targetKey) {
+        return newPath;
+      }
+
+      if (typeof obj[key] === 'object') {
+        const foundPath = getPathToKey(obj[key], targetKey, newPath);
+
+        if (foundPath) {
+          return foundPath;
+        }
+      }
+    }
+  }
+
+  return undefined;
+}
+```
+
+So far from my testing it works.
+
+<img src="./devlog-images/machine-bested-man.JPG"/>
+
+AI will now replace me
+
+I just gotta move on. It's funny I wrote a nested object builder from the flat object parent:child relationship...
+
+I have to see if that actually works
+
+---
+
 ### 02/16/2026
 
 1:21 PM
