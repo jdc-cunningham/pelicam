@@ -89,6 +89,14 @@ I just gotta move on. It's funny I wrote a nested object builder from the flat o
 
 I have to see if that actually works
 
+6:59 PM
+
+Yeah I don't use AI to write code, personally or for work
+
+I like the craft, I want to think about what I'm doing
+
+I know for a job the goal is to just ship code
+
 ---
 
 ### 02/16/2026
