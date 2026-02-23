@@ -1,0 +1,10 @@
+# files
+.pelicam
+.env
+.pyc
+.log
+
+# folders
+.pycache
+node_modules/
+captured_media/

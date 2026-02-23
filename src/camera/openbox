@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# rotate screen
+xrandr -o left
+
+# rotate touch
+xinput set-prop 6 "Coordinate Transformation Matrix" 0 -1 1 1 0 0 0 0 1
+
+# set python venv
+. /home/pi/pelicam/src/camera/.pelicam/bin/activate
+
+# hide mouse cursor
+unclutter -idle 0 -jitter 2 -root &
+
+# start GUI
+openbox --config-file ~/.config/openbox/rc.xml --startup /home/pi/pelicam/src/camera/main.py

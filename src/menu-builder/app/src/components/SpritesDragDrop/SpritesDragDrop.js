@@ -1,0 +1,135 @@
+// https://github.com/jdc-cunningham/freelancer-journal/blob/master/react-app/src/components/right-body/RightBody.js
+
+import { useState, useEffect, useRef } from 'react';
+import './SpritesDragDrop.scss';
+
+const SpritesDragDrop = (props) => {
+  const [sprites, setSprites] = useState([
+    {
+      name: '_text_tool',
+      data: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACQSURBVGhD7c/BCYAwEETR9GM99pN6rMd+4iUHQQYnEhwC/10XlvmlLY6ANALSCEgjII2ANALSvgacdSuT7Uf/PYSAeQgYQsDTvwFvjr3Putnq2a8TESAQ4CJAIMBFgECAiwCBABcBAgEuAgQCXAQIBLgIEAhwESAQ4CIgjYA0AtIISCMgjYA0AtIISFs8oLULcbuVWUmrGvMAAAAASUVORK5CYII=',
+      width: 64,
+      height: 64
+    }
+  ]);
+
+  const [displayInfo, setDisplayInfo] = useState({
+    type: '',
+    dimensions: [0, 0]
+  });
+
+  const verifyFileName = (fileName) => {
+    const fn = fileName.split('.png').join('');
+    const re = new RegExp("^[a-zA-Z0-9_]*$");
+
+    if (re.test(fn)) {
+      return fn + '.png';
+    }
+
+    return false;
+  };
+
+  // https://stackoverflow.com/a/12502559
+  // this does not have to be super unique as it's appended to a name
+  const getRandomStr = () => Math.random().toString(36).slice(2);
+
+  const processSprite = (file) => {
+    const reader = new FileReader();
+    const fileName = verifyFileName(file.name);
+
+    if (!fileName) {
+      alert('File name needs to be letters, characters and underscores only eg. sprite_name.png');
+      return;
+    }
+
+    reader.readAsDataURL(file);
+    
+    reader.onload = (e) => {
+      if (e.target.result) {
+        if (e.target.result.includes('data:image')) {
+          const img = new Image();
+
+          img.onload = () => {
+            const height = img.height;
+            const width = img.width;
+
+            if (window?.api?.sendImgData) { // web context no electron
+              window.api.sendImgData({
+                imgInfo: {
+                  // id: `${fileName}_${getRandomStr()}`,
+                  name: fileName,
+                  data: e.target.result,
+                  width,
+                  height
+                }
+              });
+            }
+          };
+
+          img.src = e.target.result;
+        }
+      } else {
+        console.warn("No img data");
+      }
+    };
+    
+    reader.onerror = (error) => {
+      console.error("Failed to read image");
+      console.error(error);
+    };
+  }
+
+  const imgDrop = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    processSprite(e.dataTransfer.files[0]);
+  };
+
+  const renderSprites = () => (
+    sprites.map((sprite, index) => (
+      <div
+        key={index}
+        className="App__right-sprites-body-sprite"
+        draggable="true"
+        onDragStart={(e) => {
+          e.dataTransfer.setData('text/plain', JSON.stringify(sprite));
+        }}
+      >
+        <img src={sprite.data} alt="sprite"/>
+      </div>
+    ))
+  )
+
+  useEffect(() => {
+    if (window?.api) { // web context no electron
+      window.api.imgAdded((event, data) => {
+        if (sprites.find(sprite => sprite.name !== data.name)) {
+          setSprites(prevSprites => ([
+            ...prevSprites,
+            {
+              ...data,
+              name: data.name,
+              data: `data:image/png;base64,${data.data}`
+            }
+          ]));
+        }
+      });
+    }
+  }, []);
+
+  return (
+    <div className="App__right-sprites">
+      <div
+        className={`App__right-sprites-body ${sprites.length ? 'has-sprites': ''}`}
+        onDragOver={(e) => {e.preventDefault()}}
+        onDrop={imgDrop}
+      >
+        <h2>Sprites</h2>
+        {!sprites.length > 0 && <p>Drag and drop sprites here</p>}
+        {sprites.length > 0 && renderSprites()}
+      </div>
+    </div>
+  );
+};
+
+export default SpritesDragDrop;

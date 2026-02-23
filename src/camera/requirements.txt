@@ -1,0 +1,6 @@
+numpy
+opencv-python
+picamera2
+pillow
+pynput
+RPi.GPIO
