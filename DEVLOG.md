@@ -39,6 +39,18 @@
   - [ ] build out interface
   - [ ] ability to delete scene/scene branch
 
+### 02/23/2026
+
+8:12 PM
+
+I'm going to add video next just so I can use that
+
+Then I'm going to focus on doing photograph vs. doing the POV photography videos
+
+Specifically paying attention to what aperture/iso/shutter speed I'm using, logging it for every photo I take
+
+Later I want to add bluetooth
+
 ### 02/22/2026
 
 10:42 AM
