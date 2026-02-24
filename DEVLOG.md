@@ -51,6 +51,14 @@ Specifically paying attention to what aperture/iso/shutter speed I'm using, logg
 
 Later I want to add bluetooth
 
+8:17 PM
+
+I will have to add the video toggle "button" on the view photos list menu page
+
+I'll cut the touch range off by half (x direction)
+
+It'll film in 1080P 60FPS
+
 ### 02/22/2026
 
 10:42 AM
