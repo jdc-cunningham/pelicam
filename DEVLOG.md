@@ -39,6 +39,16 @@
   - [ ] build out interface
   - [ ] ability to delete scene/scene branch
 
+### 02/24/2026
+
+9:44 PM
+
+One thing I noticed is the display does not match what the camera takes, so I'm going to have to check that out
+
+Currently designing this tripod mount for the Vivtar 70-200mm zoom lens so I can print it tomorrow
+
+---
+
 ### 02/23/2026
 
 8:12 PM
