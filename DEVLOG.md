@@ -39,6 +39,22 @@
   - [ ] build out interface
   - [ ] ability to delete scene/scene branch
 
+### 02/25/2026
+
+6:46 PM
+
+Tripod CLAMPS! (Futurama) are printing
+
+Currently looking into why the photo taken does not match what is displayed with regard to all the settings like ISO
+
+6:55 PM
+
+It might just be I have to wait for the camera to catch up to the settings
+
+I'm going to add video
+
+---
+
 ### 02/24/2026
 
 9:44 PM
