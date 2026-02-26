@@ -53,6 +53,14 @@ It might just be I have to wait for the camera to catch up to the settings
 
 I'm going to add video
 
+8:19 PM
+
+Well this was not as simple as I thought
+
+The current code with the pass through is different than the past code (running on Modular Pi Cam)
+
+So I'm trying to figure out how to switch between these encoders
+
 ---
 
 ### 02/24/2026

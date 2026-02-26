@@ -77,9 +77,10 @@ def reset_editable_values(editing_value):
 
 # capture mouse-click coordinate
 def on_mouse(event, x, y, flags, param):
-  global previous_photo, show_previous_photo, files_img, edit_iso_mode, edit_shutter_speed_mode, edit_awb_mode
+  global previous_photo, show_previous_photo, files_img, edit_iso_mode, edit_shutter_speed_mode, edit_awb_mode, camera_active
 
   if event == cv2.EVENT_LBUTTONDOWN:
+    # overlays
     if camera_active:
       if x > 30 and x < 160 and y > 430:
         reset_editable_values("shutter speed")
@@ -99,15 +100,26 @@ def on_mouse(event, x, y, flags, param):
       camera.zoom_in()
 
     if not camera_active and has_pictures and not show_previous_photo:
-      filepath = get_filename_from_click(x, y)
+      if x < 400:
+        filepath = get_filename_from_click(x, y)
 
-      if filepath:
-        show_previous_photo = True
-        previous_photo = get_previous_photo(filepath)
+        if filepath:
+          show_previous_photo = True
+          previous_photo = get_previous_photo(filepath)
+          return
 
       if x > 340 and y < 100:
         camera.shutter_delay_on = not camera.shutter_delay_on
         files_img = get_pictures_img()
+        return
+
+      if x > 340 and y > 120 and y < 170:
+        print(">>> video mode clicked")
+        camera.video_mode = True
+        files_img = get_pictures_img()
+        camera_active = True
+        return
+
 
 # setup GUI
 # black bg
@@ -206,6 +218,8 @@ def get_pictures_img():
   cv2.putText(file_names_img, 'Photos', (40, 40), font, 1, (0, 0, 0), 2, cv2.LINE_AA)
   shutter_delay_on = 'on' if camera.shutter_delay_on else 'off'
   cv2.putText(file_names_img, 'Shutter delay: ' + shutter_delay_on, (340, 40), font, 1, (0, 0, 0), 2, cv2.LINE_AA)
+  video_mode = 'on' if camera.video_mode else 'off'
+  cv2.putText(file_names_img, 'Video mode: ' + video_mode, (340, 120), font, 1, (0, 0, 0), 2, cv2.LINE_AA)
   base_dir = '/home/pi/pelicam/src/camera/captured_media/'
   pics = os.listdir(base_dir)
   sort = []
@@ -220,7 +234,7 @@ def get_pictures_img():
   counter = 1
 
   for pic in sort:
-    if pic == ".gitkeep":
+    if pic == ".gitkeep" or '.h264' in pic:
       continue
 
     cv2.putText(file_names_img, pic + '.jpg', (x_offset, y_offset), font, 1, (0, 0, 0), 2, cv2.LINE_AA)
@@ -246,11 +260,17 @@ def button_pressed(button):
       camera_active = True
       time.sleep(0.1) # add delay to prevent early photo
     else:
-      taking_picture = True
-      camera.take_picture()
-      taking_picture = False
-      has_pictures = True
-      files_img = get_pictures_img()
+      if camera.video_mode:
+        if camera.recording_video:
+          camera.stop_video_recording()
+        else:
+          camera.start_video_recording()
+      else:
+        taking_picture = True
+        camera.take_picture()
+        taking_picture = False
+        has_pictures = True
+        files_img = get_pictures_img()
 
   if button == "BACK":
     if edit_shutter_speed_mode:
@@ -304,7 +324,11 @@ while True:
         cv2.imshow(window_name, taking_picture_img)
       else:
         if camera.output.frame is not None:
-          cv2.imshow(window_name, buf_to_pil_img(camera.output.frame))
+          if camera.video_mode:
+            if camera.video_frame is not None:
+              cv2.imshow(window_name, camera.video_frame)
+          else:
+            cv2.imshow(window_name, buf_to_pil_img(camera.output.frame))
     elif has_pictures:
      cv2.imshow(window_name, files_img)
     else:

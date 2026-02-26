@@ -5,8 +5,8 @@ import io
 import time
 from libcamera import controls
 from picamera2 import Picamera2
-from picamera2.encoders import MJPEGEncoder
-from picamera2.outputs import FileOutput
+from picamera2.encoders import MJPEGEncoder, H264Encoder
+from picamera2.outputs import FileOutput, CircularOutput
 from threading import Condition
 
 base_path = "/home/pi/pelicam/src/camera/captured_media/"
@@ -34,6 +34,10 @@ class Camera:
     self.aperture = 0
     self.digital_aperture = False
     self.wb_mode = "Auto"
+    self.video_mode = False
+    self.recording_video = False
+    self.encoder = None
+    self.video_frame = None
 
     self.shutter_speed_map = {
       125: "1/8000",
@@ -83,11 +87,24 @@ class Camera:
     # full res 4056x3040
     self.video_config_1x = self.picam2.create_video_configuration(
       main={
-        "size": (640, 480),
-        "format":"RGB888"
+        "size": (640, 480)
       },
       sensor={
         "output_size": (2028, 1520)  
+      }
+    )
+
+    self.video_recording_config = self.picam2.create_video_configuration(
+      main={
+        "size": (1920, 1080),
+        "format":"RGB888"
+      },
+      lores={
+        "size": (640, 480),
+        "format": "YUV420"
+      },
+      controls={
+        "FrameRate": 30 
       }
     )
 
@@ -238,9 +255,35 @@ class Camera:
       self.pan_offset_y = 0
       self.picam2.controls.ScalerCrop = (0, 0, 4056, 3040)
 
+  # https://forums.raspberrypi.com/viewtopic.php?t=366084#p2197540
+  # https://github.com/raspberrypi/picamera2/blob/main/examples/yuv_to_rgb.py
+  def sample_video(self, np_arr):
+    rgb_img = cv2.cvtColor(np_arr, cv2.COLOR_YUV420p2RGB)
+    rgb_img2 = cv2.cvtColor(rgb_img, cv2.COLOR_BGR2RGB)
+    return rgb_img2
+
+  def start_video_recording(self):
+    # self.picam2.stop_recording()
+    # self.picam2.configure(self.video_recording_config)
+    video_file_path = base_path + str(time.time()).split(".")[0] + ".h264"
+    encoder = H264Encoder(30000000, repeat=True)
+    self.picam2.start_recording(encoder, video_file_path)
+    self.recording_video = True
+
+    while (self.recording_video):
+      self.video_frame = self.sample_video(self.picam2.capture_array("lores"))
+
+  def stop_video_recording(self):
+    self.encoder.output.stop()
+    self.picam2.stop_encoder()
+    self.recording_video = False
+
   def change_mode(self, mode):
     if mode == "full":
       self.picam2.switch_mode(self.photo_config)
+    elif mode == "video_recording":
+      self.picam2.stop_recording()
+      self.picam2.configure(self.video_recording_config)
     else:
       self.picam2.switch_mode(self.video_config_1x)
 
