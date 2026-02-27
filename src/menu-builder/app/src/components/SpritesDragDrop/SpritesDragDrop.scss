@@ -1,0 +1,60 @@
+.App__right-sprites {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 1rem);
+  height: 35%;
+  margin: 0.5rem;
+  padding: 0.25rem;
+
+  h2 {
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.App__right-sprites-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  flex: 1;
+  border: 1px solid #282828;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+
+  &.has-sprites {
+    display: block;
+  }
+}
+
+.App__right-sprites-body-sprite {
+  display: inline-block;
+  position: relative;
+  width: calc((100% / 5) - 0.25rem);
+  height: auto;
+  margin: 0.25rem;
+  border: 1px solid #282828;
+  border-radius: 0.25rem;
+  cursor: pointer;
+
+  &::before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 100%;
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 0.25rem;
+    transform: translate(-50%, -50%);
+  }
+}
