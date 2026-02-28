@@ -3,6 +3,7 @@
 import cv2
 import io
 import time
+import sys
 from libcamera import controls
 from picamera2 import Picamera2
 from picamera2.encoders import MJPEGEncoder, H264Encoder
@@ -29,7 +30,7 @@ class Camera:
     self.pan_offset_x = 0
     self.pan_offset_y = 0
     self.shutter_delay_on = False
-    self.analogue_gain = 1
+    self.analogue_gain = 6
     self.exposure_time = 16666 # micro seconds
     self.aperture = 0
     self.digital_aperture = False
@@ -105,6 +106,9 @@ class Camera:
       },
       controls={
         "FrameRate": 30 
+      },
+      sensor={
+        "output_size": (2028, 1520)
       }
     )
 
@@ -191,7 +195,8 @@ class Camera:
     self.picam2.set_controls({
       "ExposureTime": self.exposure_time,
       "AnalogueGain": self.analogue_gain,
-      "AeEnable": False
+      "AeEnable": False,
+      "AwbMode": controls.AwbModeEnum.Auto,
     })
 
   # ISO isn't really a thing picamera2 it's referred to as gain
@@ -259,24 +264,27 @@ class Camera:
   # https://github.com/raspberrypi/picamera2/blob/main/examples/yuv_to_rgb.py
   def sample_video(self, np_arr):
     rgb_img = cv2.cvtColor(np_arr, cv2.COLOR_YUV420p2RGB)
-    rgb_img2 = cv2.cvtColor(rgb_img, cv2.COLOR_BGR2RGB)
-    return rgb_img2
+    return rgb_img
 
   def start_video_recording(self):
     # self.picam2.stop_recording()
     # self.picam2.configure(self.video_recording_config)
     video_file_path = base_path + str(time.time()).split(".")[0] + ".h264"
-    encoder = H264Encoder(30000000, repeat=True)
-    self.picam2.start_recording(encoder, video_file_path)
+    self.encoder = H264Encoder(30000000, repeat=True)
+    self.picam2.start_recording(self.encoder, video_file_path)
     self.recording_video = True
 
-    while (self.recording_video):
+    while self.recording_video:
       self.video_frame = self.sample_video(self.picam2.capture_array("lores"))
 
   def stop_video_recording(self):
+    self.recording_video = False
     self.encoder.output.stop()
     self.picam2.stop_encoder()
-    self.recording_video = False
+    self.picam2.stop_recording()
+    self.picam2.stop()
+    self.start_streaming()
+    self.setup_init_settings()
 
   def change_mode(self, mode):
     if mode == "full":
@@ -288,12 +296,16 @@ class Camera:
       self.picam2.switch_mode(self.video_config_1x)
 
   def take_picture(self):
-    if self.shutter_delay_on:
-      time.sleep(5)
+    try:
+      if self.shutter_delay_on:
+        time.sleep(5)
 
-    img_path = base_path + str(time.time()).split(".")[0] + ".jpg"
-    array = self.picam2.switch_mode_and_capture_array(self.photo_config, "main")
-    cv2.imwrite(img_path, array)
+      img_path = base_path + str(time.time()).split(".")[0] + ".jpg"
+      array = self.picam2.switch_mode_and_capture_array(self.photo_config, "main")
+      cv2.imwrite(img_path, array)
+    except OSError as e:
+      # sometimes taking a picture crashes says "bad address"
+      sys.exit(1)
 
   def start_streaming(self):
     self.picam2.configure(self.video_config_1x)

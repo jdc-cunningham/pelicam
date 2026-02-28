@@ -12,6 +12,7 @@ from camera.camera import Camera
 from PIL import Image
 from oled.OLED_Module_Code.RaspberryPi.python.example.OLED_0in91_test import small_OLED
 from imu.imu import IMU
+from threading import Thread
 
 edit_shutter_speed_mode = False
 edit_iso_mode = False
@@ -114,13 +115,11 @@ def on_mouse(event, x, y, flags, param):
         return
 
       if x > 340 and y > 120 and y < 170:
-        print(">>> video mode clicked")
+        camera.change_mode("video_recording")
         camera.video_mode = True
-        
-        files_img = get_pictures_img()
         camera_active = True
+        Thread(target=camera.start_video_recording).start()
         return
-
 
 # setup GUI
 # black bg
@@ -263,15 +262,16 @@ def button_pressed(button):
     else:
       if camera.video_mode:
         if camera.recording_video:
+          camera.video_mode = False
           camera.stop_video_recording()
-        else:
-          camera.start_video_recording()
       else:
         taking_picture = True
         camera.take_picture()
         taking_picture = False
         has_pictures = True
         files_img = get_pictures_img()
+
+    time.sleep(0.1)
 
   if button == "BACK":
     if edit_shutter_speed_mode:

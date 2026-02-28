@@ -39,6 +39,14 @@
   - [ ] build out interface
   - [ ] ability to delete scene/scene branch
 
+### 02/27/2026
+
+6:51 PM
+
+Currently printing the lens hood 6.5 hr print damn
+
+
+
 ### 02/25/2026
 
 6:46 PM
