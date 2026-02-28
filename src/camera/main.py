@@ -3,6 +3,7 @@
 import cv2
 import io
 import logging
+import math
 import numpy as np
 import time
 import os
@@ -164,6 +165,36 @@ def get_ss_max_width(exposure_time):
     return 140
 
   return 200
+
+def check_leading_zero(num):
+    if (num < 10):
+      return "0" + str(num)
+    else:
+      return str(num)
+  
+def format_time(seconds):
+  if (seconds > 60):
+    return check_leading_zero(math.floor(seconds / 60)) + ":" + check_leading_zero(seconds % 60)
+  else:
+    return "0:" + check_leading_zero(seconds)
+
+# need to scale it
+# rec_img = cv2.imread('/home/pi/pelicam/src/camera/red-circle-icon-32-32.png', cv2.IMREAD_COLOR)
+
+def video_passthrough_osd(img):
+  formatted_time = 0
+
+  if (camera.video_start_time > 0):
+    elapsed_time = time.time() - camera.video_start_time
+    formatted_time = format_time(math.floor(elapsed_time))
+
+  # paste red recording dot here
+  # img[450:482, 60:92] = rec_img
+  # can't get past this error
+  # could not broadcast input array from shape (32,32,3) into shape (30,32,3)
+  cv2.putText(img, formatted_time, (60, 450), font, 1, (255, 255, 255), 2, cv2.LINE_AA)
+
+  return img
 
 def passthrough_osd(img):
   # aperture
@@ -327,7 +358,7 @@ while True:
         if camera.output.frame is not None:
           if camera.video_mode:
             if camera.video_frame is not None:
-              cv2.imshow(window_name, camera.video_frame)
+              cv2.imshow(window_name, video_passthrough_osd(camera.video_frame))
           else:
             cv2.imshow(window_name, buf_to_pil_img(camera.output.frame))
     elif has_pictures:
@@ -338,5 +369,8 @@ while True:
     cv2.waitKey(17)
   except KeyboardInterrupt:
     break
+  except OSError as e:
+      # sometimes taking a picture crashes says "bad address"
+      sys.exit(1)
 
 cv2.destroyAllWindows()

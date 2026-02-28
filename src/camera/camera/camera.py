@@ -39,6 +39,7 @@ class Camera:
     self.recording_video = False
     self.encoder = None
     self.video_frame = None
+    self.video_start_time = 0
 
     self.shutter_speed_map = {
       125: "1/8000",
@@ -267,8 +268,7 @@ class Camera:
     return rgb_img
 
   def start_video_recording(self):
-    # self.picam2.stop_recording()
-    # self.picam2.configure(self.video_recording_config)
+    self.video_start_time = time.time()
     video_file_path = base_path + str(time.time()).split(".")[0] + ".h264"
     self.encoder = H264Encoder(30000000, repeat=True)
     self.picam2.start_recording(self.encoder, video_file_path)
