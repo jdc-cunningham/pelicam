@@ -90,7 +90,29 @@ OMG finally unlimited nesting
 
 If you look at the order of the letters they were added alphabetically but in different nested positions.
 
+12:43 PM
 
+I'm distracted, I gotta go to the gym in an hour and do some grocery shopping
+
+Then eat... so there will be a delay, few hours work later in the day on this
+
+What do I still need to do?
+
+So if I was to use this to re-create the basic software code
+
+There is something interesting, when I was first working on this menu system, I did not think about overlay text on the live camera pass through, that could be a menu scene and you would drag text over it/bind functions like currently ISO for example, you tap the `ISO 100` display and then when it's active (rectangle border drawn around it) you can click up/down on the 5D joystick and change that value.
+
+Also the single menu scene on basic software lists files and has two toggles (shutter delay, video mode)
+
+The listing is interesting because how do you represent that
+
+What's missing?
+
+- function binding
+
+Before function binding I need some camera software written (the hardware interfacing part)
+
+I also need the menu loading that takes the generated menu from this dekstop app and uses it with the software/does the funciton binding
 
 ### 02/20/2026
 
