@@ -132,38 +132,52 @@ const MenuTree = (props) => {
   const sortMenuTree = () => {
     const sortedMenuTree = {};
 
-    // const traverseObj = (targetKey, obj, currentKeys) => {
-    //   if (targetKey in obj) {
-    //     currentKeys.push(targetKey);
-    //     return currentKeys;
-    //   } else {
-    //     Object.keys(obj).forEach(key2 => {
-    //       traverseObj(targetKey, obj[key2], currentKeys);
-    //     });
-    //   }
-    // };
+    // Google Search AI Summary Code
+    const getPathToKey = (obj, targetKey, currentPath = '') => {
+      if (obj === null || typeof obj !== 'object') {
+        return undefined;
+      }
 
-    // const getObjRef = (targetKey, obj) => {
-    //   let currentKeys = [];
-    //   traverseObj(targetKey, obj, currentKeys);
-    //   let objRef = sortedMenuTree;
-    //   currentKeys.forEach(key => {
-    //     objRef = objRef[key];
-    //   });
+      for (const key in obj) {
+        if (Object.hasOwnProperty.call(obj, key)) {
+          const newPath = currentPath ? `${currentPath}.${key}` : key;
 
-    //   return objRef;
-    // }
+          if (key === targetKey) {
+            return newPath;
+          }
 
-    // Object.keys(menuScenes).forEach(key => {
-    //   const parent = menuScenes[key].parent;
+          if (typeof obj[key] === 'object') {
+            const foundPath = getPathToKey(obj[key], targetKey, newPath);
 
-    //   if (!parent) {
-    //     sortedMenuTree[key] = {};
-    //   } else {
-    //     const ref = getObjRef(parent, sortedMenuTree);
-    //     ref[key] = {};
-    //   }
-    // });
+            if (foundPath) {
+              return foundPath;
+            }
+          }
+        }
+      }
+
+      return undefined;
+    };
+
+    const getRefFromPathKeys = (obj, pathKeys) => {
+      if (pathKeys.length > 0) {
+        return getRefFromPathKeys(obj[pathKeys[0]], pathKeys.slice(1));
+      } else {
+        return obj;
+      }
+    };
+
+    Object.keys(menuScenes).forEach(key => {
+      const parent = menuScenes[key].parent;
+
+      if (!parent) {
+        sortedMenuTree[key] = {};
+      } else {
+        const pathKeys = getPathToKey(sortedMenuTree, parent);
+        const ref = getRefFromPathKeys(sortedMenuTree, pathKeys.split("."));
+        ref[key] = {};
+      }
+    });
     
     setMenuTree(sortedMenuTree);
   };

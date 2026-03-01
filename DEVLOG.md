@@ -39,6 +39,59 @@
   - [ ] build out interface
   - [ ] ability to delete scene/scene branch
 
+### 03/01/2026
+
+11:45 AM
+
+Alright I unfortunately need to go back to reality but I do want to get this menu system to a state where it could actually be used to run a camera.
+
+I recently wrote the basic video software in other branches of this repo which has the following features:
+
+- photography
+ - shutter speed
+ - iso
+ - white balance
+- video
+- shutter delay
+
+With that I've been able to take pictures of birds in flight see this [video](https://www.youtube.com/watch?v=1GjfKuYk2jw).
+
+See this shot for example
+
+<img src="./devlog-images/loess-bluffs-02282026.jpg"/>
+
+Anyway recently I had a scare with my car and I was reminded how poor I am where some event like that could "ruin" me.
+
+So yeah, I gotta spend like the next month trying to launch an iOS/web app service in the medical industry
+
+But today and maybe following days, I'm going to try and get to a version 0.1.0 of this menu system.
+
+I mentioned below that I just used AI to get past that algorithm problem of traversing nested objects, feels bad but I need to move on.
+
+11:52 AM
+
+I was thinking about the button binding how that would work with the spot in the middle (looking at the desktop menu builder UI)
+
+I guess when your'e on an active menu page, the button bindings for that page show up in that middle spot
+
+11:57 AM
+
+My mind is kind of swimming right now, thinking of random things
+
+Also having stopped woring on this, lost momentum
+
+Woring towards a video demo showing it working
+
+12:29 PM
+
+OMG finally unlimited nesting
+
+<img src="./devlog-images/unlimited-nesting.JPG"/>
+
+If you look at the order of the letters they were added alphabetically but in different nested positions.
+
+
+
 ### 02/20/2026
 
 6:56 PM
