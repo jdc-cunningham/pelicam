@@ -114,6 +114,14 @@ Before function binding I need some camera software written (the hardware interf
 
 I also need the menu loading that takes the generated menu from this dekstop app and uses it with the software/does the funciton binding
 
+12:48 PM
+
+Initially when I started working on this I was going to just replicate what modular pi cam is running.
+
+It doesn't have a touch screen, so you couldn't tap the OSD camera settings, you'd need to use the physical buttons to activate them/move around
+
+I guess the touchscreen display should do that as well (moving 5D joystick would activate an icon/move around)
+
 ### 02/20/2026
 
 6:56 PM
