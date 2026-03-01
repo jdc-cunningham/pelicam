@@ -140,6 +140,8 @@ Other future cameras may use unique displays/less just for the character/design 
 
 I think there will be some default/initial menu scenes like `camera_passthrough` so the user knows that has to exist or at least for the camera to be usable anyway
 
+I'll work out now, do my stuff, then sit down and get something done
+
 ---
 
 ### 02/20/2026
