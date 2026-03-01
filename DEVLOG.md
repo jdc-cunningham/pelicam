@@ -142,6 +142,38 @@ I think there will be some default/initial menu scenes like `camera_passthrough`
 
 I'll work out now, do my stuff, then sit down and get something done
 
+4:27 PM
+
+Alright almost back on
+
+I was thinking about modes... if a button is clicked/emitted, you have to figure out what state that button is for
+
+If you're in zoom mode then directional buttons are for panning
+
+An active menu then navigating a menu
+
+I'm not sure if you can do it with just one mode or if there is a hierarchy
+
+4:31 PM
+
+I was also thinking about running this code against 3 cameras:
+
+- HQ cam with SPI display
+- HQ cam with DSI display
+- V3 module cameras
+
+That kind of functionality/hardware checking is covered in the existing modular pi cam code
+
+Also thinking about the main script that openbox runs, that would read the menu and camera hardware
+
+I unfortuantely already feel mentally spent being Sunday and did a few things already
+
+I kind of want to do nothing right now
+
+I like blank slate (greenfield dev) it's funny even though this codebase is not that big/old I already feel like it's a mess. The JS part in particular, could I remember all the connected events related to drag-drop and state changing/cross-component comms idk
+
+Easiest way to work on this is blow away existing code running on JDC34 cam and dogfood this code, get back to that working state
+
 ---
 
 ### 02/20/2026
