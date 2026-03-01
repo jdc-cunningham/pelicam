@@ -122,6 +122,26 @@ It doesn't have a touch screen, so you couldn't tap the OSD camera settings, you
 
 I guess the touchscreen display should do that as well (moving 5D joystick would activate an icon/move around)
 
+12:54 PM
+
+What would I consider to be a basic/successful softwareeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee my keyboard bugging out lol
+
+- produce a menu
+- actually interface with the camera hardware
+- dogfood it, use it myself
+
+successful as in usable software, useful
+
+I should try and replicate basic software functionality then based on that code and replace the software running on JDC34 and Modular Pi Cam (although it would nerf that camera technically but need the SPI display).
+
+From this point on I'm moving forward with the 640x480 DSI display from Waveshare, it is pricey like $50 each but it's worth it for the brightness and quality.
+
+Other future cameras may use unique displays/less just for the character/design eg. I had thought of an e-ink display camera since I have one lying around unused
+
+I think there will be some default/initial menu scenes like `camera_passthrough` so the user knows that has to exist or at least for the camera to be usable anyway
+
+---
+
 ### 02/20/2026
 
 6:56 PM
