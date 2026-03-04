@@ -8,8 +8,18 @@ import ButtonBindings from './components/ButtonBindings/ButtonBindings';
 function App() {
   const [sprites, setSprites] = useState({}); // {filename: fileInfo}
   const [lastActiveSprite, setLastActiveSprite] = useState(null);
-  const [menuScenes, setMenuScenes] = useState({});
   const [activeMenuName, setActiveMenuName] = useState('');
+
+  const [menuScenes, setMenuScenes] = useState({
+    // used by camera and video mode
+    "camera_pass_through": {
+      background_type: "image",
+      background_color: "",
+      background_img: null,
+      parent: "",
+      menu_items: []
+    }
+  });
 
   return (
     <div className="App">

@@ -39,6 +39,40 @@
   - [ ] build out interface
   - [ ] ability to delete scene/scene branch
 
+### 03/03/2026
+
+7:04 PM
+
+Ugh... I feel so mentally drained
+
+Got 2 hours before I eat
+
+I'm going to do the most basic full integration build
+
+- [ ] single page menu
+- [ ] a toggle-able button on that menu
+- [ ] the live camera pass through (which is a reserved menu item)
+
+I already ordered the parts for the next camera JDC35 (yellow and grey) and I want to build that.
+
+Mostly because I want to do videos on each lens I get and I need the flange to be accessible/adjustable.
+
+7:14 PM
+
+Dang I'm struggling to start
+
+7:28 PM
+
+I wonder what it is, literal head pain/feeling sick, mentally drained
+
+I eat food, I work out, I still feel terrible end of the day
+
+I should just work on physical stuff like modeling instead of code
+
+I did add the base pass through menu scene
+
+---
+
 ### 03/02/2026
 
 6:11 PM
