@@ -39,6 +39,43 @@
   - [ ] build out interface
   - [ ] ability to delete scene/scene branch
 
+### 03/04/2026
+
+6:50 PM
+
+Maybe today... trying eating now
+
+I eat two meals a day: a small salad for lunch at 11:30 AM then dinner at 9 PM
+
+I put an apple in between that time at 3:30 PM
+
+But now I'll try when I get home around this time
+
+I'm dieting/trying to lose like 20 more lbs I want abs and face gains
+
+Modes:
+
+- home
+  - shutter (engages camera pass through)
+
+I guess home should be mandatory as you need something, the pass through isn't always on to conserve power
+
+7:00 PM
+
+I'm distracted, everytime I look at the JDC34 camera (blue green) it makes me sad that I put hot glue around the HQ cam as that makes it look bad...
+
+The hot glue just looks tacky, so I keep scratching at it trying to get it off
+
+Future designs...
+
+I was thinking today too, I shouldn't try to code after work since all I do at work is write code, need to switch to something else like cad work or physical like soldering
+
+Yeah... today's not it
+
+The USB-C battery charger/bms came in, they're small
+
+---
+
 ### 03/03/2026
 
 7:04 PM
