@@ -39,6 +39,46 @@
   - [ ] build out interface
   - [ ] ability to delete scene/scene branch
 
+### 03/06/2026
+
+1:23 PM
+
+Took some time off from work, my mind is swimming
+
+I'm going to briefly work on this anime girl overlay thing just for a conceptual video
+
+The full thing would be an LLM/vision setup running on the Pi that runs while the camera runs.
+
+It's intended to be almost annoying this character is in the frame of what you're trying to take a picture of
+
+I have tried to paste an image onto another image for a while now with OpenCV but have been having problems... with PIL it was straightforward but don't need the overlay.
+
+I'm also thinking about moving the basic software over to my modular pi cam since I want to use this Som Berthiot lens I just bought which needs an adjustable flange.
+
+2:16 PM
+
+Lol this is so neat
+
+<img src="./devlog-images/virus.gif"/>
+
+---
+
+### 03/05/2026
+
+9:37 PM
+
+Got a couple new (to me) lenses in. The Som 25mm messed up my hands damn, I was trying to fix it, metal is stronger than flesh who knew.
+
+Anyway had this thought of overlaying an anime girl/talking with the onboard LLM
+
+It's like a companion camera
+
+<img src="./devlog-images/char.JPG"/>
+
+Then that'd be overlaid on the camera passthrough
+
+---
+
 ### 03/04/2026
 
 6:50 PM
