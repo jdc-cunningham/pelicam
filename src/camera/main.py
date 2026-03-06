@@ -196,7 +196,16 @@ def video_passthrough_osd(img):
 
   return img
 
+# 300x286
+char = '/home/pi/pelicam/src/camera/char-no-msg-300.png'
+char_msg = '/home/pi/pelicam/src/camera/char-message-300.png'
+msg = "Buy! Buy!"
+msg_part = ""
+render_ref = round(time.time() * 1000)
+
 def passthrough_osd(img):
+  global msg_part, render_ref, msg
+
   # aperture
   cv2.putText(img, f'F {camera.digital_aperture or "--"}', (30, 55), font, 1, (255, 255, 255), 2, cv2.LINE_AA)
 
@@ -226,13 +235,45 @@ def passthrough_osd(img):
     end_point = (max_width, 460)
     cv2.rectangle(img, start_point, end_point, (250, 250, 250), 2)
 
+  # char
+  # https://stackoverflow.com/a/14102014/2710227
+  x_offset = 300
+  y_offset = 100
+  
+  s_img = cv2.imread(char_msg, -1) if msg_part != "" else cv2.imread(char, -1)
+
+  y1, y2 = y_offset, y_offset + s_img.shape[0]
+  x1, x2 = x_offset, x_offset + s_img.shape[1]
+
+  # deal with black from transparency png
+  alpha_s = s_img[:, :, 3] / 255.0
+  alpha_l = 1.0 - alpha_s
+
+  for c in range(0, 3):
+      img[y1:y2, x1:x2, c] = (alpha_s * s_img[:, :, c] +
+                                alpha_l * img[y1:y2, x1:x2, c])
+
+  time_now = round(time.time() * 1000)
+
+  if (time_now - render_ref > 100):
+    render_ref = time_now
+
+    if len(msg) > 0:
+      msg_part += msg[0]
+      msg = msg[1:]
+    else:
+      msg = "Buy! Buy!"
+      msg_part = ""
+
+  # chat overlay
+  cv2.putText(img, msg_part, (380, 180), font, 1, (0, 0, 0), 2, cv2.LINE_AA)
+
   return img
 
 # https://stackoverflow.com/a/49517948/2710227
 def buf_to_pil_img(buf):
   nparr = np.frombuffer(buf, np.uint8)
   img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-  img = np.array(img)
   return passthrough_osd(img)
 
 camera_active = False
